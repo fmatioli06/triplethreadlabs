@@ -124,6 +124,16 @@
   .mockup-stage-inner.is-active { display: block; }
   .mockup-stage-inner img { border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
 
+  /* Interactive mock UI standing in for real product screenshots */
+  .mock-ui { background: #fff; border-radius: 6px; padding: 20px; box-shadow: 0 12px 34px rgba(0,0,0,.3); max-width: 520px; margin: 0 auto; }
+  .mock-ui__readout { display: flex; gap: 18px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--line-in-card); }
+  .mock-ui__stat-label { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 3px; }
+  .mock-ui__stat-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; color: var(--black); }
+  .mock-ui__stat-value.is-green { color: var(--green); }
+  .mock-sheet { position: relative; background: repeating-linear-gradient(45deg, #F5F4F1, #F5F4F1 8px, #FAFAF9 8px, #FAFAF9 16px); border: 1px dashed var(--line-on-offwhite); border-radius: 4px; height: 220px; overflow: hidden; }
+  .mock-piece { position: absolute; border-radius: 2px; opacity: .88; }
+  .mock-btn { display: inline-block; background: var(--green); color: #fff; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 3px; margin-top: 14px; }
+
   .section-block { margin-bottom: 48px; }
   .section-block h2 { font-size: 30px; margin-bottom: 22px; }
 
@@ -238,13 +248,59 @@
       </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <img src="/assets/dtf-main-view.png" alt="DTF Gang Sheet Builder showing full three-column layout with designs on canvas, 72.6% sheet utilization, and Export Sheet button" style="width:100%;height:auto;">
+          <div class="mock-ui">
+            <div class="mock-ui__readout">
+              <div><div class="mock-ui__stat-label">Sheet</div><div class="mock-ui__stat-value">22" &times; 60"</div></div>
+              <div><div class="mock-ui__stat-label">Items</div><div class="mock-ui__stat-value">14</div></div>
+              <div><div class="mock-ui__stat-label">Fill</div><div class="mock-ui__stat-value is-green">72.6%</div></div>
+            </div>
+            <div class="mock-sheet">
+              <span class="mock-piece" style="left:6%;top:10%;width:22%;height:34%;background:#2D7A4F;"></span>
+              <span class="mock-piece" style="left:30%;top:8%;width:18%;height:40%;background:#3A9962;"></span>
+              <span class="mock-piece" style="left:50%;top:14%;width:26%;height:28%;background:#272727;"></span>
+              <span class="mock-piece" style="left:78%;top:6%;width:16%;height:44%;background:#4A4844;"></span>
+              <span class="mock-piece" style="left:8%;top:52%;width:30%;height:36%;background:#3A9962;"></span>
+              <span class="mock-piece" style="left:42%;top:50%;width:20%;height:42%;background:#272727;"></span>
+              <span class="mock-piece" style="left:66%;top:56%;width:28%;height:30%;background:#2D7A4F;"></span>
+            </div>
+            <span class="mock-btn">Auto-Arrange</span>
+          </div>
         </div>
         <div class="mockup-stage-inner" data-panel="1">
-          <img src="/assets/dtf-after-arrange.png" alt="DTF Gang Sheet Builder after Auto-Arrange — designs packed tightly for maximum sheet coverage" style="width:100%;height:auto;">
+          <div class="mock-ui">
+            <div class="mock-ui__readout">
+              <div><div class="mock-ui__stat-label">Sheet</div><div class="mock-ui__stat-value">22" &times; 60"</div></div>
+              <div><div class="mock-ui__stat-label">Items</div><div class="mock-ui__stat-value">14</div></div>
+              <div><div class="mock-ui__stat-label">Fill</div><div class="mock-ui__stat-value is-green">94.1%</div></div>
+            </div>
+            <div class="mock-sheet">
+              <span class="mock-piece" style="left:0%;top:0%;width:24%;height:48%;background:#2D7A4F;"></span>
+              <span class="mock-piece" style="left:24%;top:0%;width:20%;height:48%;background:#3A9962;"></span>
+              <span class="mock-piece" style="left:44%;top:0%;width:28%;height:48%;background:#272727;"></span>
+              <span class="mock-piece" style="left:72%;top:0%;width:28%;height:48%;background:#4A4844;"></span>
+              <span class="mock-piece" style="left:0%;top:50%;width:32%;height:50%;background:#3A9962;"></span>
+              <span class="mock-piece" style="left:32%;top:50%;width:22%;height:50%;background:#272727;"></span>
+              <span class="mock-piece" style="left:54%;top:50%;width:46%;height:50%;background:#2D7A4F;"></span>
+            </div>
+            <span class="mock-btn">Export Sheet</span>
+          </div>
         </div>
         <div class="mockup-stage-inner" data-panel="2">
-          <img src="/assets/dtf-before-arrange.png" alt="DTF Gang Sheet Builder showing designs on canvas before final arrangement" style="width:100%;height:auto;">
+          <div class="mock-ui">
+            <div class="mock-ui__readout">
+              <div><div class="mock-ui__stat-label">Sheet</div><div class="mock-ui__stat-value">22" &times; 60"</div></div>
+              <div><div class="mock-ui__stat-label">Items</div><div class="mock-ui__stat-value">14</div></div>
+              <div><div class="mock-ui__stat-label">Fill</div><div class="mock-ui__stat-value">41.8%</div></div>
+            </div>
+            <div class="mock-sheet">
+              <span class="mock-piece" style="left:4%;top:6%;width:18%;height:24%;background:#2D7A4F;"></span>
+              <span class="mock-piece" style="left:38%;top:16%;width:14%;height:20%;background:#272727;"></span>
+              <span class="mock-piece" style="left:62%;top:4%;width:20%;height:30%;background:#4A4844;"></span>
+              <span class="mock-piece" style="left:14%;top:60%;width:22%;height:26%;background:#3A9962;"></span>
+              <span class="mock-piece" style="left:56%;top:58%;width:16%;height:22%;background:#2D7A4F;"></span>
+            </div>
+            <span class="mock-btn">Drop items to arrange</span>
+          </div>
         </div>
       </div>
     </div>

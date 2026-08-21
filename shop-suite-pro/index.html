@@ -193,7 +193,7 @@
   .module-cell p { font-size: 13.5px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
 
   /* Before / after comparison */
-  .compare-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; margin-bottom: 0; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin-bottom: 0; }
   .compare-col h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
@@ -210,8 +210,23 @@
   .compare-list .x, .compare-list .check { flex-shrink: 0; font-weight: 600; }
   .compare-list .x { color: var(--error); }
   .compare-list .check { color: var(--green); }
-  .compare-media { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line-on-white); box-shadow: var(--shadow-elevated); }
-  .compare-media img { width: 100%; height: auto; display: block; }
+  /* Interactive mock UI standing in for real product screenshots */
+  .mock-ui { background: #fff; border-radius: 6px; padding: 24px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
+  .mock-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line-in-card); }
+  .mock-row:last-child { border-bottom: none; }
+  .mock-label { font-size: 12px; font-weight: 500; color: var(--warm-gray); }
+  .mock-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; color: var(--black); }
+  .mock-value.is-green { color: var(--green); }
+  .mock-result { background: var(--green-pale); border-radius: 4px; padding: 14px 16px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .mock-result .mock-value { color: var(--green); font-size: 22px; }
+  .mock-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .mock-table th { text-align: left; font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); padding: 8px; border-bottom: 1px solid var(--line-in-card); }
+  .mock-table td { padding: 8px; border-bottom: 1px solid var(--line-in-card); color: var(--warm-gray); }
+  .mock-btn { display: inline-block; background: var(--green); color: #fff; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 3px; margin-top: 10px; }
+  .mock-kanban { display: flex; gap: 10px; }
+  .mock-kanban__col { flex: 1; background: var(--off-white); border-radius: 4px; padding: 8px; }
+  .mock-kanban__title { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 8px; }
+  .mock-kanban__card { background: #fff; border-radius: 3px; padding: 8px; font-size: 10.5px; color: var(--warm-gray); margin-bottom: 6px; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 
   @media (max-width: 1100px) {
     .compare-grid { grid-template-columns: 1fr; }
@@ -335,28 +350,49 @@
       </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <div class="mock-shot">
-            <img src="/assets/ssp-hero.png" alt="Shop Suite Pro dashboard showing open orders, revenue, profit margin, and inventory alerts">
+          <div class="mock-ui">
+            <div class="mock-row"><span class="mock-label">Open orders</span><span class="mock-value">11</span></div>
+            <div class="mock-row"><span class="mock-label">Revenue this month</span><span class="mock-value is-green">$4,280</span></div>
+            <div class="mock-row"><span class="mock-label">Average margin</span><span class="mock-value is-green">37%</span></div>
+            <div class="mock-row"><span class="mock-label">Overdue jobs</span><span class="mock-value">1</span></div>
+            <div class="mock-row"><span class="mock-label">Low-stock alerts</span><span class="mock-value">2</span></div>
           </div>
         </div>
         <div class="mockup-stage-inner" data-panel="1">
-          <div class="mock-shot">
-            <img src="/assets/ssp-quote-builder.png" alt="Shop Suite Pro Quote Builder showing a $250 quote with embroidery and DTF line items and a PDF export preview">
+          <div class="mock-ui">
+            <div class="mock-row"><span class="mock-label">Embroidery — left chest logo</span><span class="mock-value">$28.00</span></div>
+            <div class="mock-row"><span class="mock-label">DTF — back print, 12x14"</span><span class="mock-value">$22.50</span></div>
+            <div class="mock-row"><span class="mock-label">Rush fee</span><span class="mock-value">$15.00</span></div>
+            <div class="mock-result"><span class="mock-label">Quote total</span><span class="mock-value">$250.00</span></div>
+            <span class="mock-btn">Export branded PDF</span>
           </div>
         </div>
         <div class="mockup-stage-inner" data-panel="2">
-          <div class="mock-shot">
-            <img src="/assets/ssp-kanban.png" alt="Shop Suite Pro Order Tracker kanban view showing jobs by status from Quote through Complete">
+          <div class="mock-ui">
+            <div class="mock-kanban">
+              <div class="mock-kanban__col"><div class="mock-kanban__title">Quote</div><div class="mock-kanban__card">Bella Canvas · 24pc</div><div class="mock-kanban__card">Tote bags · 8pc</div></div>
+              <div class="mock-kanban__col"><div class="mock-kanban__title">In progress</div><div class="mock-kanban__card">Youth hoodies · 12pc</div></div>
+              <div class="mock-kanban__col"><div class="mock-kanban__title">Ready</div><div class="mock-kanban__card">Team jerseys · 15pc</div></div>
+              <div class="mock-kanban__col"><div class="mock-kanban__title">Complete</div><div class="mock-kanban__card">Polo run · 30pc</div></div>
+            </div>
           </div>
         </div>
         <div class="mockup-stage-inner" data-panel="3">
-          <div class="mock-shot">
-            <img src="/assets/ssp-inventory.png" alt="Shop Suite Pro Inventory module showing blanks, thread, and supplies with low-stock alerts and total value">
+          <div class="mock-ui">
+            <table class="mock-table">
+              <tr><th>Item</th><th>On hand</th><th>Value</th></tr>
+              <tr><td>Bella Canvas — Black</td><td>84</td><td>$462.00</td></tr>
+              <tr><td>Thread — Green 2570</td><td style="color:var(--error);">Low</td><td>$18.40</td></tr>
+              <tr><td>Stabilizer — Cutaway</td><td>140</td><td>$70.00</td></tr>
+            </table>
           </div>
         </div>
         <div class="mockup-stage-inner" data-panel="4">
-          <div class="mock-shot">
-            <img src="/assets/ssp-pdf-quote.png" alt="Professional branded PDF quote exported from Shop Suite Pro with itemized embroidery and DTF line items">
+          <div class="mock-ui">
+            <div class="mock-row"><span class="mock-label">Quote #1042 — Riverside Youth Soccer</span><span class="mock-value">$250.00</span></div>
+            <div class="mock-row"><span class="mock-label">Embroidery — left chest logo &times;12</span><span class="mock-value">$336.00</span></div>
+            <div class="mock-row"><span class="mock-label">DTF — back print &times;12</span><span class="mock-value">$270.00</span></div>
+            <span class="mock-btn">&#8681; Download PDF</span>
           </div>
         </div>
       </div>
@@ -364,28 +400,23 @@
 
     <div class="section-block">
       <div class="compare-grid">
-        <div>
-          <div class="compare-col is-before">
-            <h3>Running it in your head</h3>
-            <ul class="compare-list">
-              <li><span class="x">✕</span> Pricing off gut instinct — never sure if you made money</li>
-              <li><span class="x">✕</span> Quotes sent over text or email — no record, no follow-up</li>
-              <li><span class="x">✕</span> Orders tracked in a spreadsheet that only half-works</li>
-              <li><span class="x">✕</span> No idea what inventory is actually on hand</li>
-            </ul>
-          </div>
-          <div class="compare-col is-after">
-            <h3>Running it on Shop Suite Pro</h3>
-            <ul class="compare-list">
-              <li><span class="check">✓</span> Price every job in seconds — with real margin</li>
-              <li><span class="check">✓</span> Send a branded PDF quote your customer actually trusts</li>
-              <li><span class="check">✓</span> See every job's status at a glance — nothing falls through</li>
-              <li><span class="check">✓</span> Know exactly what's in stock before you take a job</li>
-            </ul>
-          </div>
+        <div class="compare-col is-before">
+          <h3>Running it in your head</h3>
+          <ul class="compare-list">
+            <li><span class="x">✕</span> Pricing off gut instinct — never sure if you made money</li>
+            <li><span class="x">✕</span> Quotes sent over text or email — no record, no follow-up</li>
+            <li><span class="x">✕</span> Orders tracked in a spreadsheet that only half-works</li>
+            <li><span class="x">✕</span> No idea what inventory is actually on hand</li>
+          </ul>
         </div>
-        <div class="compare-media">
-          <img src="/assets/ssp-before-after.png" alt="Before and after — sticky notes and spreadsheets versus the clean Shop Suite Pro dashboard">
+        <div class="compare-col is-after">
+          <h3>Running it on Shop Suite Pro</h3>
+          <ul class="compare-list">
+            <li><span class="check">✓</span> Price every job in seconds — with real margin</li>
+            <li><span class="check">✓</span> Send a branded PDF quote your customer actually trusts</li>
+            <li><span class="check">✓</span> See every job's status at a glance — nothing falls through</li>
+            <li><span class="check">✓</span> Know exactly what's in stock before you take a job</li>
+          </ul>
         </div>
       </div>
     </div>
