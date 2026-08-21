@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools — Triple Thread Labs</title>
+<meta name="description" content="Every Triple Thread Labs tool for embroidery and DTF shops. Pricing, gang sheets, quotes, and order management. Buy once, yours forever.">
+<link rel="canonical" href="https://triplethreadlabs.com/tools/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://triplethreadlabs.com/tools/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:title" content="Tools for embroidery & DTF shops — Triple Thread Labs">
+<meta property="og:description" content="Pricing, quotes, gang sheets, and order management. Buy once, yours forever.">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tools for embroidery & DTF shops — Triple Thread Labs">
+<meta name="twitter:description" content="Pricing, quotes, gang sheets, and order management. Buy once, yours forever.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+  body { background: var(--white); }
+
+  .tools-header { padding: 0 36px; height: 66px; }
+
+  .intro { text-align: center; padding: 56px 36px 36px; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); }
+  .intro h1 { font-size: 44px; line-height: 1.05; max-width: 720px; margin: 14px auto 0; }
+  .intro__sub { font-size: 16px; font-weight: 300; color: var(--warm-gray); max-width: 46ch; margin: 16px auto 0; }
+  .intro .eyebrow { justify-content: center; }
+
+  .trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin-top: 24px; }
+  .trust__item { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); }
+  .trust__dot { width: 5px; height: 5px; border-radius: 100px; background: var(--green); }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 36px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; padding: 48px 0; }
+
+  .tcard {
+    display: flex; flex-direction: column;
+    background: #fff; border: 1px solid var(--line-on-white); border-radius: var(--radius-lg);
+    padding: 28px; transition: transform 150ms ease, border-color 150ms ease;
+  }
+  .tcard:hover { transform: translateY(-3px); border-color: var(--green); }
+  @media (prefers-reduced-motion: reduce) { .tcard:hover { transform: none; } }
+
+  .tcard__badge {
+    align-self: flex-start; margin-bottom: 14px;
+  }
+
+  .tcard__name { font-size: 20px; letter-spacing: .3px; margin-bottom: 8px; }
+  .tcard__lead { font-size: 14px; font-weight: 300; color: var(--warm-gray); margin-bottom: 16px; }
+
+  .tcard__list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+  .tcard__list li { position: relative; padding-left: 16px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .tcard__list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 100px; background: var(--green); }
+
+  .tcard__foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line-in-card); }
+  .tcard__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: var(--black); }
+  .tcard__cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); }
+
+  .nudge { background: var(--off-white); border-top: 1px solid var(--line-on-white); border-bottom: 1px solid var(--line-on-white); text-align: center; padding: 48px 36px; }
+  .nudge h2 { font-size: 32px; margin-bottom: 12px; }
+  .nudge p { font-size: 15px; font-weight: 300; color: var(--warm-gray); max-width: 48ch; margin: 0 auto 24px; }
+  .nudge__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 24px; }
+  .nudge__proof { font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .nudge__proof .stars { color: var(--green); letter-spacing: 1px; }
+  .nudge__proof strong { font-family: 'Oswald', sans-serif; color: var(--black); }
+
+  @media (max-width: 900px) {
+    .tools-header { padding: 0 20px; }
+    .intro { padding: 32px 20px 28px; }
+    .intro h1 { font-size: 30px; }
+    .wrap { padding: 0 20px; }
+    .grid { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+    .nudge { padding: 32px 20px; }
+    .nudge__links .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--light tools-header">
+  <a href="/" class="logo logo--light">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <nav class="site-nav desktop-only" aria-label="Primary">
+    <a class="site-nav__item is-current" href="/tools/">Tools</a>
+    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery Calc</a>
+    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF Calc</a>
+    <a class="site-nav__item" href="/patch-pricing-calculator/">Patch Calc</a>
+    <a class="site-nav__item" href="/about/">About</a>
+  </nav>
+</header>
+
+<section class="intro">
+  <span class="eyebrow--simple">The toolkit</span>
+  <h1>Tools built for embroidery &amp; DTF shops.</h1>
+  <p class="intro__sub">Each one solves a real problem. No bloat, no subscriptions, no installs.</p>
+  <div class="trust">
+    <span class="trust__item"><span class="trust__dot"></span>Instant download</span>
+    <span class="trust__item"><span class="trust__dot"></span>No subscription, ever</span>
+    <span class="trust__item"><span class="trust__dot"></span>Works offline</span>
+    <span class="trust__item"><span class="trust__dot"></span>Buy once, yours forever</span>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="grid">
+
+    <a class="tcard" href="/embroidery-pricing-system/">
+      <span class="badge badge--fill tcard__badge">Best seller</span>
+      <h2 class="tcard__name">Embroidery Pricing System</h2>
+      <p class="tcard__lead">Know exactly what every embroidery job should cost.</p>
+      <ul class="tcard__list">
+        <li>True-cost pricing from stitch count and labor</li>
+        <li>Margin protection on every quote</li>
+        <li>Quantity pricing for bulk runs</li>
+        <li>Saved quotes and CSV export</li>
+      </ul>
+      <div class="tcard__foot">
+        <span class="tcard__price tabular">$24.99</span>
+        <span class="tcard__cta">See how it works &rarr;</span>
+      </div>
+    </a>
+
+    <a class="tcard" href="/dtf-gang-sheet-builder/">
+      <h2 class="tcard__name" style="margin-top:0;">DTF Gang Sheet Builder</h2>
+      <p class="tcard__lead">Build print-ready gang sheets in your browser.</p>
+      <ul class="tcard__list">
+        <li>Auto-arranges your PNGs</li>
+        <li>Maximizes sheet coverage</li>
+        <li>Print-ready export</li>
+        <li>Runs offline, no install</li>
+      </ul>
+      <div class="tcard__foot">
+        <span class="tcard__price tabular">$34.99</span>
+        <span class="tcard__cta">See how it works &rarr;</span>
+      </div>
+    </a>
+
+    <a class="tcard" href="/patch-price-builder/">
+      <h2 class="tcard__name" style="margin-top:0;">Patch Price Builder</h2>
+      <p class="tcard__lead">Price and quote embroidered patches, fast.</p>
+      <ul class="tcard__list">
+        <li>Accurate stitch-count pricing</li>
+        <li>Every backing and finish</li>
+        <li>Bulk tiers and rush add-ons</li>
+        <li>Printable customer quotes</li>
+      </ul>
+      <div class="tcard__foot">
+        <span class="tcard__price tabular">$13.99</span>
+        <span class="tcard__cta">See how it works &rarr;</span>
+      </div>
+    </a>
+
+    <a class="tcard" href="/embroidery-starter-kit/">
+      <span class="badge badge--outline tcard__badge">Bundle · 5 Tools</span>
+      <h2 class="tcard__name">Embroidery Business Starter Kit</h2>
+      <p class="tcard__lead">Everything to price, set up, and track your shop.</p>
+      <ul class="tcard__list">
+        <li>3 HTML tools plus 2 guides</li>
+        <li>Stitch System included</li>
+        <li>Order Tracker included</li>
+        <li>Only available here</li>
+      </ul>
+      <div class="tcard__foot">
+        <span class="tcard__price tabular">$34.99</span>
+        <span class="tcard__cta">See what's inside &rarr;</span>
+      </div>
+    </a>
+
+    <a class="tcard" href="/shop-suite-pro/">
+      <span class="badge badge--fill-mid tcard__badge">Most complete</span>
+      <h2 class="tcard__name">Complete Embroidery &amp; DTF Shop Manager</h2>
+      <p class="tcard__lead">Run your whole shop from one file.</p>
+      <ul class="tcard__list">
+        <li>Pricing, quotes, and orders</li>
+        <li>Inventory tracking</li>
+        <li>Live dashboard</li>
+        <li>Embroidery, DTF, or both</li>
+      </ul>
+      <div class="tcard__foot">
+        <span class="tcard__price tabular">$51.99</span>
+        <span class="tcard__cta">See all 7 modules &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="nudge">
+  <h2>Not sure where to start?</h2>
+  <p>Try a free calculator first. Same pricing approach as the paid tools, no signup, works right in your browser.</p>
+  <div class="nudge__links">
+    <a class="btn btn-dark" href="/embroidery-pricing-calculator/">Try the free pricing calculator</a>
+    <a class="btn btn-outline-light" href="/">Back to home</a>
+  </div>
+  <p class="nudge__proof"><span class="stars">★★★★★</span> <strong>4.9</strong> from 33 Etsy reviews · <strong>336+</strong> sales · Built by an embroidery shop owner</p>
+</section>
+
+<footer class="site-footer">
+  <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
+  <div class="site-footer__links">
+    <a href="/about/">About</a>
+    <a href="/policies/#terms">Terms</a>
+    <a href="/policies/#privacy">Privacy</a>
+    <a href="/policies/#refund">Refunds</a>
+    <a href="/policies/#support">Support</a>
+  </div>
+</footer>
+
+</body>
+</html>

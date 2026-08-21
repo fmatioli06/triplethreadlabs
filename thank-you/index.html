@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're in — Triple Thread Labs</title>
+<meta name="description" content="Thanks for signing up. We'll email you when something new drops.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+  body { background: var(--page-bg); display: flex; flex-direction: column; min-height: 100vh; }
+
+  .ty-header { padding: 0 36px; height: 64px; }
+
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 20px; }
+
+  .ty-card {
+    background: #fff;
+    border: 1px solid var(--line-on-offwhite);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-elevated);
+    padding: 52px 48px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 600px) { .ty-card { padding: 36px 24px; } }
+
+  .check-circle {
+    width: 56px; height: 56px;
+    background: var(--green-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 26px;
+    color: var(--green);
+  }
+  .check-circle svg { width: 26px; height: 26px; }
+
+  .ty-card h1 { font-size: 30px; margin-bottom: 14px; }
+  .ty-card__sub { font-size: 15px; font-weight: 300; color: var(--warm-gray); line-height: 1.6; margin-bottom: 36px; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+  .divider { height: 1px; background: var(--line-on-white); margin-bottom: 30px; }
+
+  .nudge {
+    border: 1px solid var(--line-on-white);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    text-align: left;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .nudge--primary { border-color: var(--green); background: var(--green-pale); }
+  .nudge-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--green-light);
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--green);
+  }
+  .nudge--primary .nudge-icon { background: var(--green); color: #fff; }
+  .nudge-icon svg { width: 20px; height: 20px; }
+  .nudge-content { flex: 1; text-align: left; }
+  .nudge-eyebrow {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 10px;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 5px;
+  }
+  .nudge-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; color: var(--black); margin-bottom: 6px; }
+  .nudge-desc { font-size: 12.5px; font-weight: 300; color: var(--warm-gray); line-height: 1.55; margin-bottom: 12px; }
+  .nudge-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--green); }
+
+  footer.ty-footer { padding: 26px; text-align: center; font-size: 11px; font-weight: 300; color: var(--mid-gray); border-top: 1px solid var(--line-on-white); background: #fff; }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--light ty-header">
+  <a href="/" class="logo logo--light">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <a href="/" style="font-size:13px;color:var(--warm-gray);font-family:'DM Sans',sans-serif;font-weight:300;">&larr; Back</a>
+</header>
+
+<main>
+  <div class="ty-card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <h1>You're in.</h1>
+    <p class="ty-card__sub">Your free Embroidery Pricing Cheat Sheet is ready. Open it, save it as PDF, or bookmark it — it's yours.</p>
+
+    <div class="divider"></div>
+
+    <div class="nudge nudge--primary">
+      <div class="nudge-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+      </div>
+      <div class="nudge-content">
+        <div class="nudge-eyebrow">Your free download</div>
+        <div class="nudge-title">Embroidery Pricing Cheat Sheet</div>
+        <div class="nudge-desc">Formula, platform fees, margin health guide, and common job reference — all on one printable page.</div>
+        <a href="/pricing-cheatsheet/" class="nudge-link">Open the cheat sheet &rarr;</a>
+      </div>
+    </div>
+
+    <div class="nudge">
+      <div class="nudge-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div class="nudge-content">
+        <div class="nudge-eyebrow">While you're here</div>
+        <div class="nudge-title">Embroidery Pricing System</div>
+        <div class="nudge-desc">The full tool behind the cheat sheet. Stitch count in, sell price out — with platform fees, margin health, and a one-click quote. $24.99, yours forever.</div>
+        <a href="/embroidery-pricing-system/" class="nudge-link">See the tool &rarr;</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="ty-footer">© 2026 Triple Thread Labs · Built by a maker, for makers</footer>
+
+</body>
+</html>

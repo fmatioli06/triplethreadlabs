@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embroidery Pricing Cheat Sheet — Triple Thread Labs</title>
+<meta name="description" content="A free one-page pricing reference for embroidery shops. Formula, platform fees, and margin health guide — all on one page.">
+<link rel="canonical" href="https://triplethreadlabs.com/pricing-cheatsheet/">
+
+<meta property="og:title" content="Embroidery Pricing Cheat Sheet — Triple Thread Labs">
+<meta property="og:description" content="A free one-page pricing reference for embroidery shops. Formula, platform fees, and margin health guide — all on one page.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://triplethreadlabs.com/pricing-cheatsheet/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Embroidery Pricing Cheat Sheet — Triple Thread Labs">
+<meta name="twitter:description" content="A free one-page pricing reference for embroidery shops.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --black: #111111; --charcoal: #272727; --warm-gray: #4A4844; --mid-gray: #888480;
+    --lt-gray: #C8C5C0; --page-bg: #ECEAE6; --off-white: #F5F4F1; --white: #FFFFFF;
+    --green: #2D7A4F; --green-mid: #3A9962; --green-light: #E8F5EE; --green-pale: #F0FAF3;
+    --line: #E0DEDA;
+    --warn: #8A5818; --warn-soft: #FDF3E7;
+    --danger: #8A2828; --danger-soft: #FDF0F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background: var(--page-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .screen-ui { width: 100%; max-width: 800px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--warm-gray); text-decoration: none; }
+  .back-link:hover { color: var(--black); }
+
+  .print-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 12px 20px; background: var(--green); color: white; border: none; border-radius: 3px; cursor: pointer;
+  }
+  .print-btn:hover { background: var(--green-mid); }
+
+  .sheet { width: 100%; max-width: 800px; background: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.12); border-radius: 4px; overflow: hidden; }
+
+  .sheet-header { background: var(--black); padding: 28px 36px 24px; border-top: 5px solid var(--green); display: flex; justify-content: space-between; align-items: flex-start; }
+  .sheet-eyebrow { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 3px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+  .sheet-title { font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; color: white; line-height: 1.1; }
+  .sheet-title .accent { color: var(--green-mid); }
+  .sheet-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px; font-weight: 300; }
+  .sheet-wordmark { text-align: right; flex-shrink: 0; }
+  .wordmark-line1 { font-family: 'Oswald', sans-serif; font-size: 8px; letter-spacing: 2px; color: rgba(255,255,255,0.4); font-weight: 700; text-transform: uppercase; }
+  .wordmark-line2 { font-size: 18px; color: white; font-weight: 700; }
+  .wordmark-line2 .thread { font-family: 'Playfair Display', serif; font-style: italic; }
+  .wordmark-dot { color: var(--green-mid); }
+
+  .sheet-body { padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--off-white); }
+  .sheet-col { padding: 28px; display: flex; flex-direction: column; gap: 22px; }
+  .sheet-col:first-child { border-right: 1px solid var(--line); background: white; }
+
+  .section-label { font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+
+  .formula-card { background: var(--charcoal); border-radius: 4px; padding: 18px 20px; color: white; }
+  .formula-title { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 10px; font-weight: 500; }
+  .formula-line { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 12.5px; }
+  .formula-line:last-of-type { border-bottom: 0; }
+  .formula-line .component { color: rgba(255,255,255,0.75); font-weight: 300; }
+  .formula-line .example { color: rgba(255,255,255,0.4); font-size: 11px; font-style: italic; }
+  .formula-result { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; }
+  .formula-result .label { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1.5px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; }
+  .formula-result .value { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: white; }
+
+  .ref-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .ref-table th { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); font-weight: 600; padding: 0 8px 8px 0; text-align: left; border-bottom: 1px solid var(--line); }
+  .ref-table th:last-child { text-align: right; padding-right: 0; }
+  .ref-table td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); color: var(--charcoal); font-weight: 400; vertical-align: middle; }
+  .ref-table td:last-child { text-align: right; padding-right: 0; font-weight: 600; color: var(--charcoal); }
+  .ref-table tr:last-child td { border-bottom: 0; }
+
+  .platform-badge { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 100px; background: var(--green-light); color: var(--green); }
+
+  .margin-rows { display: flex; flex-direction: column; gap: 6px; }
+  .margin-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 4px; border: 1px solid var(--line); }
+  .margin-indicator { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .margin-row-content { flex: 1; }
+  .margin-row-title { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 1px; text-transform: uppercase; letter-spacing: .5px; }
+  .margin-row-sub { font-size: 10.5px; color: var(--mid-gray); font-weight: 300; }
+  .margin-row-pct { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+
+  .margin-row.healthy { background: var(--green-light); border-color: rgba(45,122,79,0.2); }
+  .margin-row.healthy .margin-indicator { background: var(--green); }
+  .margin-row.healthy .margin-row-pct { color: var(--green); }
+  .margin-row.decent { background: #F5F9F0; border-color: rgba(100,150,60,0.2); }
+  .margin-row.decent .margin-indicator { background: #7DB060; }
+  .margin-row.decent .margin-row-pct { color: #5A8A40; }
+  .margin-row.tight { background: var(--warn-soft); border-color: rgba(138,88,24,0.2); }
+  .margin-row.tight .margin-indicator { background: #C8843A; }
+  .margin-row.tight .margin-row-pct { color: var(--warn); }
+  .margin-row.low { background: var(--danger-soft); border-color: rgba(138,40,40,0.2); }
+  .margin-row.low .margin-indicator { background: #C84040; }
+  .margin-row.low .margin-row-pct { color: var(--danger); }
+
+  .stitch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .stitch-table th { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); font-weight: 600; padding: 0 0 8px; text-align: left; border-bottom: 1px solid var(--line); }
+  .stitch-table th:last-child { text-align: right; }
+  .stitch-table td { padding: 6px 0; border-bottom: 1px solid var(--line); color: var(--charcoal); font-size: 12px; }
+  .stitch-table td:last-child { text-align: right; font-weight: 600; font-family: 'Oswald', sans-serif; }
+  .stitch-table tr:last-child td { border-bottom: 0; }
+  .job-label { font-weight: 500; color: var(--charcoal); display: block; margin-bottom: 1px; }
+  .job-sub { font-size: 10px; color: var(--lt-gray); font-weight: 300; }
+
+  .tip-box { background: var(--green-light); border-left: 3px solid var(--green); padding: 12px 14px; border-radius: 0 4px 4px 0; font-size: 11.5px; color: var(--green); line-height: 1.55; }
+  .tip-box strong { font-weight: 600; }
+
+  .sheet-footer { background: var(--black); padding: 14px 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .sheet-footer-left { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; }
+  .sheet-footer-right { font-size: 10px; color: var(--green-mid); font-weight: 500; letter-spacing: 0.5px; }
+  .sheet-footer-right a { color: inherit; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .screen-ui { display: none; }
+    .sheet { box-shadow: none; border-radius: 0; max-width: 100%; }
+    @page { size: letter landscape; margin: 0.4in; }
+  }
+
+  @media (max-width: 600px) {
+    .sheet-body { grid-template-columns: 1fr; }
+    .sheet-col:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
+    .sheet-header { flex-direction: column; gap: 16px; }
+    .sheet-wordmark { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="screen-ui">
+  <a href="/" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
+    Back to Labs
+  </a>
+  <button class="print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Save as PDF
+  </button>
+</div>
+
+<div class="sheet">
+
+  <div class="sheet-header">
+    <div>
+      <div class="sheet-eyebrow">Free resource</div>
+      <div class="sheet-title">Embroidery Pricing<br><span class="accent">Cheat Sheet</span></div>
+      <div class="sheet-sub">Formula · Platform fees · Margin health · Common job reference</div>
+    </div>
+    <div class="sheet-wordmark">
+      <div class="wordmark-line1">Triple</div>
+      <div class="wordmark-line2"><span class="thread">thread</span>labs<span class="wordmark-dot">.</span></div>
+    </div>
+  </div>
+
+  <div class="sheet-body">
+
+    <div class="sheet-col">
+      <div>
+        <div class="section-label">The Pricing Formula</div>
+        <div class="formula-card">
+          <div class="formula-title">Cost components — add them all up</div>
+          <div class="formula-line"><span class="component">Thread cost</span><span class="example">Stitch count ÷ 1,000 × $0.25</span></div>
+          <div class="formula-line"><span class="component">Labor</span><span class="example">Run time (min) ÷ 60 × hourly rate</span></div>
+          <div class="formula-line"><span class="component">Blank / garment</span><span class="example">Your actual cost</span></div>
+          <div class="formula-line"><span class="component">Stabilizer</span><span class="example">~$0.40–$0.75 per item</span></div>
+          <div class="formula-line"><span class="component">Digitizing (spread)</span><span class="example">Fee ÷ expected reorder qty</span></div>
+          <div class="formula-line"><span class="component">Overhead (10%)</span><span class="example">× 1.10 on subtotal</span></div>
+          <div class="formula-result"><span class="label">Sell for at least</span><span class="value">True cost × markup</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Platform Fee Cheat Sheet</div>
+        <table class="ref-table">
+          <thead><tr><th>Platform</th><th>Total fees</th><th style="text-align:right">You keep</th></tr></thead>
+          <tbody>
+            <tr><td><span class="platform-badge">Etsy</span></td><td style="color:var(--mid-gray);font-size:11px;">6.5% trans + $0.20 + 3% pay</td><td>~90%</td></tr>
+            <tr><td><span class="platform-badge" style="background:#F0F4FF;color:#3355CC;">Shopify</span></td><td style="color:var(--mid-gray);font-size:11px;">2.9% + $0.30 (Stripe)</td><td>~97%</td></tr>
+            <tr><td><span class="platform-badge" style="background:#F5F0FF;color:#6633CC;">Square</span></td><td style="color:var(--mid-gray);font-size:11px;">2.6% + $0.10 in-person</td><td>~97%</td></tr>
+            <tr><td><span class="platform-badge" style="background:#FFF0F5;color:#CC3366;">Amazon</span></td><td style="color:var(--mid-gray);font-size:11px;">15% + 2.9% + $0.30</td><td>~82%</td></tr>
+            <tr><td><span class="platform-badge" style="background:#F5F5F5;color:#444;">Direct / cash</span></td><td style="color:var(--mid-gray);font-size:11px;">No platform fees</td><td>100%</td></tr>
+          </tbody>
+        </table>
+        <div class="tip-box" style="margin-top:10px;"><strong>Gross-up rule:</strong> To actually keep your target price after fees, divide by (1 − fee%). At 10% fees: charge $X ÷ 0.90 so you net $X after the cut.</div>
+      </div>
+    </div>
+
+    <div class="sheet-col">
+      <div>
+        <div class="section-label">Margin Health Guide</div>
+        <div class="margin-rows">
+          <div class="margin-row healthy"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Healthy</div><div class="margin-row-sub">Strong. Room to discount, absorb returns, or run promos.</div></div><div class="margin-row-pct">40%+</div></div>
+          <div class="margin-row decent"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Decent</div><div class="margin-row-sub">Workable but watch your volume and overhead.</div></div><div class="margin-row-pct">25–40%</div></div>
+          <div class="margin-row tight"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Tight</div><div class="margin-row-sub">One mistake or return wipes your profit. Raise price or cut cost.</div></div><div class="margin-row-pct">15–25%</div></div>
+          <div class="margin-row low"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Low / Danger</div><div class="margin-row-sub">You're working for free or losing money. Fix this job before it ships.</div></div><div class="margin-row-pct">&lt;15%</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Common Job Reference</div>
+        <table class="stitch-table">
+          <thead><tr><th>Job type</th><th style="text-align:right">Typical stitches</th></tr></thead>
+          <tbody>
+            <tr><td><span class="job-label">Left chest logo</span><span class="job-sub">Standard 4" design</span></td><td>4,000–8,000</td></tr>
+            <tr><td><span class="job-label">Cap / hat</span><span class="job-sub">Structured front, 2.5" height</span></td><td>5,000–10,000</td></tr>
+            <tr><td><span class="job-label">Full back jacket</span><span class="job-sub">Dense fill, 12" design</span></td><td>15,000–30,000</td></tr>
+            <tr><td><span class="job-label">Name / text only</span><span class="job-sub">Script or block, 3" wide</span></td><td>1,500–4,000</td></tr>
+            <tr><td><span class="job-label">Team jersey (per name)</span><span class="job-sub">Name + number back</span></td><td>2,000–5,000</td></tr>
+          </tbody>
+        </table>
+        <div class="tip-box" style="margin-top:12px;"><strong>Markup rule of thumb:</strong> 20% markup ≠ 20% margin. A 20% markup gives you 16.7% margin. To hit 40% margin, you need a 67% markup. Use the pricing system — let the math do the math.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sheet-footer">
+    <span class="sheet-footer-left">© 2026 Triple Thread Labs · triplethreadlabs.com · Free to share</span>
+    <span class="sheet-footer-right"><a href="/embroidery-pricing-system/">Want the full calculator? Get the Embroidery Pricing System &rarr;</a></span>
+  </div>
+
+</div>
+
+</body>
+</html>

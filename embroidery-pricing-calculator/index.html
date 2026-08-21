@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Embroidery Pricing Calculator | Triple Thread Labs</title>
+<meta name="description" content="Free embroidery pricing calculator. Enter stitch count, blank cost, and labor to get your true cost per job and a sell price that protects your margin. No signup, no install.">
+<link rel="canonical" href="https://triplethreadlabs.com/embroidery-pricing-calculator/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Embroidery Pricing Calculator — Price by Stitch Count">
+<meta property="og:description" content="Enter stitch count, blank cost, labor rate, and platform fee. Get a protected sell price and profit margin instantly. Built by a real embroidery shop. No signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://triplethreadlabs.com/embroidery-pricing-calculator/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Embroidery Pricing Calculator — Price by Stitch Count">
+<meta name="twitter:description" content="Enter stitch count, blank cost, labor rate, and platform fee. Get a protected sell price and profit margin instantly.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://triplethreadlabs.com/#organization",
+      "name": "Triple Thread Labs",
+      "url": "https://triplethreadlabs.com",
+      "logo": "https://triplethreadlabs.com/assets/logo.png",
+      "description": "Browser-based tools for embroidery and DTF shops. Pricing, gang sheets, and business management — no installs, no subscriptions.",
+      "founder": { "@type": "Person", "name": "Felipe Matioli", "jobTitle": "Founder" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Raleigh", "addressRegion": "NC", "addressCountry": "US" },
+      "sameAs": ["https://triplethreadlabs.etsy.com"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://triplethreadlabs.com/#website",
+      "url": "https://triplethreadlabs.com",
+      "name": "Triple Thread Labs",
+      "description": "Tools for embroidery and DTF shops. Price jobs, build gang sheets, run your business.",
+      "publisher": { "@id": "https://triplethreadlabs.com/#organization" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Free Embroidery Pricing Calculator",
+      "url": "https://triplethreadlabs.com/embroidery-pricing-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free embroidery pricing calculator. Enter stitch count, blank cost, labor rate, and platform fee to get a sell price that protects your margin and your profit at a glance.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "25", "bestRating": "5", "worstRating": "1" },
+      "review": [
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Donna" }, "datePublished": "2026-06-09", "reviewBody": "I run a small business by myself, and trying to figure out pricing on everything is exhausting, plus math is not my strong suit. I was not paying myself enough, and I was definitely not charging enough. This calculator gives me a good idea on what to charge. This was a great purchase for my business." },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Ben" }, "datePublished": "2026-06-05", "reviewBody": "Excellent seller, excellent customer service. The seller also helped me make a product to fit my business. Works absolutely great, no more guessing prices." },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Zeyna" }, "datePublished": "2026-06-01", "reviewBody": "Highly recommended. It makes pricing so much easier." }
+      ],
+      "publisher": { "@id": "https://triplethreadlabs.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you price embroidery by stitch count?", "acceptedAnswer": { "@type": "Answer", "text": "Stitch count drives your run time and your thread cost. Estimate machine time from the stitch count, add thread, the blank, stabilizer, and any digitizing, then add overhead and a target margin. The calculator does this for you and grosses the price up to cover platform fees." } },
+        { "@type": "Question", "name": "How much should I charge for embroidery?", "acceptedAnswer": { "@type": "Answer", "text": "There is no flat rate. Your price depends on stitch count, your blank cost, your hourly labor rate, and where you sell. A 5,000-stitch left chest on a $5 blank at a $50/hour rate usually lands around $20 to $25 per piece once margin and platform fees are built in." } },
+        { "@type": "Question", "name": "What is a good profit margin for embroidery?", "acceptedAnswer": { "@type": "Answer", "text": "Aim for 30% or higher after costs. Under 20% is a warning sign that your labor rate is too low or your blank cost is too high. The calculator shows your margin as you type so you can see when a job stops being worth it." } },
+        { "@type": "Question", "name": "Should I charge a digitizing fee?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, every time. Digitizing is real work or a real cost you paid someone else. Charge it the first time and spread it across the reorder quantity so it stays fair on bulk runs. Never absorb it silently." } },
+        { "@type": "Question", "name": "Do I need to account for Etsy and platform fees?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Platforms like Etsy take their cut after you set your price, so charging $30 does not mean keeping $30. You have to work backward from what you want to keep. The calculator grosses your price up so the fee does not come out of your margin." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ============ PAGE-SPECIFIC: FREE TOOL ============ */
+  body { background: var(--white); }
+
+  .tool-header { height: 62px; padding: 0 36px; }
+  .tool-header .logo__triple,
+  .tool-header .logo__thread,
+  .tool-header .logo__labs { }
+  .tool-header .logo__word span { font-size: 19px; }
+  .tool-header__badge {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-mid);
+  }
+
+  .intro { background: var(--off-white); padding: 40px 36px 34px; border-bottom: 1px solid var(--line-on-white); }
+  .intro__inner { display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+  .intro__left { max-width: 600px; }
+  .intro h1 { margin: 14px 0 12px; font-size: 48px; }
+  .intro__sub { font-size: 16px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
+  .intro__stats { display: flex; gap: 26px; flex-shrink: 0; }
+  .intro__stat-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: var(--black); }
+  .intro__stat-label { font-size: 10.5px; font-weight: 300; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-top: 2px; }
+
+  .calc { background: #fff; padding: 36px; display: flex; gap: 34px; align-items: flex-start; }
+  .calc__inputs { width: 400px; flex-shrink: 0; }
+  .calc__section-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--line-on-white);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+  .field-wrap { position: relative; display: flex; align-items: center; }
+  .field-affix { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; color: var(--mid-gray); position: absolute; left: 14px; pointer-events: none; }
+  .field input {
+    width: 100%;
+    border: 1px solid var(--line-on-offwhite);
+    border-radius: var(--radius-md);
+    background: #FAF9F7;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--black);
+    padding: 13px 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .field input.has-prefix { padding-left: 30px; }
+  .field-suffix { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; color: var(--mid-gray); position: absolute; right: 14px; }
+  .field-helper { font-size: 11px; font-weight: 300; color: var(--mid-gray); margin-top: 6px; }
+
+  .calc__output { flex: 1; min-width: 0; }
+  .result-panel { background: var(--black); border-radius: var(--radius-lg); padding: 32px; }
+  .result-panel__label { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 6px; }
+  .result-panel__row { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .result-panel__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 92px; line-height: .85; color: #fff; font-variant-numeric: tabular-nums; transition: opacity 120ms ease; }
+  .result-panel__verdict { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; }
+  .result-panel__verdict.is-good { color: var(--green-mid); }
+  .result-panel__verdict.is-thin { color: #E0B84A; }
+  .result-panel__verdict.is-low { color: #E0725A; }
+  .result-panel__footnote { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.13); font-size: 11.5px; font-weight: 300; color: var(--lt-gray); }
+
+  .metrics { display: flex; gap: 2px; margin-top: 2px; }
+  .metric-cell { flex: 1; background: var(--off-white); padding: 20px; }
+  .metric-cell__label { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 6px; }
+  .metric-cell__value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 28px; font-variant-numeric: tabular-nums; color: var(--black); }
+  .metric-cell__value.is-green { color: var(--green); }
+
+  .breakdown { margin-top: 28px; }
+  .breakdown__label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--line-on-white);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--line-in-card); }
+  .breakdown-row span:first-child { font-size: 13.5px; font-weight: 300; color: var(--warm-gray); }
+  .breakdown-row span:last-child { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; color: var(--black); font-variant-numeric: tabular-nums; }
+  .breakdown-row--final { border-bottom: none; padding-top: 16px; }
+  .breakdown-row--final span:first-child { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); }
+  .breakdown-row--final span:last-child { font-size: 20px; color: var(--green); }
+
+  .upgrade { background: var(--green-pale); border-top: 1px solid var(--line-on-pale); padding: 34px 36px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .upgrade__left { flex: 1; min-width: 280px; }
+  .upgrade__left h2 { margin: 12px 0 16px; font-size: 30px; }
+  .upgrade__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 24px; max-width: 620px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .upgrade__buy { text-align: center; flex-shrink: 0; }
+  .upgrade__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; color: var(--black); margin-bottom: 10px; }
+
+  .tool-footer { background: var(--black); padding: 30px 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .tool-footer__note { font-size: 11px; font-weight: 300; color: var(--warm-gray); max-width: 560px; }
+  .tool-footer__copy { font-size: 11px; font-weight: 300; color: var(--mid-gray); }
+
+  @media (max-width: 900px) {
+    .tool-header { padding: 0 20px; }
+    .tool-header__badge { font-size: 9px; letter-spacing: 1px; }
+
+    .intro { padding: 28px 20px 24px; }
+    .intro__inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .intro h1 { font-size: 32px; }
+    .intro__stats { gap: 20px; }
+
+    .calc { padding: 20px; flex-direction: column; gap: 24px; }
+    .calc__inputs { width: 100%; }
+    .field input { min-height: 48px; }
+
+    .result-panel { padding: 22px; }
+    .result-panel__price { font-size: 52px; }
+
+    .upgrade { padding: 24px 20px; }
+    .upgrade__left h2 { font-size: 24px; }
+    .upgrade__grid { grid-template-columns: 1fr; }
+    .upgrade__buy { width: 100%; }
+    .upgrade__buy .btn { width: 100%; }
+
+    .tool-footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--dark tool-header">
+  <a href="/" class="logo logo--dark">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <span class="tool-header__badge">Free · No signup · Nothing saved</span>
+</header>
+
+<section class="intro reveal">
+  <div class="intro__inner">
+    <div class="intro__left">
+      <span class="eyebrow--simple">Free embroidery pricing calculator</span>
+      <h1>What should I charge for this job?</h1>
+      <p class="intro__sub">Four numbers and you have an answer. Nothing is saved, nothing is sent — the math runs in your browser.</p>
+    </div>
+    <div class="intro__stats">
+      <div>
+        <div class="intro__stat-value">4.9</div>
+        <div class="intro__stat-label">33 reviews</div>
+      </div>
+      <div>
+        <div class="intro__stat-value">336+</div>
+        <div class="intro__stat-label">Tools sold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="calc reveal">
+  <div class="calc__inputs">
+    <span class="calc__section-label">Your job</span>
+
+    <div class="field">
+      <label for="demo-stitches">Stitch count <span style="text-transform:none;font-weight:300;">per item</span></label>
+      <div class="field-wrap">
+        <input type="number" id="demo-stitches" value="5000" min="0" step="500" inputmode="numeric">
+      </div>
+      <div class="field-helper">A left-chest logo is usually 4,000–8,000.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-blank">Blank cost</label>
+      <div class="field-wrap">
+        <span class="field-affix">$</span>
+        <input type="number" id="demo-blank" class="has-prefix" value="5.00" min="0" step="0.50" inputmode="decimal">
+      </div>
+      <div class="field-helper">What you pay for the shirt or hat.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-rate">Your labor rate <span style="text-transform:none;font-weight:300;">per hour</span></label>
+      <div class="field-wrap">
+        <span class="field-affix">$</span>
+        <input type="number" id="demo-rate" class="has-prefix" value="50" min="0" step="1" inputmode="numeric">
+      </div>
+      <div class="field-helper">Pay yourself like an employee, not what's left over.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-fee">Selling fees</label>
+      <div class="field-wrap">
+        <input type="number" id="demo-fee" value="6.5" min="0" max="90" step="0.5" inputmode="decimal">
+        <span class="field-suffix">%</span>
+      </div>
+      <div class="field-helper">Etsy runs about 9–11% all-in. Local pickup is 0%.</div>
+    </div>
+  </div>
+
+  <div class="calc__output">
+    <div class="result-panel">
+      <div class="result-panel__label">Suggested sell price</div>
+      <div class="result-panel__row">
+        <span class="result-panel__price" id="demo-price">$22</span>
+        <span class="result-panel__verdict" id="demo-verdict"><span id="demo-verdict-text">Healthy margin — worth taking</span></span>
+      </div>
+      <div class="result-panel__footnote">Run time <span id="demo-runtime">6 min</span>, estimated from stitch count · digitizing not included · 35% target margin.</div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-cell">
+        <div class="metric-cell__label">True cost</div>
+        <div class="metric-cell__value" id="demo-cost">$12.93</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-cell__label">Your profit</div>
+        <div class="metric-cell__value is-green" id="demo-profit">$7.65</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-cell__label">Margin</div>
+        <div class="metric-cell__value is-green" id="demo-margin">35%</div>
+      </div>
+    </div>
+
+    <div class="breakdown">
+      <span class="breakdown__label">Where the cost comes from</span>
+      <div class="breakdown-row"><span>Blank</span><span id="bd-blank">$5.00</span></div>
+      <div class="breakdown-row"><span>Labor · <span id="bd-runtime-label">6 min</span> at <span id="bd-rate-label">$50</span>/hr</span><span id="bd-labor">$5.00</span></div>
+      <div class="breakdown-row"><span>Thread &amp; stabilizer</span><span id="bd-thread">$1.75</span></div>
+      <div class="breakdown-row"><span>Overhead buffer · 10%</span><span id="bd-overhead">$1.18</span></div>
+      <div class="breakdown-row"><span>Selling fees · <span id="bd-fee-label">6.5</span>% of the sale</span><span id="bd-fees">−$1.43</span></div>
+      <div class="breakdown-row breakdown-row--final"><span>You keep</span><span id="bd-keep">$7.65</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="upgrade reveal">
+  <div class="upgrade__left">
+    <span class="eyebrow--simple">This is the quick estimate</span>
+    <h2>The full system does the parts this can't</h2>
+    <div class="upgrade__grid">
+      <span>Digitizing amortized across reorders</span>
+      <span>Thread and stabilizer dialed to your shop</span>
+      <span>Your own overhead and target margin</span>
+      <span>Bulk-quantity pricing, saved quotes, CSV</span>
+    </div>
+  </div>
+  <div class="upgrade__buy">
+    <div class="upgrade__price tabular">$24.99</div>
+    <a href="/embroidery-pricing-system/" class="btn btn-primary">Get the full tool</a>
+  </div>
+</section>
+
+<footer class="tool-footer">
+  <span class="tool-footer__note">Demo uses standard defaults for thread, stabilizer, and overhead. In the full tool, every one is yours to set.</span>
+  <span class="tool-footer__copy">© 2026 Triple Thread Labs</span>
+</footer>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  /* ============ LIVE PRICING CALCULATOR ============
+     Mirrors calculate() in the Embroidery Pricing System v3.1.
+     Fixed constants below match the tool's defaults so this number
+     tracks what a buyer gets for the same inputs. The full tool
+     exposes all of these as editable fields. */
+  (function pricing() {
+    var SPM           = 850;   // run-time estimate from stitch count
+    var THREAD_RATE   = 0.25;  // $ per 1,000 stitches
+    var STABILIZER    = 0.50;  // $ per item
+    var OVERHEAD       = 0.10; // 10% added to subtotal
+    var TARGET_MARGIN  = 0.35; // 35% target margin
+    var FEE_CAP        = 0.90; // platform fee can't exceed 90%
+
+    var $ = function(id){ return document.getElementById(id); };
+    var els = {
+      stitches: $('demo-stitches'), blank: $('demo-blank'), rate: $('demo-rate'), fee: $('demo-fee'),
+      price: $('demo-price'), cost: $('demo-cost'), profit: $('demo-profit'), margin: $('demo-margin'),
+      verdict: $('demo-verdict'), verdictText: $('demo-verdict-text'), runtime: $('demo-runtime'),
+      bdBlank: $('bd-blank'), bdLabor: $('bd-labor'), bdThread: $('bd-thread'), bdOverhead: $('bd-overhead'),
+      bdFees: $('bd-fees'), bdKeep: $('bd-keep'), bdRuntimeLabel: $('bd-runtime-label'),
+      bdRateLabel: $('bd-rate-label'), bdFeeLabel: $('bd-fee-label')
+    };
+    if (!els.stitches) return;
+
+    var money = function(n){ return '$' + n.toFixed(2); };
+    var moneyRound = function(n){ return '$' + Math.round(n).toLocaleString(); };
+
+    function num(el, cap) {
+      var v = parseFloat(el.value);
+      if (isNaN(v) || v < 0) v = 0;
+      if (cap !== undefined && v > cap) v = cap;
+      return v;
+    }
+
+    function calc() {
+      var stitches = num(els.stitches);
+      var blank    = num(els.blank);
+      var rate     = num(els.rate);
+      var feePct   = num(els.fee, 90) / 100;
+      if (feePct > FEE_CAP) feePct = FEE_CAP;
+
+      var runTime    = Math.ceil(stitches / SPM);
+      var threadCost = (stitches / 1000) * THREAD_RATE;
+      var laborCost  = (runTime / 60) * rate;
+      var threadStab = threadCost + STABILIZER;
+
+      var subCost      = blank + threadCost + laborCost + STABILIZER;
+      var overheadCost = subCost * OVERHEAD;
+      var trueCost      = subCost + overheadCost;
+
+      var denom = 1 - feePct - TARGET_MARGIN;
+      if (denom < 0.05) denom = 0.05;
+
+      var price  = trueCost / denom;
+      var priceR = Math.round(price);
+
+      var netRevenue = priceR * (1 - feePct);
+      var profit     = netRevenue - trueCost;
+      var margin     = priceR > 0 ? profit / priceR : 0;
+      var feeAmt     = priceR * feePct;
+
+      els.price.style.opacity = '0.4';
+      requestAnimationFrame(function() {
+        els.price.textContent  = moneyRound(priceR);
+        els.cost.textContent   = money(trueCost);
+        els.profit.textContent = money(profit);
+        els.margin.textContent = Math.round(margin * 100) + '%';
+        els.runtime.textContent = runTime + ' min';
+
+        els.bdBlank.textContent = money(blank);
+        els.bdLabor.textContent = money(laborCost);
+        els.bdThread.textContent = money(threadStab);
+        els.bdOverhead.textContent = money(overheadCost);
+        els.bdFees.textContent = '−' + money(feeAmt);
+        els.bdKeep.textContent = money(profit);
+        els.bdRuntimeLabel.textContent = runTime + ' min';
+        els.bdRateLabel.textContent = '$' + rate;
+        els.bdFeeLabel.textContent = num(els.fee, 90).toFixed(1).replace(/\.0$/, '');
+
+        els.price.style.opacity = '1';
+      });
+
+      els.verdict.classList.remove('is-good', 'is-thin', 'is-low');
+      var shown = Math.round(margin * 100);
+      if (shown >= 30) {
+        els.verdict.classList.add('is-good');
+        els.verdictText.textContent = 'Healthy margin — worth taking';
+      } else if (shown >= 20) {
+        els.verdict.classList.add('is-thin');
+        els.verdictText.textContent = 'Thin — consider nudging the price up';
+      } else {
+        els.verdict.classList.add('is-low');
+        els.verdictText.textContent = 'Too low — this job needs a higher price';
+      }
+    }
+
+    [els.stitches, els.blank, els.rate, els.fee].forEach(function(el) {
+      el.addEventListener('input', calc);
+    });
+    calc();
+  })();
+</script>
+
+</body>
+</html>
