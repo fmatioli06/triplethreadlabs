@@ -115,6 +115,7 @@
   }
   .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
+  .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
   .mockup-stage-inner.is-active { display: block; }
 
@@ -246,13 +247,7 @@
       </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Stitch count</span><span class="mock-value">6,500</span></div>
-            <div class="mock-row"><span class="mock-label">Blank cost</span><span class="mock-value">$6.75</span></div>
-            <div class="mock-row"><span class="mock-label">Labor rate</span><span class="mock-value">$50/hr</span></div>
-            <div class="mock-row"><span class="mock-label">Platform fee</span><span class="mock-value">6.5%</span></div>
-            <div class="mock-result"><span class="mock-label">Sell price</span><span class="mock-value">$28</span></div>
-          </div>
+          <img src="/assets/embroidery-system-pricing.png" alt="Embroidery Pricing System calculator showing stitch count, labor rate, and cost inputs with a suggested sell price of $15–$19 and a full cost breakdown">
         </div>
         <div class="mockup-stage-inner" data-panel="1">
           <div class="mock-ui">

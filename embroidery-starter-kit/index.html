@@ -105,6 +105,7 @@
   }
   .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
+  .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
   .mockup-stage-inner.is-active { display: block; }
 
@@ -261,33 +262,13 @@
       </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Stitch count</span><span class="mock-value">6,500</span></div>
-            <div class="mock-row"><span class="mock-label">Blank cost</span><span class="mock-value">$6.75</span></div>
-            <div class="mock-row"><span class="mock-label">Labor rate</span><span class="mock-value">$50/hr</span></div>
-            <div class="mock-row"><span class="mock-label">Platform fee</span><span class="mock-value">6.5%</span></div>
-            <div class="mock-result"><span class="mock-label">Sell price</span><span class="mock-value">$28</span></div>
-          </div>
+          <img src="/assets/starter-pricing-calculator.png" alt="Embroidery Pricing Calculator showing stitch count, labor rate, and cost inputs with a suggested sell price of $15–$19">
         </div>
         <div class="mockup-stage-inner" data-panel="1">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Fabric</span><span class="mock-value">Cotton / twill</span></div>
-            <div class="mock-row"><span class="mock-label">Design type</span><span class="mock-value">Left chest logo</span></div>
-            <div class="mock-row"><span class="mock-label">Density</span><span class="mock-value">4.2 pts</span></div>
-            <div class="mock-row"><span class="mock-label">Underlay</span><span class="mock-value">Zigzag + edge walk</span></div>
-            <div class="mock-result"><span class="mock-label">Stabilizer</span><span class="mock-value">Cutaway, med.</span></div>
-          </div>
+          <img src="/assets/starter-stitch-system.png" alt="Stitch System embroidery reference guide start page with sections for stitch setup, digitizing, fixing problems, needles, hoops, tension, and a pre-stitch checklist">
         </div>
         <div class="mockup-stage-inner" data-panel="2">
-          <div class="mock-ui">
-            <table class="mock-table">
-              <tr><th>Customer</th><th>Item</th><th>Status</th></tr>
-              <tr><td>Sarah M.</td><td>Left chest logo</td><td>Ready</td></tr>
-              <tr><td>Youth Soccer Co.</td><td>Team jerseys ×18</td><td>In progress</td></tr>
-              <tr><td>J. Delgado</td><td>Tote bag patch</td><td>Due Fri</td></tr>
-            </table>
-            <span class="mock-btn">+ New order</span>
-          </div>
+          <img src="/assets/starter-order-tracker.png" alt="Order Tracker showing a list of orders with customer, item, due date, status, and payment state">
         </div>
         <div class="mockup-stage-inner" data-panel="3">
           <div class="mock-ui">

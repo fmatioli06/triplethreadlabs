@@ -152,6 +152,7 @@
   }
   .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
+  .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
   .mockup-stage-inner.is-active { display: block; }
 
@@ -346,42 +347,16 @@
       </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Open orders</span><span class="mock-value">11</span></div>
-            <div class="mock-row"><span class="mock-label">Revenue this month</span><span class="mock-value is-green">$4,280</span></div>
-            <div class="mock-row"><span class="mock-label">Average margin</span><span class="mock-value is-green">37%</span></div>
-            <div class="mock-row"><span class="mock-label">Overdue jobs</span><span class="mock-value">1</span></div>
-            <div class="mock-row"><span class="mock-label">Low-stock alerts</span><span class="mock-value">2</span></div>
-          </div>
+          <img src="/assets/ssp-dashboard.png" alt="Shop Suite Pro dashboard showing open orders, revenue this month, average profit margin, revenue chart, orders by status, recent orders, and inventory stock alerts">
         </div>
         <div class="mockup-stage-inner" data-panel="1">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Embroidery — left chest logo</span><span class="mock-value">$28.00</span></div>
-            <div class="mock-row"><span class="mock-label">DTF — back print, 12x14"</span><span class="mock-value">$22.50</span></div>
-            <div class="mock-row"><span class="mock-label">Rush fee</span><span class="mock-value">$15.00</span></div>
-            <div class="mock-result"><span class="mock-label">Quote total</span><span class="mock-value">$250.00</span></div>
-            <span class="mock-btn">Export branded PDF</span>
-          </div>
+          <img src="/assets/ssp-quote-builder.png" alt="Shop Suite Pro Quote Builder showing a $250 quote with embroidery line items and a live quote preview panel">
         </div>
         <div class="mockup-stage-inner" data-panel="2">
-          <div class="mock-ui">
-            <div class="mock-kanban">
-              <div class="mock-kanban__col"><div class="mock-kanban__title">Quote</div><div class="mock-kanban__card">Bella Canvas · 24pc</div><div class="mock-kanban__card">Tote bags · 8pc</div></div>
-              <div class="mock-kanban__col"><div class="mock-kanban__title">In progress</div><div class="mock-kanban__card">Youth hoodies · 12pc</div></div>
-              <div class="mock-kanban__col"><div class="mock-kanban__title">Ready</div><div class="mock-kanban__card">Team jerseys · 15pc</div></div>
-              <div class="mock-kanban__col"><div class="mock-kanban__title">Complete</div><div class="mock-kanban__card">Polo run · 30pc</div></div>
-            </div>
-          </div>
+          <img src="/assets/ssp-order-tracking.png" alt="Shop Suite Pro Order Tracker showing a list of orders with customer, item, quantity, total, due date, and status">
         </div>
         <div class="mockup-stage-inner" data-panel="3">
-          <div class="mock-ui">
-            <table class="mock-table">
-              <tr><th>Item</th><th>On hand</th><th>Value</th></tr>
-              <tr><td>Bella Canvas — Black</td><td>84</td><td>$462.00</td></tr>
-              <tr><td>Thread — Green 2570</td><td style="color:var(--error);">Low</td><td>$18.40</td></tr>
-              <tr><td>Stabilizer — Cutaway</td><td>140</td><td>$70.00</td></tr>
-            </table>
-          </div>
+          <img src="/assets/ssp-inventory.png" alt="Shop Suite Pro Inventory module showing total items, low-stock and out-of-stock alerts, and a table of blanks and thread with on-hand counts and value">
         </div>
         <div class="mockup-stage-inner" data-panel="4">
           <div class="mock-ui">
