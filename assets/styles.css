@@ -210,16 +210,9 @@ p { text-wrap: pretty; }
 .site-header--dark .site-nav__item:hover,
 .site-header--dark .site-nav__item.is-current { color: #F0EFEC; }
 
-.site-header--light .site-nav__item {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--warm-gray);
-}
+.site-header--light .site-nav__item { color: var(--warm-gray); }
 .site-header--light .site-nav__item:hover,
-.site-header--light .site-nav__item.is-current { color: var(--black); font-weight: 500; }
+.site-header--light .site-nav__item.is-current { color: var(--black); }
 
 .nav-toggle {
   display: none;
