@@ -214,6 +214,21 @@ p { text-wrap: pretty; }
 .site-header--light .site-nav__item:hover,
 .site-header--light .site-nav__item.is-current { color: var(--black); }
 
+/* ============ HEADER CTA ============ */
+.header-cta {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--green);
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  transition: background 150ms ease;
+}
+.header-cta:hover { background: var(--green-mid); }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
