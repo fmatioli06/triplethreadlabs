@@ -196,6 +196,43 @@
   .upgrade__buy { text-align: center; flex-shrink: 0; }
   .upgrade__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; color: var(--black); margin-bottom: 10px; }
 
+  /* Email capture */
+  .capture { background: var(--green); padding: 44px 36px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .capture__copy { flex: 1; min-width: 240px; }
+  .capture__copy h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.1; color: #fff; }
+  .capture__copy p { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,.82); max-width: 480px; }
+  .capture__form-wrap { width: 400px; max-width: 100%; flex-shrink: 0; }
+
+  #mlb2-40421709 .ml-form-embedWrapper { width: 100%; }
+  #mlb2-40421709 .ml-form-formContent { display: flex; gap: 2px; }
+  #mlb2-40421709 .ml-field-group { flex: 1; }
+  #mlb2-40421709 input[type="email"] {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--black);
+  }
+  #mlb2-40421709 input[type="email"]::placeholder { color: #B9B6B1; }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--black);
+    padding: 14px 20px;
+    white-space: nowrap;
+    height: 100%;
+    border-radius: 0;
+  }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary:hover { background: var(--charcoal); }
+  #mlb2-40421709 .ml-form-successBody p { color: #fff !important; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+
   .tool-footer { background: var(--black); padding: 30px 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
   .tool-footer__note { font-size: 11px; font-weight: 300; color: var(--warm-gray); max-width: 560px; }
   .tool-footer__copy { font-size: 11px; font-weight: 300; color: var(--mid-gray); }
@@ -221,6 +258,11 @@
     .upgrade__grid { grid-template-columns: 1fr; }
     .upgrade__buy { width: 100%; }
     .upgrade__buy .btn { width: 100%; }
+
+    .capture { padding: 28px 20px; flex-direction: column; align-items: stretch; gap: 18px; }
+    .capture__form-wrap { width: 100%; }
+    #mlb2-40421709 .ml-form-formContent { flex-direction: column; }
+    #mlb2-40421709 .ml-form-embedSubmit button.primary { width: 100%; padding: 14px; }
 
     .tool-footer { padding: 20px; flex-direction: column; align-items: flex-start; }
   }
@@ -354,6 +396,46 @@
   </div>
 </section>
 
+<section class="capture reveal" id="signup">
+  <div class="capture__copy">
+    <h2>Free embroidery pricing cheat sheet</h2>
+    <p>Enter your email and I'll send the one-page pricing reference I use to quote embroidery jobs with more confidence.</p>
+  </div>
+  <div class="capture__form-wrap">
+    <div id="mlb2-40421709" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40421709">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="you@yourshop.com" autocomplete="email">
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Send it to me</button>
+                <button disabled="disabled" style="display:none;" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none;">
+            <div class="ml-form-successContent">
+              <p>✓ Check your email — cheat sheet is on its way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="tool-footer">
   <span class="tool-footer__note">Demo uses standard defaults for thread, stabilizer, and overhead. In the full tool, every one is yours to set.</span>
   <span class="tool-footer__copy">© 2026 Triple Thread Labs</span>
@@ -466,6 +548,21 @@
     });
     calc();
   })();
+
+  // MailerLite redirect after successful submission
+  function ml_webform_success_40421709() {
+    try {
+      window.top.location.href = 'https://triplethreadlabs.com/thank-you/';
+    } catch(e) {
+      window.location.href = 'https://triplethreadlabs.com/thank-you/';
+    }
+  }
+</script>
+
+<!-- MailerLite script -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>
+  fetch("https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/takel")
 </script>
 
 </body>
