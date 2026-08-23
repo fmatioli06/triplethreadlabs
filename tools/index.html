@@ -30,6 +30,11 @@
   body { background: var(--white); }
 
   .tools-header { padding: 0 36px; height: 66px; }
+  .tools-header .header-cta {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #fff; background: var(--green); padding: 10px 18px; border-radius: var(--radius-sm);
+  }
+  .tools-header .header-cta:hover { background: var(--green-mid); }
 
   .intro { text-align: center; padding: 56px 36px 36px; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); }
   .intro h1 { font-size: 44px; line-height: 1.05; max-width: 720px; margin: 14px auto 0; }
@@ -132,10 +137,8 @@
   </a>
   <nav class="site-nav desktop-only" aria-label="Primary">
     <a class="site-nav__item is-current" href="/tools/">Tools</a>
-    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery Calc</a>
-    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF Calc</a>
-    <a class="site-nav__item" href="/patch-pricing-calculator/">Patch Calc</a>
     <a class="site-nav__item" href="/about/">About</a>
+    <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
   </nav>
 </header>
 
