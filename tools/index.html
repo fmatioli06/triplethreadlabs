@@ -40,31 +40,45 @@
   .trust__item { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); }
   .trust__dot { width: 5px; height: 5px; border-radius: 100px; background: var(--green); }
 
-  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 36px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; padding: 48px 0; }
+  /* ============ TOOLKIT SPEC LIST (matches homepage) ============ */
+  .toolkit { background: var(--page-bg); padding: 56px 40px 68px; }
+  .toolkit__head { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line-on-pagebg); margin-bottom: 2px; gap: 24px; }
+  .toolkit__head h2 { margin: 0; font-size: 42px; line-height: 1; }
+  .toolkit__note { font-size: 13px; font-weight: 300; color: var(--warm-gray); max-width: 280px; text-align: right; }
 
-  .tcard {
-    display: flex; flex-direction: column;
-    background: #fff; border: 1px solid var(--line-on-white); border-radius: var(--radius-lg);
-    padding: 28px; transition: transform 150ms ease, border-color 150ms ease;
-  }
-  .tcard:hover { transform: translateY(-3px); border-color: var(--green); }
-  @media (prefers-reduced-motion: reduce) { .tcard:hover { transform: none; } }
+  .tool-row { display: flex; align-items: center; gap: 24px; padding: 26px 24px; border-bottom: 1px solid var(--line-on-offwhite); background: #fff; margin-top: 2px; transition: background 150ms ease; }
+  .tool-row:hover { background: var(--off-white); }
+  .tool-row--last { border-bottom: none; }
+  .tool-row--pale { background: var(--green-pale); }
+  .tool-row--pale:hover { background: #E8F5EE; }
+  .tool-row--dark { background: var(--charcoal); }
+  .tool-row--dark:hover { background: #2F2F2F; }
 
-  .tcard__badge {
-    align-self: flex-start; margin-bottom: 14px;
-  }
+  .tool-row__mark { display: flex; flex-direction: column; gap: 3px; width: 38px; flex-shrink: 0; }
+  .tool-row__mark span { display: block; height: 3px; border-radius: 2px; }
+  .tool-row__mark span:nth-child(1) { width: 38px; background: var(--charcoal); }
+  .tool-row__mark span:nth-child(2) { width: 27px; background: var(--green); }
+  .tool-row__mark span:nth-child(3) { width: 17px; background: var(--charcoal); }
+  .tool-row--dark .tool-row__mark span:nth-child(1),
+  .tool-row--dark .tool-row__mark span:nth-child(3) { background: #DDDBD7; }
+  .tool-row--dark .tool-row__mark span:nth-child(2) { background: var(--green-mid); }
 
-  .tcard__name { font-size: 20px; letter-spacing: .3px; margin-bottom: 8px; }
-  .tcard__lead { font-size: 14px; font-weight: 300; color: var(--warm-gray); margin-bottom: 16px; }
+  .tool-row__title { width: 320px; flex-shrink: 0; }
+  .tool-row__title-line { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
+  .tool-row__name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: .3px; text-transform: uppercase; color: var(--black); }
+  .tool-row--dark .tool-row__name { color: #fff; }
+  .tool-row__desc { font-size: 13px; font-weight: 300; color: var(--warm-gray); display: block; }
+  .tool-row--dark .tool-row__desc { color: var(--lt-gray); }
 
-  .tcard__list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
-  .tcard__list li { position: relative; padding-left: 16px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
-  .tcard__list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 100px; background: var(--green); }
+  .tool-row__features { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+  .tool-row__features span { font-size: 12px; font-weight: 300; color: var(--warm-gray); }
+  .tool-row--dark .tool-row__features span { color: var(--lt-gray); }
 
-  .tcard__foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line-in-card); }
-  .tcard__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: var(--black); }
-  .tcard__cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); }
+  .tool-row__buy { width: 150px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .tool-row__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 26px; color: var(--black); }
+  .tool-row--dark .tool-row__price { color: #fff; }
+  .tool-row__cta { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); border-bottom: 1px solid var(--green); padding-bottom: 2px; }
+  .tool-row--dark .tool-row__cta { color: var(--green-mid); border-color: var(--green-mid); }
 
   .nudge { background: var(--off-white); border-top: 1px solid var(--line-on-white); border-bottom: 1px solid var(--line-on-white); text-align: center; padding: 48px 36px; }
   .nudge h2 { font-size: 32px; margin-bottom: 12px; }
@@ -78,8 +92,28 @@
     .tools-header { padding: 0 20px; }
     .intro { padding: 32px 20px 28px; }
     .intro h1 { font-size: 30px; }
-    .wrap { padding: 0 20px; }
-    .grid { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+
+    .toolkit { padding: 32px 20px 40px; }
+    .toolkit__head { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .toolkit__note { text-align: left; max-width: none; }
+    .toolkit__head h2 { font-size: 30px; }
+
+    .tool-row { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; border-radius: 4px; margin-top: 12px; border-bottom: none; }
+    .tool-row__features { display: none; }
+    .tool-row__title { width: 100%; }
+    .tool-row__buy { width: 100%; flex-direction: row; align-items: center; justify-content: space-between; }
+    .tool-row__cta {
+      background: var(--green);
+      color: #fff !important;
+      border: none !important;
+      padding: 12px 20px;
+      border-radius: 2px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .tool-row--dark .tool-row__cta { background: var(--green-mid); }
+
     .nudge { padding: 32px 20px; }
     .nudge__links .btn { width: 100%; }
   }
@@ -117,88 +151,110 @@
   </div>
 </section>
 
-<section class="wrap">
-  <div class="grid">
-
-    <a class="tcard" href="/embroidery-pricing-system/">
-      <span class="badge badge--fill tcard__badge">Best seller</span>
-      <h2 class="tcard__name">Embroidery Pricing System</h2>
-      <p class="tcard__lead">Know exactly what every embroidery job should cost.</p>
-      <ul class="tcard__list">
-        <li>True-cost pricing from stitch count and labor</li>
-        <li>Margin protection on every quote</li>
-        <li>Quantity pricing for bulk runs</li>
-        <li>Saved quotes and CSV export</li>
-      </ul>
-      <div class="tcard__foot">
-        <span class="tcard__price tabular">$24.99</span>
-        <span class="tcard__cta">See how it works &rarr;</span>
-      </div>
-    </a>
-
-    <a class="tcard" href="/dtf-gang-sheet-builder/">
-      <h2 class="tcard__name" style="margin-top:0;">DTF Gang Sheet Builder</h2>
-      <p class="tcard__lead">Build print-ready gang sheets in your browser.</p>
-      <ul class="tcard__list">
-        <li>Auto-arranges your PNGs</li>
-        <li>Maximizes sheet coverage</li>
-        <li>Print-ready export</li>
-        <li>Runs offline, no install</li>
-      </ul>
-      <div class="tcard__foot">
-        <span class="tcard__price tabular">$34.99</span>
-        <span class="tcard__cta">See how it works &rarr;</span>
-      </div>
-    </a>
-
-    <a class="tcard" href="/patch-price-builder/">
-      <h2 class="tcard__name" style="margin-top:0;">Patch Price Builder</h2>
-      <p class="tcard__lead">Price and quote embroidered patches, fast.</p>
-      <ul class="tcard__list">
-        <li>Accurate stitch-count pricing</li>
-        <li>Every backing and finish</li>
-        <li>Bulk tiers and rush add-ons</li>
-        <li>Printable customer quotes</li>
-      </ul>
-      <div class="tcard__foot">
-        <span class="tcard__price tabular">$13.99</span>
-        <span class="tcard__cta">See how it works &rarr;</span>
-      </div>
-    </a>
-
-    <a class="tcard" href="/embroidery-starter-kit/">
-      <span class="badge badge--outline tcard__badge">Bundle · 5 Tools</span>
-      <h2 class="tcard__name">Embroidery Business Starter Kit</h2>
-      <p class="tcard__lead">Everything to price, set up, and track your shop.</p>
-      <ul class="tcard__list">
-        <li>3 HTML tools plus 2 guides</li>
-        <li>Stitch System included</li>
-        <li>Order Tracker included</li>
-        <li>Only available here</li>
-      </ul>
-      <div class="tcard__foot">
-        <span class="tcard__price tabular">$34.99</span>
-        <span class="tcard__cta">See what's inside &rarr;</span>
-      </div>
-    </a>
-
-    <a class="tcard" href="/shop-suite-pro/">
-      <span class="badge badge--fill-mid tcard__badge">Most complete</span>
-      <h2 class="tcard__name">Complete Embroidery &amp; DTF Shop Manager</h2>
-      <p class="tcard__lead">Run your whole shop from one file.</p>
-      <ul class="tcard__list">
-        <li>Pricing, quotes, and orders</li>
-        <li>Inventory tracking</li>
-        <li>Live dashboard</li>
-        <li>Embroidery, DTF, or both</li>
-      </ul>
-      <div class="tcard__foot">
-        <span class="tcard__price tabular">$51.99</span>
-        <span class="tcard__cta">See all 7 modules &rarr;</span>
-      </div>
-    </a>
-
+<section class="toolkit">
+  <div class="toolkit__head">
+    <h2>Five tools. One job each.</h2>
+    <span class="toolkit__note">No bloat, no subscriptions, no installs. Every file runs in your browser, offline.</span>
   </div>
+
+  <a class="tool-row" href="/embroidery-pricing-system/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Embroidery Pricing System</span>
+        <span class="badge badge--fill">Best seller</span>
+      </div>
+      <span class="tool-row__desc">Know exactly what every embroidery job should cost.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>True-cost pricing from stitch count and labor</span>
+      <span>Margin protection on every quote</span>
+      <span>Quantity pricing for bulk runs</span>
+      <span>Saved quotes and CSV export</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$24.99</span>
+      <span class="tool-row__cta">See how it works</span>
+    </div>
+  </a>
+
+  <a class="tool-row" href="/dtf-gang-sheet-builder/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <span class="tool-row__name">DTF Gang Sheet Builder</span>
+      <span class="tool-row__desc">Build print-ready gang sheets in your browser.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Auto-arranges your PNGs</span>
+      <span>Maximizes sheet coverage</span>
+      <span>Print-ready export</span>
+      <span>Runs offline, no install</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$34.99</span>
+      <span class="tool-row__cta">See how it works</span>
+    </div>
+  </a>
+
+  <a class="tool-row" href="/patch-price-builder/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <span class="tool-row__name">Patch Price Builder</span>
+      <span class="tool-row__desc">Price and quote embroidered patches, fast.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Accurate stitch-count pricing</span>
+      <span>Every backing and finish</span>
+      <span>Bulk tiers and rush add-ons</span>
+      <span>Printable customer quotes</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$13.99</span>
+      <span class="tool-row__cta">See how it works</span>
+    </div>
+  </a>
+
+  <a class="tool-row tool-row--pale" href="/embroidery-starter-kit/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Embroidery Starter Kit</span>
+        <span class="badge badge--outline">Bundle · 5</span>
+      </div>
+      <span class="tool-row__desc">Everything to price, set up, and track your shop.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>3 HTML tools plus 2 guides</span>
+      <span>Stitch System included</span>
+      <span>Order Tracker included</span>
+      <span>Only available here</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$34.99</span>
+      <span class="tool-row__cta">See what's inside</span>
+    </div>
+  </a>
+
+  <a class="tool-row tool-row--dark tool-row--last" href="/shop-suite-pro/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Complete Embroidery &amp; DTF Shop Manager</span>
+        <span class="badge badge--fill-mid">Most complete</span>
+      </div>
+      <span class="tool-row__desc">Run your whole shop from one file.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Pricing, quotes, and orders</span>
+      <span>Inventory tracking</span>
+      <span>Live dashboard</span>
+      <span>Embroidery, DTF, or both</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$51.99</span>
+      <span class="tool-row__cta">See all 7 modules</span>
+    </div>
+  </a>
 </section>
 
 <section class="nudge">
