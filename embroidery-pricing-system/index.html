@@ -87,37 +87,10 @@
   .lead { font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); max-width: 600px; margin-bottom: 36px; }
 
   .mockup-panel { border: 1px solid var(--line-on-white); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 48px; }
-  .mockup-tabs { display: flex; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); overflow-x: auto; }
-  .mockup-tab {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--mid-gray);
-    padding: 14px;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
   .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
   .mockup-stage-inner.is-active { display: block; }
-
-  /* Interactive mock UI standing in for real product screenshots */
-  .mock-ui { background: #fff; border-radius: 6px; padding: 24px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
-  .mock-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line-in-card); }
-  .mock-row:last-child { border-bottom: none; }
-  .mock-label { font-size: 12px; font-weight: 500; color: var(--warm-gray); }
-  .mock-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; color: var(--black); }
-  .mock-result { background: var(--green-pale); border-radius: 4px; padding: 14px 16px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center; }
-  .mock-result .mock-value { color: var(--green); font-size: 22px; }
-  .mock-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .mock-table th { text-align: left; font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); padding: 8px; border-bottom: 1px solid var(--line-in-card); }
-  .mock-table td { padding: 8px; border-bottom: 1px solid var(--line-in-card); color: var(--warm-gray); }
-  .mock-btn { display: inline-block; background: var(--green); color: #fff; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 3px; margin-top: 10px; }
 
   .section-block { margin-bottom: 48px; }
   .section-block h2 { font-size: 30px; margin-bottom: 22px; }
@@ -183,7 +156,6 @@
     .product-right { width: 100%; position: static; display: none; }
     .product-left h1 { font-size: 34px; }
     .lead { font-size: 16px; }
-    .mockup-tabs { overflow-x: auto; }
 
     .feature-grid { grid-template-columns: 1fr; }
     .faq-row { flex-direction: column; gap: 6px; }
@@ -224,41 +196,9 @@
     <p class="lead">Enter the stitch count and your real costs. Get the price to charge, the margin you'd keep, and a clear answer on whether the job is worth taking.</p>
 
     <div class="mockup-panel">
-      <div class="mockup-tabs" role="tablist">
-        <button class="mockup-tab" role="tab" aria-selected="true" data-tab="0">Pricing panel</button>
-        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="1">Quantity tiers</button>
-        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="2">Saved quotes</button>
-        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="3">CSV export</button>
-      </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
           <img src="/assets/embroidery-system-pricing.png" alt="Embroidery Pricing System calculator showing stitch count, labor rate, and cost inputs with a suggested sell price of $15–$19 and a full cost breakdown">
-        </div>
-        <div class="mockup-stage-inner" data-panel="1">
-          <div class="mock-ui">
-            <table class="mock-table">
-              <tr><th>Qty</th><th>Price ea.</th><th>Margin</th></tr>
-              <tr><td>1</td><td>$28.00</td><td>35%</td></tr>
-              <tr><td>12</td><td>$24.50</td><td>33%</td></tr>
-              <tr><td>25</td><td>$22.75</td><td>31%</td></tr>
-              <tr><td>50</td><td>$21.00</td><td>30%</td></tr>
-            </table>
-          </div>
-        </div>
-        <div class="mockup-stage-inner" data-panel="2">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Bella Canvas — left chest logo</span><span class="mock-value">$28.00</span></div>
-            <div class="mock-row"><span class="mock-label">Youth hoodie — back design</span><span class="mock-value">$41.50</span></div>
-            <div class="mock-row"><span class="mock-label">Tote bag — small patch</span><span class="mock-value">$16.00</span></div>
-            <span class="mock-btn">+ New quote</span>
-          </div>
-        </div>
-        <div class="mockup-stage-inner" data-panel="3">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">quotes-2026-08.csv</span><span class="mock-value">14 rows</span></div>
-            <div class="mock-row"><span class="mock-label">Includes</span><span class="mock-value">Date, item, cost, price</span></div>
-            <span class="mock-btn">⬇ Export CSV</span>
-          </div>
         </div>
       </div>
     </div>
@@ -355,22 +295,6 @@
     <a href="/policies/">Policies</a>
   </div>
 </footer>
-
-<script>
-  var tabs = document.querySelectorAll('.mockup-tab');
-  var panels = document.querySelectorAll('.mockup-stage-inner');
-  function selectTab(idx) {
-    tabs.forEach(function(t, i) { t.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
-    panels.forEach(function(p, i) { p.classList.toggle('is-active', i === idx); });
-  }
-  tabs.forEach(function(tab, idx) {
-    tab.addEventListener('click', function() { selectTab(idx); });
-    tab.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowRight') selectTab((idx + 1) % tabs.length);
-      if (e.key === 'ArrowLeft') selectTab((idx - 1 + tabs.length) % tabs.length);
-    });
-  });
-</script>
 
 </body>
 </html>

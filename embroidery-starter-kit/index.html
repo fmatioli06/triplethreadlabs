@@ -96,19 +96,6 @@
   .mockup-stage-inner { display: none; width: 100%; }
   .mockup-stage-inner.is-active { display: block; }
 
-  /* Interactive mock UI standing in for real product screenshots */
-  .mock-ui { background: #fff; border-radius: 6px; padding: 24px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
-  .mock-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line-in-card); }
-  .mock-row:last-child { border-bottom: none; }
-  .mock-label { font-size: 12px; font-weight: 500; color: var(--warm-gray); }
-  .mock-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; color: var(--black); }
-  .mock-result { background: var(--green-pale); border-radius: 4px; padding: 14px 16px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center; }
-  .mock-result .mock-value { color: var(--green); font-size: 22px; }
-  .mock-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .mock-table th { text-align: left; font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); padding: 8px; border-bottom: 1px solid var(--line-in-card); }
-  .mock-table td { padding: 8px; border-bottom: 1px solid var(--line-in-card); color: var(--warm-gray); }
-  .mock-btn { display: inline-block; background: var(--green); color: #fff; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 3px; margin-top: 10px; }
-
   .section-block { margin-bottom: 48px; }
   .section-block h2 { font-size: 30px; margin-bottom: 10px; }
   .section-block .section-sub { font-size: 14.5px; font-weight: 300; color: var(--mid-gray); margin-bottom: 22px; max-width: 600px; }
@@ -242,8 +229,6 @@
         <button class="mockup-tab" role="tab" aria-selected="true" data-tab="0">Pricing calculator</button>
         <button class="mockup-tab" role="tab" aria-selected="false" data-tab="1">Stitch system</button>
         <button class="mockup-tab" role="tab" aria-selected="false" data-tab="2">Order tracker</button>
-        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="3">Pricing examples</button>
-        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="4">Charge guide</button>
       </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
@@ -254,23 +239,6 @@
         </div>
         <div class="mockup-stage-inner" data-panel="2">
           <img src="/assets/starter-order-tracker.png" alt="Order Tracker showing a list of orders with customer, item, due date, status, and payment state">
-        </div>
-        <div class="mockup-stage-inner" data-panel="3">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Left chest logo</span><span class="mock-value">$18–24</span></div>
-            <div class="mock-row"><span class="mock-label">Custom hat</span><span class="mock-value">$22–28</span></div>
-            <div class="mock-row"><span class="mock-label">Team jerseys (12)</span><span class="mock-value">$31 ea</span></div>
-            <div class="mock-row"><span class="mock-label">Full back jacket</span><span class="mock-value">$65–85</span></div>
-            <span class="mock-btn">7 worked scenarios</span>
-          </div>
-        </div>
-        <div class="mockup-stage-inner" data-panel="4">
-          <div class="mock-ui">
-            <div class="mock-row"><span class="mock-label">Per-stitch rate</span><span class="mock-value">$0.0045–0.008</span></div>
-            <div class="mock-row"><span class="mock-label">Digitizing fee</span><span class="mock-value">$15–45</span></div>
-            <div class="mock-row"><span class="mock-label">Volume discount</span><span class="mock-value">10%+ at 25pc</span></div>
-            <span class="mock-btn">7 pricing rules</span>
-          </div>
         </div>
       </div>
     </div>
