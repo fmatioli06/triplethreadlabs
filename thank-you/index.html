@@ -100,36 +100,61 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
 
-    <h1>You're in.</h1>
-    <p class="ty-card__sub">Your free Embroidery Pricing Cheat Sheet is ready. Open it, save it as PDF, or bookmark it — it's yours.</p>
+    <h1 id="tyHeadline">You're in.</h1>
+    <p class="ty-card__sub" id="tySub">Your free Embroidery Pricing Cheat Sheet is ready. Open it, save it as PDF, or bookmark it — it's yours.</p>
 
     <div class="divider"></div>
 
-    <div class="nudge nudge--primary">
-      <div class="nudge-icon">
+    <div class="nudge nudge--primary" id="tyNudge1">
+      <div class="nudge-icon" id="tyNudge1Icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
       </div>
       <div class="nudge-content">
-        <div class="nudge-eyebrow">Your free download</div>
-        <div class="nudge-title">Embroidery Pricing Cheat Sheet</div>
-        <div class="nudge-desc">Formula, platform fees, margin health guide, and common job reference — all on one printable page.</div>
-        <a href="/pricing-cheatsheet/" class="nudge-link">Open the cheat sheet &rarr;</a>
+        <div class="nudge-eyebrow" id="tyNudge1Eyebrow">Your free download</div>
+        <div class="nudge-title" id="tyNudge1Title">Embroidery Pricing Cheat Sheet</div>
+        <div class="nudge-desc" id="tyNudge1Desc">Formula, platform fees, margin health guide, and common job reference — all on one printable page.</div>
+        <a href="/pricing-cheatsheet/" class="nudge-link" id="tyNudge1Link">Open the cheat sheet &rarr;</a>
       </div>
     </div>
 
-    <div class="nudge">
-      <div class="nudge-icon">
+    <div class="nudge" id="tyNudge2">
+      <div class="nudge-icon" id="tyNudge2Icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
       <div class="nudge-content">
-        <div class="nudge-eyebrow">While you're here</div>
-        <div class="nudge-title">Embroidery Pricing System</div>
-        <div class="nudge-desc">The full tool behind the cheat sheet. Stitch count in, sell price out — with platform fees, margin health, and a one-click quote. $24.99, yours forever.</div>
-        <a href="/embroidery-pricing-system/" class="nudge-link">See the tool &rarr;</a>
+        <div class="nudge-eyebrow" id="tyNudge2Eyebrow">While you're here</div>
+        <div class="nudge-title" id="tyNudge2Title">Embroidery Pricing System</div>
+        <div class="nudge-desc" id="tyNudge2Desc">The full tool behind the cheat sheet. Stitch count in, sell price out — with platform fees, margin health, and a one-click quote. $24.99, yours forever.</div>
+        <a href="/embroidery-pricing-system/" class="nudge-link" id="tyNudge2Link">See the tool &rarr;</a>
       </div>
     </div>
   </div>
 </main>
+
+<script>
+  // Purchases (Payhip redirect) land here with ?src=order — one shared
+  // redirect URL for every product, so swap the copy client-side instead
+  // of needing a page per product.
+  if (new URLSearchParams(location.search).get('src') === 'order') {
+    document.title = "You're all set — Triple Thread Labs";
+    document.getElementById('tyHeadline').textContent = "You're all set.";
+    document.getElementById('tySub').textContent = "Check your email for your download link and receipt. If it doesn't show up in a few minutes, check spam before reaching out.";
+
+    document.getElementById('tyNudge1Icon').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>';
+    document.getElementById('tyNudge1Eyebrow').textContent = 'While you\'re here';
+    document.getElementById('tyNudge1Title').textContent = 'Explore the rest of the toolkit';
+    document.getElementById('tyNudge1Desc').textContent = 'Five tools, one job each — pricing, gang sheets, patches, and full shop management.';
+    document.getElementById('tyNudge1Link').textContent = 'Browse all tools →';
+    document.getElementById('tyNudge1Link').href = '/tools/';
+
+    document.getElementById('tyNudge2Icon').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>';
+    document.getElementById('tyNudge2Eyebrow').textContent = 'Also free';
+    document.getElementById('tyNudge2Title').textContent = 'Embroidery Pricing Cheat Sheet';
+    document.getElementById('tyNudge2Desc').textContent = 'Formula, platform fees, margin health guide, and common job reference — all on one printable page.';
+    document.getElementById('tyNudge2Link').textContent = 'Open the cheat sheet →';
+    document.getElementById('tyNudge2Link').href = '/pricing-cheatsheet/';
+  }
+</script>
 
 <footer class="ty-footer">© 2026 Triple Thread Labs · Built by a maker, for makers</footer>
 
