@@ -198,6 +198,9 @@ p { text-wrap: pretty; }
 }
 
 .site-nav { display: flex; align-items: center; gap: 30px; }
+/* Compound selector wins over .desktop-only's plain `display: block` regardless
+   of source order — .site-nav always needs flex, never the utility's default. */
+.site-nav.desktop-only { display: flex; }
 .site-nav__item {
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
