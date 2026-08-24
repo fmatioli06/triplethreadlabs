@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free DTF Pricing Calculator | Triple Thread Labs</title>
+<meta name="description" content="Free DTF pricing calculator. Enter your transfer size, labor rate, and target margin to get a price that covers film, ink, powder, labor, and equipment. No signup, no install.">
+<link rel="canonical" href="https://triplethreadlabs.com/dtf-pricing-calculator/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free DTF Pricing Calculator — Price Transfers by Size">
+<meta property="og:description" content="Enter your transfer size, labor rate, and target margin. Get a price that covers film, ink, powder, labor, and equipment and protects your profit instantly. Built by a real DTF shop. No signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://triplethreadlabs.com/dtf-pricing-calculator/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free DTF Pricing Calculator — Price Transfers by Size">
+<meta name="twitter:description" content="Enter your transfer size, labor rate, and target margin. Get a price that covers film, ink, powder, labor, and equipment and protects your profit instantly.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://triplethreadlabs.com/#organization",
+      "name": "Triple Thread Labs",
+      "url": "https://triplethreadlabs.com",
+      "logo": "https://triplethreadlabs.com/assets/logo.png",
+      "description": "Browser-based tools for embroidery and DTF shops. Pricing, gang sheets, and business management — no installs, no subscriptions.",
+      "founder": { "@type": "Person", "name": "Felipe Matioli", "jobTitle": "Founder" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Raleigh", "addressRegion": "NC", "addressCountry": "US" },
+      "sameAs": ["https://triplethreadlabs.etsy.com"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://triplethreadlabs.com/#website",
+      "url": "https://triplethreadlabs.com",
+      "name": "Triple Thread Labs",
+      "description": "Tools for embroidery and DTF shops. Price jobs, build gang sheets, run your business.",
+      "publisher": { "@id": "https://triplethreadlabs.com/#organization" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Free DTF Pricing Calculator",
+      "url": "https://triplethreadlabs.com/dtf-pricing-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free DTF pricing calculator. Enter your transfer size, labor rate, and target margin to get a price that covers film, ink, powder, labor, and equipment and protects your profit.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "25", "bestRating": "5", "worstRating": "1" },
+      "review": [
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Donna" }, "datePublished": "2026-06-09", "reviewBody": "I run a small business by myself, and trying to figure out pricing on everything is exhausting, plus math is not my strong suit. I was not paying myself enough, and I was definitely not charging enough. This calculator gives me a good idea on what to charge. This was a great purchase for my business." },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Ben" }, "datePublished": "2026-06-05", "reviewBody": "Excellent seller, excellent customer service. The seller also helped me make a product to fit my business. Works absolutely great, no more guessing prices." },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Zeyna" }, "datePublished": "2026-06-01", "reviewBody": "Highly recommended. It makes pricing so much easier." }
+      ],
+      "publisher": { "@id": "https://triplethreadlabs.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you price a DTF transfer?", "acceptedAnswer": { "@type": "Answer", "text": "Start with your real cost per transfer: film by the linear inch of height, ink by area and coverage, powder by area, plus your labor and a share of equipment cost per print. Then divide by one minus your target margin to get a price that protects your profit. The calculator does this from just the transfer size." } },
+        { "@type": "Question", "name": "How much should I charge for a DTF transfer?", "acceptedAnswer": { "@type": "Answer", "text": "It depends mostly on size and how much of your time each print takes. As a rough anchor, an 11 by 11 inch transfer at a $25 per hour labor rate and a 60% margin lands around $14 to $15 each as a single print. Gang several designs on one sheet and the cost per print drops a lot." } },
+        { "@type": "Question", "name": "What is a good profit margin for DTF transfers?", "acceptedAnswer": { "@type": "Answer", "text": "Most transfer shops target 55% to 70%. DTF has low material cost per print, so your margin is mostly about covering your labor and equipment and still leaving real profit. The calculator prices to the margin you set and shows the profit per transfer." } },
+        { "@type": "Question", "name": "How is a DTF gang sheet priced compared to a single transfer?", "acceptedAnswer": { "@type": "Answer", "text": "A single transfer carries the full labor and equipment cost on its own. A gang sheet spreads one print run across many designs, so the fixed cost per design drops and your cost per print falls sharply. DTF Gang Sheet Builder lays out and prices the gang sheet itself." } },
+        { "@type": "Question", "name": "What does it cost to make a DTF transfer?", "acceptedAnswer": { "@type": "Answer", "text": "The material cost is small: film at roughly $0.05 per linear inch, ink around $0.10 per ml at about 70% coverage, and powder around $0.03 per gram. The bigger costs are your labor per print and a share of your equipment. For a typical 11 by 11 transfer, total cost is usually under $6." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ============ PAGE-SPECIFIC: FREE TOOL ============ */
+  body { background: var(--white); }
+
+  .tool-header { height: 62px; padding: 0 36px; }
+  .tool-header .logo__word span { font-size: 19px; }
+  .tool-header__badge {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-mid);
+  }
+
+  .intro { background: var(--off-white); padding: 40px 36px 34px; border-bottom: 1px solid var(--line-on-white); }
+  .intro__inner { display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+  .intro__left { max-width: 600px; }
+  .intro h1 { margin: 14px 0 12px; font-size: 48px; }
+  .intro__sub { font-size: 16px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
+  .intro__stats { display: flex; gap: 26px; flex-shrink: 0; }
+  .intro__stat-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: var(--black); }
+  .intro__stat-label { font-size: 10.5px; font-weight: 300; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-top: 2px; }
+
+  .calc { background: #fff; padding: 36px; display: flex; gap: 34px; align-items: flex-start; }
+  .calc__inputs { width: 400px; flex-shrink: 0; }
+  .calc__section-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--line-on-white);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+  .field-wrap { position: relative; display: flex; align-items: center; }
+  .field-affix { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; color: var(--mid-gray); position: absolute; left: 14px; pointer-events: none; }
+  .field input {
+    width: 100%;
+    border: 1px solid var(--line-on-offwhite);
+    border-radius: var(--radius-md);
+    background: #FAF9F7;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--black);
+    padding: 13px 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .field input.has-prefix { padding-left: 30px; }
+  .field-suffix { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; color: var(--mid-gray); position: absolute; right: 14px; }
+  .field-helper { font-size: 11px; font-weight: 300; color: var(--mid-gray); margin-top: 6px; }
+
+  .calc__output { flex: 1; min-width: 0; }
+  .result-panel { background: var(--black); border-radius: var(--radius-lg); padding: 32px; }
+  .result-panel__label { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 6px; }
+  .result-panel__row { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .result-panel__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 92px; line-height: .85; color: #fff; font-variant-numeric: tabular-nums; transition: opacity 120ms ease; }
+  .result-panel__verdict { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; }
+  .result-panel__verdict.is-good { color: var(--green-mid); }
+  .result-panel__verdict.is-thin { color: #E0B84A; }
+  .result-panel__verdict.is-low { color: #E0725A; }
+  .result-panel__footnote { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.13); font-size: 11.5px; font-weight: 300; color: var(--lt-gray); }
+
+  .metrics { display: flex; gap: 2px; margin-top: 2px; }
+  .metric-cell { flex: 1; background: var(--off-white); padding: 20px; }
+  .metric-cell__label { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 6px; }
+  .metric-cell__value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 28px; font-variant-numeric: tabular-nums; color: var(--black); }
+  .metric-cell__value.is-green { color: var(--green); }
+
+  .breakdown { margin-top: 28px; }
+  .breakdown__label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--line-on-white);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--line-in-card); }
+  .breakdown-row span:first-child { font-size: 13.5px; font-weight: 300; color: var(--warm-gray); }
+  .breakdown-row span:last-child { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; color: var(--black); font-variant-numeric: tabular-nums; }
+  .breakdown-row--final { border-bottom: none; padding-top: 16px; }
+  .breakdown-row--final span:first-child { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); }
+  .breakdown-row--final span:last-child { font-size: 20px; color: var(--green); }
+
+  .upgrade { background: var(--green-pale); border-top: 1px solid var(--line-on-pale); padding: 34px 36px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .upgrade__left { flex: 1; min-width: 280px; }
+  .upgrade__left h2 { margin: 12px 0 16px; font-size: 30px; }
+  .upgrade__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 24px; max-width: 620px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .upgrade__buy { text-align: center; flex-shrink: 0; }
+  .upgrade__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; color: var(--black); margin-bottom: 10px; }
+
+  /* Email capture */
+  .capture { background: var(--green); padding: 44px 36px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .capture__copy { flex: 1; min-width: 240px; }
+  .capture__copy h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.1; color: #fff; }
+  .capture__copy p { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,.82); max-width: 480px; }
+  .capture__form-wrap { width: 400px; max-width: 100%; flex-shrink: 0; }
+
+  #mlb2-40421709 .ml-form-embedWrapper { width: 100%; }
+  #mlb2-40421709 .ml-form-formContent { display: flex; gap: 2px; }
+  #mlb2-40421709 .ml-field-group { flex: 1; }
+  #mlb2-40421709 input[type="email"] {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--black);
+  }
+  #mlb2-40421709 input[type="email"]::placeholder { color: #B9B6B1; }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--black);
+    padding: 14px 20px;
+    white-space: nowrap;
+    height: 100%;
+    border-radius: 0;
+  }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary:hover { background: var(--charcoal); }
+  #mlb2-40421709 .ml-form-successBody p { color: #fff !important; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+
+  .tool-footer { background: var(--black); padding: 30px 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .tool-footer__note { font-size: 11px; font-weight: 300; color: var(--warm-gray); max-width: 560px; }
+  .tool-footer__copy { font-size: 11px; font-weight: 300; color: var(--mid-gray); }
+
+  @media (max-width: 900px) {
+    .tool-header { padding: 0 20px; }
+    .tool-header__badge { font-size: 9px; letter-spacing: 1px; }
+
+    .intro { padding: 28px 20px 24px; }
+    .intro__inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .intro h1 { font-size: 32px; }
+    .intro__stats { gap: 20px; }
+
+    .calc { padding: 20px; flex-direction: column; gap: 24px; }
+    .calc__inputs { width: 100%; }
+    .field input { min-height: 48px; }
+
+    .result-panel { padding: 22px; }
+    .result-panel__price { font-size: 52px; }
+
+    .upgrade { padding: 24px 20px; }
+    .upgrade__left h2 { font-size: 24px; }
+    .upgrade__grid { grid-template-columns: 1fr; }
+    .upgrade__buy { width: 100%; }
+    .upgrade__buy .btn { width: 100%; }
+
+    .capture { padding: 28px 20px; flex-direction: column; align-items: stretch; gap: 18px; }
+    .capture__form-wrap { width: 100%; }
+    #mlb2-40421709 .ml-form-formContent { flex-direction: column; }
+    #mlb2-40421709 .ml-form-embedSubmit button.primary { width: 100%; padding: 14px; }
+
+    .tool-footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--dark tool-header">
+  <a href="/" class="logo logo--dark">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <span class="tool-header__badge">Free · No signup · Nothing saved</span>
+</header>
+
+<section class="intro reveal">
+  <div class="intro__inner">
+    <div class="intro__left">
+      <span class="eyebrow--simple">Free DTF pricing calculator</span>
+      <h1>What should I charge for this transfer?</h1>
+      <p class="intro__sub">Width, height, labor rate, and margin — that's it. Nothing is saved, nothing is sent, the math runs right here in your browser.</p>
+    </div>
+    <div class="intro__stats">
+      <div>
+        <div class="intro__stat-value">4.9</div>
+        <div class="intro__stat-label">33 reviews</div>
+      </div>
+      <div>
+        <div class="intro__stat-value">336+</div>
+        <div class="intro__stat-label">Tools sold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="calc reveal">
+  <div class="calc__inputs">
+    <span class="calc__section-label">Your transfer</span>
+
+    <div class="field">
+      <label for="demo-width">Transfer width <span style="text-transform:none;font-weight:300;">inches</span></label>
+      <div class="field-wrap">
+        <input type="number" id="demo-width" value="11" min="0" step="0.5" inputmode="decimal">
+        <span class="field-suffix">in</span>
+      </div>
+      <div class="field-helper">Left edge to right edge.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-height">Transfer height <span style="text-transform:none;font-weight:300;">inches</span></label>
+      <div class="field-wrap">
+        <input type="number" id="demo-height" value="11" min="0" step="0.5" inputmode="decimal">
+        <span class="field-suffix">in</span>
+      </div>
+      <div class="field-helper">Top to bottom — this drives your film cost.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-rate">Your labor rate <span style="text-transform:none;font-weight:300;">per hour</span></label>
+      <div class="field-wrap">
+        <span class="field-affix">$</span>
+        <input type="number" id="demo-rate" class="has-prefix" value="25" min="0" step="1" inputmode="numeric">
+      </div>
+      <div class="field-helper">Pay yourself like an employee, not what's left over.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-target">Target margin</label>
+      <div class="field-wrap">
+        <input type="number" id="demo-target" value="60" min="0" max="95" step="1" inputmode="numeric">
+        <span class="field-suffix">%</span>
+      </div>
+      <div class="field-helper">Most transfer shops run 55–70%.</div>
+    </div>
+  </div>
+
+  <div class="calc__output">
+    <div class="result-panel">
+      <div class="result-panel__label">Suggested price per transfer</div>
+      <div class="result-panel__row">
+        <span class="result-panel__price" id="demo-price">$15</span>
+        <span class="result-panel__verdict" id="demo-verdict"><span id="demo-verdict-text">Hits your target margin</span></span>
+      </div>
+      <div class="result-panel__footnote">Single print, <span id="demo-labormin">8 min</span> labor per transfer · film, ink, and powder priced by size · gang sheets drop the cost per print.</div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-cell">
+        <div class="metric-cell__label">True cost</div>
+        <div class="metric-cell__value" id="demo-cost">$5.62</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-cell__label">Your profit</div>
+        <div class="metric-cell__value is-green" id="demo-profit">$8.88</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-cell__label">Margin</div>
+        <div class="metric-cell__value is-green" id="demo-margin">61%</div>
+      </div>
+    </div>
+
+    <div class="breakdown">
+      <span class="breakdown__label">Where the cost comes from</span>
+      <div class="breakdown-row"><span>Film · <span id="bd-height-label">11"</span> tall</span><span id="bd-film">$0.55</span></div>
+      <div class="breakdown-row"><span>Ink · 70% coverage</span><span id="bd-ink">$0.15</span></div>
+      <div class="breakdown-row"><span>Powder</span><span id="bd-powder">$0.54</span></div>
+      <div class="breakdown-row"><span>Labor · <span id="bd-labormin-label">8 min</span> at <span id="bd-rate-label">$25</span>/hr</span><span id="bd-labor">$3.33</span></div>
+      <div class="breakdown-row"><span>Equipment share</span><span id="bd-equip">$1.04</span></div>
+      <div class="breakdown-row breakdown-row--final"><span>You keep</span><span id="bd-keep">$8.88</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="upgrade reveal">
+  <div class="upgrade__left">
+    <span class="eyebrow--simple">This is the quick estimate</span>
+    <h2>The full builder does the parts this can't</h2>
+    <div class="upgrade__grid">
+      <span>Auto-nested gang sheet layout</span>
+      <span>Cost per print drops as you add designs</span>
+      <span>Your own film, ink, powder, and equipment rates</span>
+      <span>Saved layouts and print-ready export</span>
+    </div>
+  </div>
+  <div class="upgrade__buy">
+    <div class="upgrade__price tabular">$34.99</div>
+    <a href="/dtf-gang-sheet-builder/" class="btn btn-primary">Get DTF Gang Sheet Builder</a>
+  </div>
+</section>
+
+<section class="capture reveal" id="signup">
+  <div class="capture__copy">
+    <h2>Free DTF pricing cheat sheet</h2>
+    <p>Enter your email and I'll send the one-page pricing reference I keep open while I quote DTF jobs.</p>
+  </div>
+  <div class="capture__form-wrap">
+    <div id="mlb2-40421709" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40421709">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="you@yourshop.com" autocomplete="email">
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Send it to me</button>
+                <button disabled="disabled" style="display:none;" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none;">
+            <div class="ml-form-successContent">
+              <p>✓ Check your email — cheat sheet is on its way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="tool-footer">
+  <span class="tool-footer__note">Demo uses standard defaults for film, ink, powder, and equipment. In the full builder, every rate is yours to set.</span>
+  <span class="tool-footer__copy">© 2026 Triple Thread Labs</span>
+</footer>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  /* ============ LIVE PRICING CALCULATOR ============
+     Mirrors calcOneTransfer() in the DTF Pricing System.
+     Fixed constants below match the tool's defaults so this number
+     tracks what a buyer gets for the same inputs. The full tool
+     exposes all of these as editable fields. */
+  (function pricing() {
+    var FILM_PER_IN  = 0.05;   // $ per linear inch of height
+    var INK_PER_ML   = 0.10;   // $ per ml
+    var INK_COVER    = 0.70;   // 70% coverage assumption
+    var ML_PER_SQIN  = 0.018;  // ml of ink per sq in at full coverage
+    var POWDER_PER_G = 0.03;   // $ per gram
+    var POWDER_G100  = 15;     // grams per 100 sq in (single transfer)
+    var EQUIP        = 1.04;   // equipment cost per print
+    var LABOR_MIN    = 8;      // minutes per transfer
+    var ROUND_STEP   = 0.50;   // round price up to nearest $0.50
+
+    var $ = function(id){ return document.getElementById(id); };
+    var els = {
+      width: $('demo-width'), height: $('demo-height'), rate: $('demo-rate'), target: $('demo-target'),
+      price: $('demo-price'), cost: $('demo-cost'), profit: $('demo-profit'), margin: $('demo-margin'),
+      verdict: $('demo-verdict'), verdictText: $('demo-verdict-text'), laborMin: $('demo-labormin'),
+      bdFilm: $('bd-film'), bdInk: $('bd-ink'), bdPowder: $('bd-powder'), bdLabor: $('bd-labor'),
+      bdEquip: $('bd-equip'), bdKeep: $('bd-keep'), bdHeightLabel: $('bd-height-label'),
+      bdLaborMinLabel: $('bd-labormin-label'), bdRateLabel: $('bd-rate-label')
+    };
+    if (!els.width) return;
+
+    var money = function(n){ return '$' + n.toFixed(2); };
+
+    function num(el, cap) {
+      var v = parseFloat(el.value);
+      if (isNaN(v) || v < 0) v = 0;
+      if (cap !== undefined && v > cap) v = cap;
+      return v;
+    }
+
+    function calc() {
+      var w      = num(els.width);
+      var h      = num(els.height);
+      var rate   = num(els.rate);
+      var target = num(els.target, 95) / 100;
+
+      var area       = w * h;
+      var filmCost   = h * FILM_PER_IN;
+      var inkCost    = area * INK_COVER * ML_PER_SQIN * INK_PER_ML;
+      var powderCost = (POWDER_G100 / 100) * area * POWDER_PER_G;
+      var laborCost  = (LABOR_MIN / 60) * rate;
+      var trueCost   = filmCost + inkCost + powderCost + laborCost + EQUIP;
+
+      var rawPrice = target < 1 ? trueCost / (1 - target) : trueCost;
+      var price    = Math.ceil(rawPrice / ROUND_STEP) * ROUND_STEP;
+
+      var profit = price - trueCost;
+      var margin = price > 0 ? profit / price : 0;
+
+      els.price.style.opacity = '0.4';
+      requestAnimationFrame(function() {
+        els.price.textContent  = money(price);
+        els.cost.textContent   = money(trueCost);
+        els.profit.textContent = money(profit);
+        els.margin.textContent = Math.round(margin * 100) + '%';
+        els.laborMin.textContent = LABOR_MIN + ' min';
+
+        els.bdFilm.textContent = money(filmCost);
+        els.bdInk.textContent = money(inkCost);
+        els.bdPowder.textContent = money(powderCost);
+        els.bdLabor.textContent = money(laborCost);
+        els.bdEquip.textContent = money(EQUIP);
+        els.bdKeep.textContent = money(profit);
+        els.bdHeightLabel.textContent = h + '"';
+        els.bdLaborMinLabel.textContent = LABOR_MIN + ' min';
+        els.bdRateLabel.textContent = '$' + rate;
+
+        els.price.style.opacity = '1';
+      });
+
+      els.verdict.classList.remove('is-good', 'is-thin', 'is-low');
+      if (margin >= target) {
+        els.verdict.classList.add('is-good');
+        els.verdictText.textContent = 'Hits your target margin';
+      } else if (margin >= target * 0.8) {
+        els.verdict.classList.add('is-thin');
+        els.verdictText.textContent = 'Just under target — nudge the price up';
+      } else {
+        els.verdict.classList.add('is-low');
+        els.verdictText.textContent = 'Below target — raise the price';
+      }
+    }
+
+    [els.width, els.height, els.rate, els.target].forEach(function(el) {
+      el.addEventListener('input', calc);
+    });
+    calc();
+  })();
+
+  // MailerLite redirect after successful submission
+  function ml_webform_success_40421709() {
+    try {
+      window.top.location.href = '/thank-you/';
+    } catch(e) {
+      window.location.href = '/thank-you/';
+    }
+  }
+</script>
+
+<!-- MailerLite script -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>
+  fetch("https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/takel")
+</script>
+
+</body>
+</html>

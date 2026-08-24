@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Patch Pricing Calculator | Triple Thread Labs</title>
+<meta name="description" content="Free patch pricing calculator. Enter patch size and coverage to get an accurate stitch count and a per-patch price that protects your margin. No signup, no install.">
+<link rel="canonical" href="https://triplethreadlabs.com/patch-pricing-calculator/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Patch Pricing Calculator — Price by Size & Coverage">
+<meta property="og:description" content="Enter patch size and coverage. Get an accurate stitch count and a per-patch price that protects your margin, with bulk pricing built in. No signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://triplethreadlabs.com/patch-pricing-calculator/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Patch Pricing Calculator — Price by Size & Coverage">
+<meta name="twitter:description" content="Enter patch size and coverage. Get an accurate stitch count and a per-patch price that protects your margin, with bulk pricing built in.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://triplethreadlabs.com/#organization",
+      "name": "Triple Thread Labs",
+      "url": "https://triplethreadlabs.com",
+      "logo": "https://triplethreadlabs.com/assets/logo.png",
+      "description": "Browser-based tools for embroidery and DTF shops. Pricing, gang sheets, and business management — no installs, no subscriptions.",
+      "founder": { "@type": "Person", "name": "Felipe Matioli", "jobTitle": "Founder" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Raleigh", "addressRegion": "NC", "addressCountry": "US" },
+      "sameAs": ["https://triplethreadlabs.etsy.com"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://triplethreadlabs.com/#website",
+      "url": "https://triplethreadlabs.com",
+      "name": "Triple Thread Labs",
+      "description": "Tools for embroidery and DTF shops. Price jobs, build gang sheets, run your business.",
+      "publisher": { "@id": "https://triplethreadlabs.com/#organization" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Free Patch Pricing Calculator",
+      "url": "https://triplethreadlabs.com/patch-pricing-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free patch pricing calculator. Enter patch size and coverage to get an accurate stitch count and a per-patch price that protects your margin, with bulk pricing built in.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "33", "bestRating": "5", "worstRating": "1" },
+      "review": [
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Donna" }, "datePublished": "2026-06-09", "reviewBody": "I run a small business by myself, and trying to figure out pricing on everything is exhausting, plus math is not my strong suit. I was not paying myself enough, and I was definitely not charging enough. This calculator gives me a good idea on what to charge. This was a great purchase for my business." },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Ben" }, "datePublished": "2026-06-05", "reviewBody": "Excellent seller, excellent customer service. The seller also helped me make a product to fit my business. Works absolutely great, no more guessing prices." },
+        { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Zeyna" }, "datePublished": "2026-06-01", "reviewBody": "Highly recommended. It makes pricing so much easier." }
+      ],
+      "publisher": { "@id": "https://triplethreadlabs.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you price embroidered patches?", "acceptedAnswer": { "@type": "Answer", "text": "Start with the stitch count, not the size. Multiply the patch area by how much of it is stitched over, roughly 2,000 stitches per square inch at full coverage. That drives your thread cost and machine time. Add materials, backing, and labor, then the margin you want to keep. The calculator does all of it as you type." } },
+        { "@type": "Question", "name": "How much should I charge for a patch?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the size, the coverage, how many you run at once, and your quantity. There's no flat rate, and copying a competitor is how shops lose money. As a rough anchor, a 3x3 full-coverage patch run six per sheet lands near $9 each at a small quantity, and less per patch in bulk. Run your own numbers to get yours." } },
+        { "@type": "Question", "name": "Why is my per-patch price so high?", "acceptedAnswer": { "@type": "Answer", "text": "Almost always because the price assumes one patch on one head. Patches are meant to run many at a time. Priced solo, a small patch can read over $30. Tell the calculator how many you run per sheet and the same patch can drop to under $10. That single setting matters more than any other." } },
+        { "@type": "Question", "name": "How does coverage change the price?", "acceptedAnswer": { "@type": "Answer", "text": "Coverage is how much of the twill ends up buried under thread. Full coverage is about 2,000 stitches per square inch, half coverage about 1,000. Half the coverage is half the thread and half the machine time, which is a very different price for the same size patch. It's the biggest single choice in patch pricing." } },
+        { "@type": "Question", "name": "Should patches get a bulk discount?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Larger runs share setup and stitch out more efficiently, so the per-patch cost drops as quantity climbs. The calculator applies a bulk discount by quantity and shows the whole-order total, so you can quote a run of 100 differently from a run of 6 without doing the math by hand." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ============ PAGE-SPECIFIC: FREE PATCH TOOL ============ */
+  body { background: var(--white); }
+
+  .tool-header { height: 62px; padding: 0 36px; }
+  .tool-header .logo__triple,
+  .tool-header .logo__thread,
+  .tool-header .logo__labs { }
+  .tool-header .logo__word span { font-size: 19px; }
+  .tool-header__badge {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-mid);
+  }
+
+  .intro { background: var(--off-white); padding: 40px 36px 34px; border-bottom: 1px solid var(--line-on-white); }
+  .intro__inner { display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+  .intro__left { max-width: 600px; }
+  .intro h1 { margin: 14px 0 12px; font-size: 48px; }
+  .intro__sub { font-size: 16px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
+  .intro__stats { display: flex; gap: 26px; flex-shrink: 0; }
+  .intro__stat-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: var(--black); }
+  .intro__stat-label { font-size: 10.5px; font-weight: 300; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-top: 2px; }
+
+  .calc { background: #fff; padding: 36px; display: flex; gap: 34px; align-items: flex-start; }
+  .calc__inputs { width: 400px; flex-shrink: 0; }
+  .calc__section-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--line-on-white);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+  .field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 6px; }
+  .field-pair .field { margin-bottom: 0; }
+  .field-wrap { position: relative; display: flex; align-items: center; }
+  .field-affix { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; color: var(--mid-gray); position: absolute; left: 14px; pointer-events: none; }
+  .field input {
+    width: 100%;
+    border: 1px solid var(--line-on-offwhite);
+    border-radius: var(--radius-md);
+    background: #FAF9F7;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--black);
+    padding: 13px 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .field input.has-prefix { padding-left: 30px; }
+  .field input.has-suffix { padding-right: 38px; }
+  .field-suffix { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; color: var(--mid-gray); position: absolute; right: 14px; }
+  .field-helper { font-size: 11px; font-weight: 300; color: var(--mid-gray); margin-top: 6px; }
+  .field select {
+    width: 100%;
+    border: 1px solid var(--line-on-offwhite);
+    border-radius: var(--radius-md);
+    background: #FAF9F7;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--black);
+    padding: 14px 34px 14px 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888480' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 15px;
+  }
+
+  .calc__output { flex: 1; min-width: 0; }
+  .result-panel { background: var(--black); border-radius: var(--radius-lg); padding: 32px; }
+  .result-panel__label { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 6px; }
+  .result-panel__row { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .result-panel__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 92px; line-height: .85; color: #fff; font-variant-numeric: tabular-nums; transition: opacity 120ms ease; }
+  .result-panel__verdict { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; }
+  .result-panel__verdict.is-good { color: var(--green-mid); }
+  .result-panel__verdict.is-thin { color: #E0B84A; }
+  .result-panel__verdict.is-low { color: #E0725A; }
+  .result-panel__footnote { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.13); font-size: 11.5px; font-weight: 300; color: var(--lt-gray); }
+
+  .metrics { display: flex; gap: 2px; margin-top: 2px; }
+  .metric-cell { flex: 1; background: var(--off-white); padding: 20px; }
+  .metric-cell__label { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 6px; }
+  .metric-cell__value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 28px; font-variant-numeric: tabular-nums; color: var(--black); }
+  .metric-cell__value.is-green { color: var(--green); }
+
+  .breakdown { margin-top: 28px; }
+  .breakdown + .breakdown { margin-top: 20px; }
+  .breakdown__label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 1px solid var(--line-on-white);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--line-in-card); }
+  .breakdown-row span:first-child { font-size: 13.5px; font-weight: 300; color: var(--warm-gray); }
+  .breakdown-row span:last-child { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 14px; color: var(--black); font-variant-numeric: tabular-nums; }
+  .breakdown-row--final { border-bottom: none; padding-top: 16px; }
+  .breakdown-row--final span:first-child { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--black); }
+  .breakdown-row--final span:last-child { font-size: 20px; color: var(--green); }
+
+  .upgrade { background: var(--green-pale); border-top: 1px solid var(--line-on-pale); padding: 34px 36px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .upgrade__left { flex: 1; min-width: 280px; }
+  .upgrade__left h2 { margin: 12px 0 16px; font-size: 30px; }
+  .upgrade__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 24px; max-width: 620px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .upgrade__buy { text-align: center; flex-shrink: 0; }
+  .upgrade__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; color: var(--black); margin-bottom: 10px; }
+
+  /* Email capture */
+  .capture { background: var(--green); padding: 44px 36px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .capture__copy { flex: 1; min-width: 240px; }
+  .capture__copy h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.1; color: #fff; }
+  .capture__copy p { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,.82); max-width: 480px; }
+  .capture__form-wrap { width: 400px; max-width: 100%; flex-shrink: 0; }
+
+  #mlb2-40421709 .ml-form-embedWrapper { width: 100%; }
+  #mlb2-40421709 .ml-form-formContent { display: flex; gap: 2px; }
+  #mlb2-40421709 .ml-field-group { flex: 1; }
+  #mlb2-40421709 input[type="email"] {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--black);
+  }
+  #mlb2-40421709 input[type="email"]::placeholder { color: #B9B6B1; }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--black);
+    padding: 14px 20px;
+    white-space: nowrap;
+    height: 100%;
+    border-radius: 0;
+  }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary:hover { background: var(--charcoal); }
+  #mlb2-40421709 .ml-form-successBody p { color: #fff !important; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+
+  .tool-footer { background: var(--black); padding: 30px 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .tool-footer__note { font-size: 11px; font-weight: 300; color: var(--warm-gray); max-width: 560px; }
+  .tool-footer__copy { font-size: 11px; font-weight: 300; color: var(--mid-gray); }
+
+  @media (max-width: 900px) {
+    .tool-header { padding: 0 20px; }
+    .tool-header__badge { font-size: 9px; letter-spacing: 1px; }
+
+    .intro { padding: 28px 20px 24px; }
+    .intro__inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .intro h1 { font-size: 32px; }
+    .intro__stats { gap: 20px; }
+
+    .calc { padding: 20px; flex-direction: column; gap: 24px; }
+    .calc__inputs { width: 100%; }
+    .field input, .field select { min-height: 48px; }
+
+    .result-panel { padding: 22px; }
+    .result-panel__price { font-size: 52px; }
+
+    .upgrade { padding: 24px 20px; }
+    .upgrade__left h2 { font-size: 24px; }
+    .upgrade__grid { grid-template-columns: 1fr; }
+    .upgrade__buy { width: 100%; }
+    .upgrade__buy .btn { width: 100%; }
+
+    .capture { padding: 28px 20px; flex-direction: column; align-items: stretch; gap: 18px; }
+    .capture__form-wrap { width: 100%; }
+    #mlb2-40421709 .ml-form-formContent { flex-direction: column; }
+    #mlb2-40421709 .ml-form-embedSubmit button.primary { width: 100%; padding: 14px; }
+
+    .tool-footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--dark tool-header">
+  <a href="/" class="logo logo--dark">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <span class="tool-header__badge">Free · No signup · Nothing saved</span>
+</header>
+
+<section class="intro reveal">
+  <div class="intro__inner">
+    <div class="intro__left">
+      <span class="eyebrow--simple">Free patch pricing calculator</span>
+      <h1>What should I charge for this patch?</h1>
+      <p class="intro__sub">Size, coverage, and how many you run at once. Nothing is saved, nothing is sent — the math runs in your browser.</p>
+    </div>
+    <div class="intro__stats">
+      <div>
+        <div class="intro__stat-value">4.9</div>
+        <div class="intro__stat-label">33 reviews</div>
+      </div>
+      <div>
+        <div class="intro__stat-value">336+</div>
+        <div class="intro__stat-label">Tools sold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="calc reveal">
+  <div class="calc__inputs">
+    <span class="calc__section-label">Your patch</span>
+
+    <div class="field-pair">
+      <div class="field">
+        <label for="demo-w">Width <span style="text-transform:none;font-weight:300;">in</span></label>
+        <div class="field-wrap">
+          <input type="number" id="demo-w" value="3" min="0" step="0.25" inputmode="decimal">
+        </div>
+      </div>
+      <div class="field">
+        <label for="demo-h">Height <span style="text-transform:none;font-weight:300;">in</span></label>
+        <div class="field-wrap">
+          <input type="number" id="demo-h" value="3" min="0" step="0.25" inputmode="decimal">
+        </div>
+      </div>
+    </div>
+    <div class="field-helper" style="margin-bottom:18px;">A shoulder patch is usually 3&times;3 to 4&times;3.</div>
+
+    <div class="field">
+      <label for="demo-cover">Embroidery coverage</label>
+      <div class="field-wrap">
+        <select id="demo-cover">
+          <option value="full" selected>100% — full stitch, no twill showing</option>
+          <option value="three">75% — some twill showing</option>
+          <option value="half">50% — text or simple art</option>
+        </select>
+      </div>
+      <div class="field-helper">How much of the twill ends up buried under thread. This moves the price more than size does.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-perrun">Patches per run <span style="text-transform:none;font-weight:300;">heads &times; per sheet</span></label>
+      <div class="field-wrap">
+        <input type="number" id="demo-perrun" value="6" min="1" step="1" inputmode="numeric">
+      </div>
+      <div class="field-helper">Machine time and hooping are split across everything you stitch at once.</div>
+    </div>
+
+    <div class="field">
+      <label for="demo-qty">Quantity <span style="text-transform:none;font-weight:300;">total patches</span></label>
+      <div class="field-wrap">
+        <input type="number" id="demo-qty" value="25" min="1" step="1" inputmode="numeric">
+      </div>
+      <div class="field-helper">Bulk pricing starts at 6 patches and tops out near 30% off for 100+.</div>
+    </div>
+  </div>
+
+  <div class="calc__output">
+    <div class="result-panel">
+      <div class="result-panel__label">Suggested price / patch</div>
+      <div class="result-panel__row">
+        <span class="result-panel__price" id="demo-price">$9.26</span>
+        <span class="result-panel__verdict is-good" id="demo-verdict"><span id="demo-verdict-text">25 patches — 20% bulk price</span></span>
+      </div>
+      <div class="result-panel__footnote">&asymp; <span id="demo-stitches-out">18,000</span> stitches &middot; run time <span id="demo-runtime">4.6 min</span>/patch, shared across your run &middot; heat-seal backing assumed &middot; 40% target margin.</div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-cell">
+        <div class="metric-cell__label">True cost</div>
+        <div class="metric-cell__value" id="demo-cost">$5.55</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-cell__label">Your profit</div>
+        <div class="metric-cell__value is-green" id="demo-profit">$3.70</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-cell__label">Margin</div>
+        <div class="metric-cell__value is-green" id="demo-margin">40%</div>
+      </div>
+    </div>
+
+    <div class="breakdown">
+      <span class="breakdown__label">Where the cost comes from</span>
+      <div class="breakdown-row"><span>Twill &amp; backing</span><span id="bd-materials">$0.56</span></div>
+      <div class="breakdown-row"><span>Stabilizer</span><span id="bd-stab">$0.15</span></div>
+      <div class="breakdown-row"><span>Stitching &middot; <span id="bd-stitches-label">18,000</span> stitches</span><span id="bd-stitch">$0.27</span></div>
+      <div class="breakdown-row"><span>Labor &middot; <span id="bd-runtime-label">4.6 min</span> at $50/hr</span><span id="bd-labor">$3.85</span></div>
+      <div class="breakdown-row"><span>Overhead buffer &middot; 15%</span><span id="bd-overhead">$0.72</span></div>
+      <div class="breakdown-row breakdown-row--final"><span>You keep, per patch</span><span id="bd-keep">$3.70</span></div>
+    </div>
+
+    <div class="breakdown">
+      <span class="breakdown__label">Whole order</span>
+      <div class="breakdown-row"><span>Bulk discount &middot; <span id="bd-qty-label">25</span> patches</span><span id="bd-discount-pct">20% off</span></div>
+      <div class="breakdown-row breakdown-row--final"><span>Order total</span><span id="bd-order-total">$185.12</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="upgrade reveal">
+  <div class="upgrade__left">
+    <span class="eyebrow--simple">This is the quick estimate</span>
+    <h2>The full builder does the parts this can't</h2>
+    <div class="upgrade__grid">
+      <span>Every backing and finishing type</span>
+      <span>Your real material and labor rates</span>
+      <span>Bulk-discount tiers built to your shop</span>
+      <span>Rush, hot-knife, and multi-head setups</span>
+    </div>
+  </div>
+  <div class="upgrade__buy">
+    <div class="upgrade__price tabular">$13.99</div>
+    <a href="/patch-price-builder/" class="btn btn-primary">Get the full tool</a>
+  </div>
+</section>
+
+<section class="capture reveal" id="signup">
+  <div class="capture__copy">
+    <h2>Free patch pricing cheat sheet</h2>
+    <p>Enter your email and I'll send the one-page pricing reference I keep open while I quote patch jobs.</p>
+  </div>
+  <div class="capture__form-wrap">
+    <div id="mlb2-40421709" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40421709">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="you@yourshop.com" autocomplete="email">
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Send it to me</button>
+                <button disabled="disabled" style="display:none;" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none;">
+            <div class="ml-form-successContent">
+              <p>✓ Check your email — cheat sheet is on its way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="tool-footer">
+  <span class="tool-footer__note">Demo assumes heat-seal backing, standard thread, and a 15% overhead buffer. In the full tool, every rate, backing, and tier is yours to set.</span>
+  <span class="tool-footer__copy">© 2026 Triple Thread Labs</span>
+</footer>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  /* ============ LIVE PRICING CALCULATOR ============
+     Mirrors pricePatch() / grossUp() in the Patch Price Builder.
+     Fixed constants below match the tool's defaults so this number
+     tracks what a buyer gets for the same patch. The full tool
+     exposes all of these as editable fields. */
+  (function pricing() {
+    var STITCHES_PER_SQIN = { full: 2000, three: 1500, half: 1000 }; // by coverage (2,000/sq in trade rule)
+    var STITCH_COST = 0.015;  // $ per 1,000 stitches (thread + bobbin)
+    var LABOR       = 50;     // $ per hour
+    var SPM         = 700;    // stitches per minute
+    var HOOP_MIN    = 2;      // minutes to hoop a run
+    var OVERHEAD    = 0.15;   // 15% overhead added to cost
+    var MARGIN      = 0.40;   // 40% target margin
+    var MAT_SQIN    = 0.04;   // $ material per sq in of twill
+    var STAB        = 0.15;   // $ stabilizer per patch
+    var BACK        = 0.20;   // heat-seal backing assumed (small patch)
+
+    // bulk discount tiers: [minQty, maxQty, percentOff]
+    var TIERS = [[6, 11, 10], [12, 24, 15], [25, 49, 20], [50, 99, 25], [100, Infinity, 30]];
+
+    var $ = function(id){ return document.getElementById(id); };
+    var els = {
+      w: $('demo-w'), h: $('demo-h'), cover: $('demo-cover'), perRun: $('demo-perrun'), qty: $('demo-qty'),
+      price: $('demo-price'), cost: $('demo-cost'), profit: $('demo-profit'), margin: $('demo-margin'),
+      verdict: $('demo-verdict'), verdictText: $('demo-verdict-text'), runtime: $('demo-runtime'),
+      stitchesOut: $('demo-stitches-out'),
+      bdMaterials: $('bd-materials'), bdStab: $('bd-stab'), bdStitch: $('bd-stitch'), bdLabor: $('bd-labor'),
+      bdOverhead: $('bd-overhead'), bdKeep: $('bd-keep'), bdStitchesLabel: $('bd-stitches-label'),
+      bdRuntimeLabel: $('bd-runtime-label'), bdQtyLabel: $('bd-qty-label'), bdDiscountPct: $('bd-discount-pct'),
+      bdOrderTotal: $('bd-order-total')
+    };
+    if (!els.w) return;
+
+    var money = function(n){ return '$' + (isFinite(n) ? n : 0).toFixed(2); };
+    var intc  = function(n){ return Math.round(isFinite(n) ? n : 0).toLocaleString(); };
+
+    function num(el, floor) {
+      var v = parseFloat(el.value);
+      if (isNaN(v) || v < 0) v = 0;
+      if (floor !== undefined && v < floor) v = floor;
+      return v;
+    }
+
+    /* Turn a pre-overhead base cost into a sell price at a target margin.
+       Overhead is added first, then the price is grossed up so the margin
+       is measured against the sell price. No platform fee here — the Patch
+       Price Builder defaults to direct sales. */
+    function grossUp(base, marginPct) {
+      var withOh = base * (1 + OVERHEAD);
+      var m = Math.max(0, Math.min(marginPct, 0.89));
+      return withOh / (1 - m);
+    }
+
+    function bulkPct(qty) {
+      for (var i = 0; i < TIERS.length; i++) {
+        if (qty >= TIERS[i][0] && qty <= TIERS[i][1]) return TIERS[i][2];
+      }
+      return 0;
+    }
+
+    function calc() {
+      var w      = num(els.w);
+      var h      = num(els.h);
+      var perRun = num(els.perRun, 1);
+      var qty    = Math.round(num(els.qty, 1));
+
+      var density  = STITCHES_PER_SQIN[els.cover.value] || STITCHES_PER_SQIN.full;
+      var sqin     = w * h;
+      var stitches = sqin * density;
+
+      var stitchCost = (stitches / 1000) * STITCH_COST;
+      var runMin      = SPM > 0 ? stitches / SPM : 0;
+      var labMin       = (runMin + HOOP_MIN) / perRun;
+      var laborCost   = (labMin / 60) * LABOR;
+      var twillBack   = (sqin * MAT_SQIN) + BACK;
+
+      var base     = stitchCost + twillBack + STAB + laborCost;
+      var trueCost  = base * (1 + OVERHEAD);
+      var overheadCost = trueCost - base;
+
+      var mid    = grossUp(base, MARGIN);
+      var profit = mid - trueCost;
+      var margin = mid > 0 ? profit / mid : 0;
+
+      var pct   = bulkPct(qty);
+      var total = mid * qty * (1 - pct / 100);
+
+      els.price.style.opacity = '0.4';
+      requestAnimationFrame(function() {
+        els.price.textContent       = money(mid);
+        els.cost.textContent        = money(trueCost);
+        els.profit.textContent      = money(profit);
+        els.margin.textContent      = Math.round(margin * 100) + '%';
+        els.runtime.textContent     = labMin.toFixed(1) + ' min';
+        els.stitchesOut.textContent = intc(stitches);
+
+        els.bdMaterials.textContent   = money(twillBack);
+        els.bdStab.textContent        = money(STAB);
+        els.bdStitch.textContent      = money(stitchCost);
+        els.bdLabor.textContent       = money(laborCost);
+        els.bdOverhead.textContent    = money(overheadCost);
+        els.bdKeep.textContent        = money(profit);
+        els.bdStitchesLabel.textContent = intc(stitches);
+        els.bdRuntimeLabel.textContent  = labMin.toFixed(1) + ' min';
+        els.bdQtyLabel.textContent      = qty.toLocaleString();
+        els.bdDiscountPct.textContent   = pct > 0 ? (pct + '% off') : 'none yet';
+        els.bdOrderTotal.textContent    = money(total);
+
+        els.price.style.opacity = '1';
+      });
+
+      els.verdictText.textContent = pct > 0
+        ? (qty + ' patches — ' + pct + '% bulk price')
+        : 'Priced to your 40% target margin';
+    }
+
+    [els.w, els.h, els.perRun, els.qty].forEach(function(el) {
+      el.addEventListener('input', calc);
+    });
+    els.cover.addEventListener('change', calc);
+    calc();
+  })();
+
+  // MailerLite redirect after successful submission
+  function ml_webform_success_40421709() {
+    try {
+      window.top.location.href = '/thank-you/';
+    } catch(e) {
+      window.location.href = '/thank-you/';
+    }
+  }
+</script>
+
+<!-- MailerLite script -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>
+  fetch("https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/takel")
+</script>
+
+</body>
+</html>

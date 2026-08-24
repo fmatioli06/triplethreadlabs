@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patch Price Builder — Price Patches Right | Triple Thread Labs</title>
+<meta name="description" content="Patch pricing tool that turns size and coverage into an accurate stitch count and a per-patch price. Backing tiers, bulk discounts, rush add-ons, and printable quotes. $13.99, works offline.">
+<link rel="canonical" href="https://triplethreadlabs.com/patch-price-builder/">
+
+<meta property="og:title" content="Patch Price Builder — Triple Thread Labs">
+<meta property="og:description" content="Stop guessing patch prices. Size and coverage in, an accurate per-patch price with bulk discounts out. $13.99, no subscription.">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://triplethreadlabs.com/patch-price-builder/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Patch Price Builder — Triple Thread Labs">
+<meta name="twitter:description" content="Stop guessing patch prices. Size and coverage in, an accurate per-patch price with bulk discounts out. $13.99, no subscription.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://triplethreadlabs.com/patch-price-builder/",
+  "name": "Patch Price Builder",
+  "url": "https://triplethreadlabs.com/patch-price-builder/",
+  "description": "Browser-based patch pricing tool. Enter patch size and coverage to get an accurate stitch count and a per-patch price, with backing tiers, bulk discounts, rush and hot-knife add-ons, multi-head setup, and printable customer quotes.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "13.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://payhip.com/b/4x2bS",
+    "seller": {
+      "@type": "Organization",
+      "name": "Triple Thread Labs"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "33",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "Patch pricing from size and embroidery coverage",
+    "Accurate stitch-count estimate per patch",
+    "Backing tiers: heat seal, double heat seal, velcro hook, velcro set",
+    "Bulk discount tiers by quantity",
+    "Rush turnaround and hot-knife add-ons",
+    "Multi-head and per-sheet production setup",
+    "Per-patch price range and whole-order total",
+    "Printable customer quotes",
+    "Saved patches and settings between sessions",
+    "Works offline, no install required"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Triple Thread Labs",
+    "@id": "https://triplethreadlabs.com/#organization"
+  },
+  "keywords": "patch pricing calculator, how to price embroidered patches, rush patch price calculator, patch pricing tool, embroidery patch cost"
+}
+</script>
+
+<style>
+  /* ============ PAGE-SPECIFIC: PRODUCT DETAIL ============ */
+  body { background: var(--white); }
+
+  .product-header { padding: 0 40px; }
+
+  .breadcrumb { background: var(--off-white); padding: 14px 40px; border-bottom: 1px solid var(--line-on-white); font-size: 11.5px; }
+  .breadcrumb span, .breadcrumb a { color: var(--mid-gray); }
+  .breadcrumb .sep { color: var(--lt-gray); }
+  .breadcrumb .current { font-weight: 500; color: var(--charcoal); }
+
+  .product-body { background: #fff; padding: 44px 40px 52px; display: flex; gap: 44px; align-items: flex-start; }
+  .product-left { flex: 1; min-width: 0; }
+  .product-right { width: 352px; flex-shrink: 0; position: sticky; top: 20px; }
+
+  .badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .badge-row__meta { font-size: 12px; font-weight: 300; color: var(--mid-gray); }
+
+  .product-left h1 { font-size: 54px; margin-bottom: 18px; }
+  .lead { font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); max-width: 600px; margin-bottom: 36px; }
+
+  .mockup-panel { border: 1px solid var(--line-on-white); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 48px; }
+  .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
+  .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
+  .mockup-stage-inner { display: none; width: 100%; }
+  .mockup-stage-inner.is-active { display: block; }
+
+  .section-block { margin-bottom: 48px; }
+  .section-block h2 { font-size: 30px; margin-bottom: 22px; }
+
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .feature-cell { background: var(--off-white); padding: 22px; }
+  .feature-cell__label { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; display: block; }
+  .feature-cell p { font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
+
+  .faq-list { border-top: 1px solid var(--line-on-white); }
+  .faq-row { display: flex; gap: 28px; padding: 18px 0; border-bottom: 1px solid var(--line-on-white); }
+  .faq-q { width: 260px; flex-shrink: 0; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14.5px; color: var(--black); }
+  .faq-a { flex: 1; font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
+
+  /* Buy box */
+  .buy-box { background: #fff; border: 1px solid var(--line-on-offwhite); border-radius: var(--radius-lg); box-shadow: var(--shadow-elevated); overflow: hidden; }
+  .buy-box__price-block { padding: 24px 24px 20px; border-bottom: 1px solid var(--line-in-card); }
+  .buy-box__price { display: flex; align-items: baseline; gap: 8px; }
+  .buy-box__price .amount { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 42px; color: var(--black); }
+  .buy-box__price .term { font-size: 13px; font-weight: 300; color: var(--mid-gray); }
+  .buy-box__price-sub { font-size: 12.5px; font-weight: 300; color: var(--warm-gray); margin-top: 6px; }
+
+  .buy-box__buttons { padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; }
+  .buy-box__buttons .btn { padding-top: 16px; padding-bottom: 16px; }
+  .buy-box__buttons .btn-outline-light { border-radius: var(--radius-md); }
+
+  .reassure { padding: 0 24px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .reassure li { list-style: none; display: flex; gap: 8px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .reassure li.is-muted { color: var(--mid-gray); }
+  .reassure li .check { color: var(--green); flex-shrink: 0; }
+  .reassure li .dot { color: var(--mid-gray); flex-shrink: 0; }
+
+  .buy-box__quote { background: var(--green-pale); border-top: 1px solid var(--line-on-pale); padding: 18px 24px; }
+  .buy-box__quote p { font-size: 13.5px; font-weight: 300; color: var(--charcoal); margin-bottom: 8px; }
+  .buy-box__quote cite { font-style: normal; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); }
+
+  .cross-sell { margin-top: 14px; background: var(--off-white); border: 1px solid var(--line-on-white); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .cross-sell__label { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); display: block; margin-bottom: 6px; }
+  .cross-sell p { font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .cross-sell a { color: var(--green); font-weight: 500; }
+
+  .mobile-buybar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-top: 1px solid var(--line-on-offwhite);
+    padding: 12px 20px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+  }
+  .mobile-buybar__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px; color: var(--black); }
+  .mobile-buybar .btn { min-height: 48px; padding: 0 24px; }
+
+  @media (max-width: 900px) {
+    .product-header { padding: 0 20px; }
+    .header-cta { display: none; }
+    .breadcrumb { padding: 12px 20px; }
+
+    .product-body { flex-direction: column; padding: 28px 20px 90px; gap: 32px; }
+    .product-right { width: 100%; position: static; display: none; }
+    .product-left h1 { font-size: 34px; }
+    .lead { font-size: 16px; }
+
+    .feature-grid { grid-template-columns: 1fr; }
+    .faq-row { flex-direction: column; gap: 6px; }
+    .faq-q { width: 100%; }
+
+    .mobile-buybar { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--light product-header">
+  <a href="/" class="logo logo--light">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <nav class="site-nav desktop-only" aria-label="Primary">
+    <a class="header-cta" href="https://payhip.com/b/4x2bS">Buy · $13.99</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/tools/">Tools</a> <span class="sep">/</span> <span>Patches</span> <span class="sep">/</span> <span class="current">Patch Price Builder</span>
+</nav>
+
+<div class="product-body">
+  <div class="product-left">
+    <div class="badge-row">
+      <span class="badge badge--fill">Patches</span>
+      <span class="badge-row__meta">★★★★★ 4.9 · 33 reviews</span>
+    </div>
+
+    <h1>Patch Price Builder</h1>
+    <p class="lead">Enter the patch size and coverage. Get an accurate stitch count, the backing and finish priced in, and a per-patch number you can quote with confidence &mdash; every time, not just when you feel like doing the math.</p>
+
+    <div class="mockup-panel">
+      <div class="mockup-stage">
+        <div class="mockup-stage-inner is-active" data-panel="0">
+          <img src="/assets/patch-pricing-panel.png" alt="Patch Price Builder showing patch shape, size, embroidery coverage, and backing inputs with a $34.50 order total, cost breakdown, and 66% margin">
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>What it does</h2>
+      <div class="feature-grid">
+        <div class="feature-cell">
+          <span class="feature-cell__label">True cost</span>
+          <p>Length, width, and coverage turn into an estimated stitch count, then price it against thread, stabilizer, backing, and labor. Override the stitch count by hand any time.</p>
+        </div>
+        <div class="feature-cell">
+          <span class="feature-cell__label">Every backing</span>
+          <p>Heat seal, double heat seal, velcro hook, or velcro set. Backing size is set automatically from the patch dimensions, so the cost matches what you actually use.</p>
+        </div>
+        <div class="feature-cell">
+          <span class="feature-cell__label">Bulk &amp; rush</span>
+          <p>A bulk tier applies automatically by quantity. Toggle rush turnaround, hot-knife trim, or large-hoop setup and the price moves with it.</p>
+        </div>
+        <div class="feature-cell">
+          <span class="feature-cell__label">Quotes &amp; records</span>
+          <p>Stack multiple patch types into one quote, print it for the customer, and export the whole thing to CSV.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>Straight answers</h2>
+      <div class="faq-list">
+        <div class="faq-row">
+          <div class="faq-q">Will it work on my computer?</div>
+          <div class="faq-a">Any Windows or Mac desktop or laptop. Open the file in Chrome, Edge, Safari, or Firefox. No install, no login, no internet needed after download.</div>
+        </div>
+        <div class="faq-row">
+          <div class="faq-q">Does it work on my phone?</div>
+          <div class="faq-a">It's built for a laptop or desktop screen. It'll open on a phone or tablet, but the layout is easiest to read on something bigger.</div>
+        </div>
+        <div class="faq-row">
+          <div class="faq-q">What backings and finishes does it cover?</div>
+          <div class="faq-a">Heat seal, double heat seal, velcro hook, velcro set, or none. Each is priced by patch size, and you can set your own material and labor rates in Settings.</div>
+        </div>
+        <div class="faq-row">
+          <div class="faq-q">Will my saved patches and settings stick around?</div>
+          <div class="faq-a">Yes. Saved patches, custom rates, and bulk tiers save locally in your browser, so they're there the next time you open the tool.</div>
+        </div>
+        <div class="faq-row">
+          <div class="faq-q">Is this a subscription?</div>
+          <div class="faq-a">No. It's $13.99 once. You own the file forever &mdash; no renewal, no "pro" tier, no account required.</div>
+        </div>
+        <div class="faq-row">
+          <div class="faq-q">Is it a physical product?</div>
+          <div class="faq-a">No. It's an instant digital download &mdash; one HTML file. Nothing ships.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-right">
+    <div class="buy-box">
+      <div class="buy-box__price-block">
+        <div class="buy-box__price"><span class="amount tabular">$13.99</span><span class="term">one time</span></div>
+        <div class="buy-box__price-sub">No subscription. Free updates for life.</div>
+      </div>
+      <div class="buy-box__buttons">
+        <a href="https://payhip.com/b/4x2bS" class="btn btn-primary btn-full">Buy and download now</a>
+        <a href="/patch-pricing-calculator/" class="btn btn-outline-light btn-full">Try the free calculator first</a>
+      </div>
+      <ul class="reassure">
+        <li><span class="check">✓</span> Instant download — one HTML file</li>
+        <li><span class="check">✓</span> Runs offline in any browser</li>
+        <li><span class="check">✓</span> Your data stays on your machine</li>
+        <li><span class="check">✓</span> Email support from the guy who built it</li>
+        <li class="is-muted"><span class="dot">·</span> Built for desktop or laptop screens</li>
+      </ul>
+      <div class="buy-box__quote">
+        <p>&ldquo;Seller was willing to work with me to help me get all of the things I needed added.&rdquo;</p>
+        <cite>Lawren · verified Etsy buyer</cite>
+      </div>
+    </div>
+    <div class="cross-sell">
+      <span class="cross-sell__label">Run the whole shop</span>
+      <p>This pricing engine plus embroidery, DTF, inventory, and orders in <a href="/shop-suite-pro/">Complete Embroidery &amp; DTF Shop Manager</a> — $51.99.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-buybar">
+  <span class="mobile-buybar__price tabular">$13.99</span>
+  <a href="https://payhip.com/b/4x2bS" class="btn btn-primary">Buy now</a>
+</div>
+
+<footer class="site-footer">
+  <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
+  <div class="site-footer__links">
+    <a href="/tools/">Tools</a>
+    <a href="/about/">About</a>
+    <a href="mailto:hello@triplethreadlabs.com">Contact</a>
+    <a href="/policies/">Policies</a>
+  </div>
+</footer>
+
+</body>
+</html>

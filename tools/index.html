@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools — Triple Thread Labs</title>
+<meta name="description" content="Every Triple Thread Labs tool for embroidery and DTF shops. Pricing, gang sheets, quotes, and order management. Buy once, yours forever.">
+<link rel="canonical" href="https://triplethreadlabs.com/tools/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://triplethreadlabs.com/tools/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:title" content="Tools for embroidery & DTF shops — Triple Thread Labs">
+<meta property="og:description" content="Pricing, quotes, gang sheets, and order management. Buy once, yours forever.">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tools for embroidery & DTF shops — Triple Thread Labs">
+<meta name="twitter:description" content="Pricing, quotes, gang sheets, and order management. Buy once, yours forever.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+  body { background: var(--white); }
+
+  .tools-header { padding: 0 36px; height: 66px; }
+
+  .intro { text-align: center; padding: 56px 36px 36px; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); }
+  .intro h1 { font-size: 44px; line-height: 1.05; max-width: 720px; margin: 14px auto 0; }
+  .intro__sub { font-size: 16px; font-weight: 300; color: var(--warm-gray); max-width: 46ch; margin: 16px auto 0; }
+  .intro .eyebrow { justify-content: center; }
+
+  .trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin-top: 24px; }
+  .trust__item { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); }
+  .trust__dot { width: 5px; height: 5px; border-radius: 100px; background: var(--green); }
+
+  /* ============ TOOLKIT SPEC LIST (matches homepage) ============ */
+  .toolkit { background: var(--page-bg); padding: 56px 40px 68px; }
+  .toolkit__head { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line-on-pagebg); margin-bottom: 2px; gap: 24px; }
+  .toolkit__head h2 { margin: 0; font-size: 42px; line-height: 1; }
+  .toolkit__note { font-size: 13px; font-weight: 300; color: var(--warm-gray); max-width: 280px; text-align: right; }
+
+  .tool-row { display: flex; align-items: center; gap: 24px; padding: 26px 24px; border-bottom: 1px solid var(--line-on-offwhite); background: #fff; margin-top: 2px; transition: background 150ms ease; }
+  .tool-row:hover { background: var(--off-white); }
+  .tool-row--last { border-bottom: none; }
+  .tool-row--pale { background: var(--green-pale); }
+  .tool-row--pale:hover { background: #E8F5EE; }
+  .tool-row--dark { background: var(--charcoal); }
+  .tool-row--dark:hover { background: #2F2F2F; }
+
+  .tool-row__mark { display: flex; flex-direction: column; gap: 3px; width: 38px; flex-shrink: 0; }
+  .tool-row__mark span { display: block; height: 3px; border-radius: 2px; }
+  .tool-row__mark span:nth-child(1) { width: 38px; background: var(--charcoal); }
+  .tool-row__mark span:nth-child(2) { width: 27px; background: var(--green); }
+  .tool-row__mark span:nth-child(3) { width: 17px; background: var(--charcoal); }
+  .tool-row--dark .tool-row__mark span:nth-child(1),
+  .tool-row--dark .tool-row__mark span:nth-child(3) { background: #DDDBD7; }
+  .tool-row--dark .tool-row__mark span:nth-child(2) { background: var(--green-mid); }
+
+  .tool-row__title { width: 320px; flex-shrink: 0; }
+  .tool-row__title-line { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
+  .tool-row__name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: .3px; text-transform: uppercase; color: var(--black); }
+  .tool-row--dark .tool-row__name { color: #fff; }
+  .tool-row__desc { font-size: 13px; font-weight: 300; color: var(--warm-gray); display: block; }
+  .tool-row--dark .tool-row__desc { color: var(--lt-gray); }
+
+  .tool-row__features { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+  .tool-row__features span { font-size: 12px; font-weight: 300; color: var(--warm-gray); }
+  .tool-row--dark .tool-row__features span { color: var(--lt-gray); }
+
+  .tool-row__buy { width: 150px; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .tool-row__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 26px; color: var(--black); }
+  .tool-row--dark .tool-row__price { color: #fff; }
+  .tool-row__cta { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); border-bottom: 1px solid var(--green); padding-bottom: 2px; }
+  .tool-row--dark .tool-row__cta { color: var(--green-mid); border-color: var(--green-mid); }
+
+  .nudge { background: var(--off-white); border-top: 1px solid var(--line-on-white); border-bottom: 1px solid var(--line-on-white); text-align: center; padding: 48px 36px; }
+  .nudge h2 { font-size: 32px; margin-bottom: 12px; }
+  .nudge p { font-size: 15px; font-weight: 300; color: var(--warm-gray); max-width: 48ch; margin: 0 auto 24px; }
+  .nudge__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 24px; }
+  .nudge__proof { font-size: 13px; font-weight: 300; color: var(--warm-gray); }
+  .nudge__proof .stars { color: var(--green); letter-spacing: 1px; }
+  .nudge__proof strong { font-family: 'Oswald', sans-serif; color: var(--black); }
+
+  @media (max-width: 900px) {
+    .tools-header { padding: 0 20px; }
+    .intro { padding: 32px 20px 28px; }
+    .intro h1 { font-size: 30px; }
+
+    .toolkit { padding: 32px 20px 40px; }
+    .toolkit__head { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .toolkit__note { text-align: left; max-width: none; }
+    .toolkit__head h2 { font-size: 30px; }
+
+    .tool-row { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; border-radius: 4px; margin-top: 12px; border-bottom: none; }
+    .tool-row__features { display: none; }
+    .tool-row__title { width: 100%; }
+    .tool-row__buy { width: 100%; flex-direction: row; align-items: center; justify-content: space-between; }
+    .tool-row__cta {
+      background: var(--green);
+      color: #fff !important;
+      border: none !important;
+      padding: 12px 20px;
+      border-radius: 2px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .tool-row--dark .tool-row__cta { background: var(--green-mid); }
+
+    .nudge { padding: 32px 20px; }
+    .nudge__links .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--light tools-header">
+  <a href="/" class="logo logo--light">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <nav class="site-nav desktop-only" aria-label="Primary">
+    <a class="site-nav__item" href="/about/">About</a>
+    <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
+  </nav>
+</header>
+
+<section class="intro">
+  <span class="eyebrow--simple">The toolkit</span>
+  <h1>Tools built for embroidery &amp; DTF shops.</h1>
+  <p class="intro__sub">Each one solves a real problem. No bloat, no subscriptions, no installs.</p>
+  <div class="trust">
+    <span class="trust__item"><span class="trust__dot"></span>Instant download</span>
+    <span class="trust__item"><span class="trust__dot"></span>No subscription, ever</span>
+    <span class="trust__item"><span class="trust__dot"></span>Works offline</span>
+    <span class="trust__item"><span class="trust__dot"></span>Buy once, yours forever</span>
+  </div>
+</section>
+
+<section class="toolkit">
+  <div class="toolkit__head">
+    <h2>Five tools. One job each.</h2>
+    <span class="toolkit__note">No bloat, no subscriptions, no installs. Every file runs in your browser, offline.</span>
+  </div>
+
+  <a class="tool-row" href="/embroidery-pricing-system/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Embroidery Pricing System</span>
+        <span class="badge badge--fill">Best seller</span>
+      </div>
+      <span class="tool-row__desc">Know exactly what every embroidery job should cost.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>True-cost pricing from stitch count and labor</span>
+      <span>Margin protection on every quote</span>
+      <span>Quantity pricing for bulk runs</span>
+      <span>Saved quotes and CSV export</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$24.99</span>
+      <span class="tool-row__cta">See how it works</span>
+    </div>
+  </a>
+
+  <a class="tool-row" href="/dtf-gang-sheet-builder/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <span class="tool-row__name">DTF Gang Sheet Builder</span>
+      <span class="tool-row__desc">Build print-ready gang sheets in your browser.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Auto-arranges your PNGs</span>
+      <span>Maximizes sheet coverage</span>
+      <span>Print-ready export</span>
+      <span>Runs offline, no install</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$34.99</span>
+      <span class="tool-row__cta">See how it works</span>
+    </div>
+  </a>
+
+  <a class="tool-row" href="/patch-price-builder/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <span class="tool-row__name">Patch Price Builder</span>
+      <span class="tool-row__desc">Price and quote embroidered patches, fast.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Accurate stitch-count pricing</span>
+      <span>Every backing and finish</span>
+      <span>Bulk tiers and rush add-ons</span>
+      <span>Printable customer quotes</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$13.99</span>
+      <span class="tool-row__cta">See how it works</span>
+    </div>
+  </a>
+
+  <a class="tool-row tool-row--pale" href="/embroidery-starter-kit/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Embroidery Starter Kit</span>
+        <span class="badge badge--outline">Bundle · 5</span>
+      </div>
+      <span class="tool-row__desc">Everything to price, set up, and track your shop.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>3 HTML tools plus 2 guides</span>
+      <span>Stitch System included</span>
+      <span>Order Tracker included</span>
+      <span>Only available here</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$34.99</span>
+      <span class="tool-row__cta">See what's inside</span>
+    </div>
+  </a>
+
+  <a class="tool-row tool-row--dark tool-row--last" href="/shop-suite-pro/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Complete Embroidery &amp; DTF Shop Manager</span>
+        <span class="badge badge--fill-mid">Most complete</span>
+      </div>
+      <span class="tool-row__desc">Run your whole shop from one file.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Pricing, quotes, and orders</span>
+      <span>Inventory tracking</span>
+      <span>Live dashboard</span>
+      <span>Embroidery, DTF, or both</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__price tabular">$51.99</span>
+      <span class="tool-row__cta">See all 7 modules</span>
+    </div>
+  </a>
+</section>
+
+<section class="nudge">
+  <h2>Not sure where to start?</h2>
+  <p>Try a free calculator first. Same pricing approach as the paid tools, no signup, works right in your browser.</p>
+  <div class="nudge__links">
+    <a class="btn btn-dark" href="/embroidery-pricing-calculator/">Try the free pricing calculator</a>
+    <a class="btn btn-outline-light" href="/">Back to home</a>
+  </div>
+  <p class="nudge__proof"><span class="stars">★★★★★</span> <strong>4.9</strong> from 33 Etsy reviews · <strong>336+</strong> sales · Built by an embroidery shop owner</p>
+</section>
+
+<footer class="site-footer">
+  <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
+  <div class="site-footer__links">
+    <a href="/about/">About</a>
+    <a href="/policies/#terms">Terms</a>
+    <a href="/policies/#privacy">Privacy</a>
+    <a href="/policies/#refund">Refunds</a>
+    <a href="/policies/#support">Support</a>
+  </div>
+</footer>
+
+</body>
+</html>
