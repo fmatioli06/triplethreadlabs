@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patch Price Builder — Price Patches Right | Triple Thread Labs</title>
-<meta name="description" content="Patch pricing tool that turns size and coverage into an accurate stitch count and a per-patch price. Backing tiers, bulk discounts, rush add-ons, and printable quotes. $13.99, works offline.">
+<meta name="description" content="Patch pricing tool that turns size and coverage into an accurate stitch count and a per-patch price. Backing tiers, bulk discounts, rush add-ons, and printable quotes. $11.89, works offline.">
 <link rel="canonical" href="https://triplethreadlabs.com/patch-price-builder/">
 
 <meta property="og:title" content="Patch Price Builder — Triple Thread Labs">
-<meta property="og:description" content="Stop guessing patch prices. Size and coverage in, an accurate per-patch price with bulk discounts out. $13.99, no subscription.">
+<meta property="og:description" content="Stop guessing patch prices. Size and coverage in, an accurate per-patch price with bulk discounts out. $11.89, no subscription.">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://triplethreadlabs.com/patch-price-builder/">
 <meta property="og:site_name" content="Triple Thread Labs">
@@ -18,7 +18,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Patch Price Builder — Triple Thread Labs">
-<meta name="twitter:description" content="Stop guessing patch prices. Size and coverage in, an accurate per-patch price with bulk discounts out. $13.99, no subscription.">
+<meta name="twitter:description" content="Stop guessing patch prices. Size and coverage in, an accurate per-patch price with bulk discounts out. $11.89, no subscription.">
 <meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
@@ -40,7 +40,7 @@
   "operatingSystem": "Any (runs in browser)",
   "offers": {
     "@type": "Offer",
-    "price": "13.99",
+    "price": "11.89",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://payhip.com/b/4x2bS",
@@ -122,6 +122,9 @@
   .buy-box__price-block { padding: 24px 24px 20px; border-bottom: 1px solid var(--line-in-card); }
   .buy-box__price { display: flex; align-items: baseline; gap: 8px; }
   .buy-box__price .amount { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 42px; color: var(--black); }
+.buy-box__price { flex-wrap: wrap; }
+  .buy-box__price .was { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 17px; color: var(--mid-gray); text-decoration: line-through; }
+  .buy-box__save { display: inline-block; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); background: var(--green-pale); padding: 3px 8px; border-radius: var(--radius-sm); margin-top: 10px; }
   .buy-box__price .term { font-size: 13px; font-weight: 300; color: var(--mid-gray); }
   .buy-box__price-sub { font-size: 12.5px; font-weight: 300; color: var(--warm-gray); margin-top: 6px; }
 
@@ -189,7 +192,7 @@
     <span class="sr-only">Triple Thread Labs</span>
   </a>
   <nav class="site-nav desktop-only" aria-label="Primary">
-    <a class="header-cta" href="https://payhip.com/b/4x2bS">Buy · $13.99</a>
+    <a class="header-cta" href="https://payhip.com/b/4x2bS">Buy · $11.89</a>
   </nav>
 </header>
 
@@ -258,7 +261,7 @@
         </div>
         <div class="faq-row">
           <div class="faq-q">Is this a subscription?</div>
-          <div class="faq-a">No. It's $13.99 once. You own the file forever &mdash; no renewal, no "pro" tier, no account required.</div>
+          <div class="faq-a">No. It's $11.89 once (15% off the regular $13.99). You own the file forever &mdash; no renewal, no "pro" tier, no account required.</div>
         </div>
         <div class="faq-row">
           <div class="faq-q">Is it a physical product?</div>
@@ -271,8 +274,9 @@
   <div class="product-right">
     <div class="buy-box">
       <div class="buy-box__price-block">
-        <div class="buy-box__price"><span class="amount tabular">$13.99</span><span class="term">one time</span></div>
+        <div class="buy-box__price"><span class="amount tabular">$11.89</span><span class="was tabular">$13.99</span><span class="term">one time</span></div>
         <div class="buy-box__price-sub">No subscription. Free updates for life.</div>
+        <span class="buy-box__save">Save 15%</span>
       </div>
       <div class="buy-box__buttons">
         <a href="https://payhip.com/b/4x2bS" class="btn btn-primary btn-full">Buy and download now</a>
@@ -298,7 +302,7 @@
 </div>
 
 <div class="mobile-buybar">
-  <span class="mobile-buybar__price tabular">$13.99</span>
+  <span class="mobile-buybar__price tabular">$11.89</span>
   <a href="https://payhip.com/b/4x2bS" class="btn btn-primary">Buy now</a>
 </div>
 
