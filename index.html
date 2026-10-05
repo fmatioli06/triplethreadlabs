@@ -369,6 +369,25 @@
     .site-footer { flex-direction: column; gap: 14px; align-items: flex-start; padding: 24px 20px; }
   }
   .tool-row__was { text-decoration: line-through; color: var(--mid-gray, #8a8a8a); font-size: 13px; }
+
+  /* Free tools */
+  .free-tools { background: var(--off-white); padding: 64px 40px 68px; }
+  .free-tools__inner { max-width: 1100px; margin: 0 auto; }
+  .free-tools__head { text-align: center; margin-bottom: 34px; }
+  .free-tools__head h2 { margin: 10px 0 8px; font-size: 42px; line-height: 1; font-family: 'Oswald', sans-serif; font-weight: 600; }
+  .free-tools__sub { margin: 0; font-size: 16px; font-weight: 300; color: var(--warm-gray); }
+  .free-tools__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); border: 1px solid var(--line); }
+  .free-card { background: #fff; padding: 32px 30px; text-decoration: none; display: block; }
+  .free-card__badge { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); background: var(--green-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+  .free-card h3 { margin: 0 0 10px; font-size: 24px; font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--black); }
+  .free-card p { margin: 0 0 18px; font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--charcoal); }
+  .free-card__cta { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); }
+  .free-card:hover .free-card__cta { text-decoration: underline; }
+  @media (max-width: 720px) {
+    .free-tools { padding: 40px 20px 44px; }
+    .free-tools__grid { grid-template-columns: 1fr; }
+    .free-tools__head h2 { font-size: 30px; }
+  }
 </style>
 </head>
 <body>
@@ -385,6 +404,7 @@
   </a>
   <nav class="site-nav" aria-label="Primary">
     <a class="site-nav__item" href="/tools/">Tools</a>
+    <a class="site-nav__item" href="#free-tools">Free tools</a>
     <a class="site-nav__item" href="/about/">About</a>
     <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
   </nav>
@@ -396,6 +416,9 @@
 <div class="nav-overlay" id="navOverlay">
   <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
   <a href="/tools/">Tools</a>
+  <a href="/#free-tools">Free tools</a>
+  <a href="/embroidery-pricing-calculator/">Free embroidery calc</a>
+  <a href="/dtf-pricing-calculator/">Free DTF calc</a>
   <a href="/about/">About</a>
 </div>
 
@@ -541,6 +564,32 @@
   </div>
 
   <a href="/tools/" class="mobile-only" style="display:block;text-align:center;margin-top:16px;font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);">See all five tools →</a>
+</section>
+
+
+<!-- FREE TOOLS -->
+<section class="free-tools reveal" id="free-tools">
+  <div class="free-tools__inner">
+    <div class="free-tools__head">
+      <span class="eyebrow--simple">Start free</span>
+      <h2>Two free calculators. No signup.</h2>
+      <p class="free-tools__sub">The same pricing approach as the paid tools. Run a real job through one right now.</p>
+    </div>
+    <div class="free-tools__grid">
+      <a class="free-card" href="/embroidery-pricing-calculator/">
+        <span class="free-card__badge">Free</span>
+        <h3>Embroidery Pricing Calculator</h3>
+        <p>Enter stitch count, blank cost, and labor rate. Get your true cost, your margin, and a sell price that survives platform fees.</p>
+        <span class="free-card__cta">Open the calculator &rarr;</span>
+      </a>
+      <a class="free-card" href="/dtf-pricing-calculator/">
+        <span class="free-card__badge">Free</span>
+        <h3>DTF Pricing Calculator</h3>
+        <p>Price DTF jobs from transfer cost, garment, and labor. Know your margin before you print a single sheet.</p>
+        <span class="free-card__cta">Open the calculator &rarr;</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- FOUNDER QUOTE -->
