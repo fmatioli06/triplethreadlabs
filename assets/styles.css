@@ -327,3 +327,40 @@ p { text-wrap: pretty; }
   .mobile-only { display: block; }
   .desktop-only { display: none; }
 }
+
+/* ============ SHARED MOBILE NAV ============ */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 200;
+  padding: 24px 20px;
+  flex-direction: column;
+  gap: 28px;
+}
+.nav-overlay.is-open { display: flex; }
+.nav-overlay__close {
+  align-self: flex-end;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.nav-overlay a {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F0EFEC;
+  text-decoration: none;
+}
+.site-header--light .nav-toggle span { background: var(--black); }
+
+@media (max-width: 900px) {
+  .site-nav.desktop-only { display: none; }
+  .nav-toggle { display: flex; }
+}

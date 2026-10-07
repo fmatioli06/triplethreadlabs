@@ -277,7 +277,28 @@
     <span class="sr-only">Triple Thread Labs</span>
   </a>
   <span class="tool-header__badge">Free · No signup · Nothing saved</span>
+  <nav class="site-nav desktop-only" aria-label="Primary">
+    <a class="site-nav__item" href="/tools/">Tools</a>
+    <a class="site-nav__item" href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
+    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
+    <a class="site-nav__item" href="/about/">About</a>
+    <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
+  <a href="/tools/">Tools</a>
+  <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+  <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
+  <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
+  <a href="/about/">About</a>
+</div>
+
 
 <section class="intro reveal">
   <div class="intro__inner">
@@ -556,5 +577,14 @@
   fetch("https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/takel")
 </script>
 
+<script>
+  (function () {
+    var t = document.getElementById('navToggle'), o = document.getElementById('navOverlay'), c = document.getElementById('navClose');
+    if (!t || !o) return;
+    t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
+    if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
+    o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
 </body>
 </html>

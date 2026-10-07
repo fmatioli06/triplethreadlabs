@@ -86,28 +86,6 @@
   /* ============ PAGE-SPECIFIC: HOME ============ */
   body { background: var(--white); }
 
-  /* Mobile nav overlay */
-  .nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: var(--black);
-    z-index: 200;
-    padding: 24px 20px;
-    flex-direction: column;
-    gap: 28px;
-  }
-  .nav-overlay.is-open { display: flex; }
-  .nav-overlay__close { align-self: flex-end; color: #fff; font-size: 28px; line-height: 1; }
-  .nav-overlay a {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #F0EFEC;
-  }
-
   /* Hero */
   .hero {
     background: var(--black);
@@ -402,9 +380,11 @@
     </span>
     <span class="sr-only">Triple Thread Labs</span>
   </a>
-  <nav class="site-nav" aria-label="Primary">
+  <nav class="site-nav desktop-only" aria-label="Primary">
     <a class="site-nav__item" href="/tools/">Tools</a>
-    <a class="site-nav__item" href="#free-tools">Free tools</a>
+    <a class="site-nav__item" href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
+    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
     <a class="site-nav__item" href="/about/">About</a>
     <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
   </nav>
@@ -416,9 +396,9 @@
 <div class="nav-overlay" id="navOverlay">
   <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
   <a href="/tools/">Tools</a>
-  <a href="/#free-tools">Free tools</a>
-  <a href="/embroidery-pricing-calculator/">Free embroidery calc</a>
-  <a href="/dtf-pricing-calculator/">Free DTF calc</a>
+  <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+  <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
+  <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
   <a href="/about/">About</a>
 </div>
 

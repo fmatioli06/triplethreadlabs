@@ -206,11 +206,26 @@
   </a>
   <nav class="site-nav desktop-only" aria-label="Primary">
     <a class="site-nav__item" href="/tools/">Tools</a>
-    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery Calc</a>
-    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF Calc</a>
-        <a class="header-cta" href="https://payhip.com/b/4x2bS">Buy · $11.89</a>
+    <a class="site-nav__item" href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
+    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
+    <a class="site-nav__item" href="/about/">About</a>
+    <a class="header-cta" href="https://payhip.com/b/4x2bS">Buy · $11.89</a>
   </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
+  <a href="/tools/">Tools</a>
+  <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+  <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
+  <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
+  <a href="/about/">About</a>
+</div>
+
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/tools/">Tools</a> <span class="sep">/</span> <span>Patches</span> <span class="sep">/</span> <span class="current">Patch Pricing Calculator</span>
@@ -355,5 +370,14 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var t = document.getElementById('navToggle'), o = document.getElementById('navOverlay'), c = document.getElementById('navClose');
+    if (!t || !o) return;
+    t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
+    if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
+    o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
 </body>
 </html>
