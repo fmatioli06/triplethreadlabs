@@ -223,6 +223,27 @@
     <h1>DTF Business Starter Kit</h1>
     <p class="lead">Stop guessing what to charge for DTF jobs. This kit gives you the pricing calculator, gang sheet builder and profit tracker — everything a DTF seller needs to quote faster, fill sheets smarter, and see real profit on every order. No Excel. No subscription.</p>
 
+    <div class="mockup-panel">
+      <div class="mockup-tabs" role="tablist">
+        <button class="mockup-tab" role="tab" aria-selected="true" data-tab="0">The gang sheet builder</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="1">The pricing calculator</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="2">The profit tracker</button>
+      </div>
+      <div class="mockup-stage">
+        <div class="mockup-stage-inner is-active" data-panel="0">
+          <img src="/assets/dtf-kit-builder.png" alt="DTF Gang Sheet Builder from the Starter Kit: sheet setup, auto-arrange controls and live fill percentage">
+        </div>
+        <div class="mockup-stage-inner" data-panel="1">
+          <img src="/assets/dtf-pricing-calculator-tool.png" alt="DTF Pricing Calculator with a 24-shirt job priced: retail range $26 to $33, cost breakdown and transfer sheet details">
+        </div>
+        <div class="mockup-stage-inner" data-panel="2">
+          <img src="/assets/dtf-profit-tracker.png" alt="DTF Profit Tracker showing three logged orders with revenue, costs, profit and margin for October">
+        </div>
+      </div>
+    </div>
+
+
+
     <div class="section-block">
       <h2>What&apos;s included</h2>
       <ul class="plain-list">
@@ -339,6 +360,22 @@
     <a href="/policies/">Policies</a>
   </div>
 </footer>
+
+<script>
+  var tabs = document.querySelectorAll('.mockup-tab');
+  var panels = document.querySelectorAll('.mockup-stage-inner');
+  function selectTab(idx) {
+    tabs.forEach(function(t, i) { t.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
+    panels.forEach(function(p, i) { p.classList.toggle('is-active', i === idx); });
+  }
+  tabs.forEach(function(tab, idx) {
+    tab.addEventListener('click', function() { selectTab(idx); });
+    tab.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') selectTab((idx + 1) % tabs.length);
+      if (e.key === 'ArrowLeft') selectTab((idx - 1 + tabs.length) % tabs.length);
+    });
+  });
+</script>
 
 <script>
   (function () {
