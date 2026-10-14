@@ -194,7 +194,9 @@
   .upgrade__left h2 { margin: 12px 0 16px; font-size: 30px; }
   .upgrade__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 24px; max-width: 620px; font-size: 13px; font-weight: 300; color: var(--warm-gray); }
   .upgrade__buy { text-align: center; flex-shrink: 0; }
-  .upgrade__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; color: var(--black); margin-bottom: 10px; }
+  .upgrade__price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 32px; color: var(--black); margin-bottom: 8px; }
+  .upgrade__price .upgrade__was { font-weight: 500; font-size: 17px; color: var(--warm-gray); text-decoration: line-through; margin-left: 8px; }
+  .upgrade__save { display: inline-block; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: var(--green); padding: 4px 9px; border-radius: 4px; margin-bottom: 12px; }
 
   /* Email capture */
   .capture { background: var(--green); padding: 44px 36px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
@@ -406,15 +408,15 @@
     <span class="eyebrow--simple">This is the quick estimate</span>
     <h2>The full system does the parts this can't</h2>
     <div class="upgrade__grid">
-      <span>Digitizing amortized across reorders</span>
-      <span>Thread and stabilizer dialed to your shop</span>
-      <span>Your own overhead and target margin</span>
-      <span>Bulk-quantity pricing, saved quotes, CSV</span>
+      <span>Quote builder with quote numbers, sales tax, and your shop logo</span>
+      <span>Profit tracker showing what each job actually made</span>
+      <span>The full pricing guide, the thinking behind the numbers</span>
     </div>
   </div>
   <div class="upgrade__buy">
-    <div class="upgrade__price tabular">$21.24</div>
-    <a href="/embroidery-pricing-system/" class="btn btn-primary">Get the full tool</a>
+    <div class="upgrade__price tabular">$21.24<span class="upgrade__was">$24.99</span></div>
+    <span class="upgrade__save">Save 15%</span>
+    <a href="https://payhip.com/b/mhS7B" class="btn btn-primary">Get the full tool</a>
   </div>
 </section>
 
