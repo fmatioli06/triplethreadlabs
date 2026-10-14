@@ -184,6 +184,12 @@
     .guide-body { grid-template-columns: 1fr; padding: 8px 20px 48px; }
     .guide-right { position: static; }
   }
+  .related { border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; margin: 40px 0; background: var(--white); }
+  .related__label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 12px; }
+  .related a.related__link { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; color: var(--black); text-decoration: none; }
+  .related a.related__link:hover { color: var(--green); }
+  .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
+  .related p:last-child { margin-bottom: 0 !important; }
 </style>
 </head>
 <body>
@@ -199,7 +205,7 @@
   </a>
   <nav class="site-nav desktop-only" aria-label="Primary">
     <a class="site-nav__item" href="/tools/">Tools</a>
-    <a class="site-nav__item" href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a class="site-nav__item" href="/guides/">Guides</a>
     <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
     <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
     <a class="site-nav__item" href="/about/">About</a>
@@ -213,7 +219,7 @@
 <div class="nav-overlay" id="navOverlay">
   <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
   <a href="/tools/">Tools</a>
-  <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+  <a href="/guides/">Guides</a>
   <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
   <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
   <a href="/about/">About</a>
@@ -296,6 +302,12 @@
     </ol>
     <p>True cost is the sum. Sell price is true cost grossed up for your margin target and any selling fees. That's the whole method, and it's the same math the calculator runs.</p>
 
+    <div class="related">
+      <div class="related__label">Related guides</div>
+      <a class="related__link" href="/how-much-to-charge-for-embroidery/">How Much Should I Charge for Embroidery?</a>
+      <p>The pricing method behind every tool on this site: the costs beginners forget, three pricing methods that work, and a fill-in worksheet.</p>
+    </div>
+
     <div class="cta-band">
       <h3>Stop rebuilding this quote every time</h3>
       <p>The Patch Price Builder runs this whole method while you type: size and coverage to stitch count, every backing priced in, bulk tiers and rush applied on their own, printable customer quotes. Built for exactly this kind of order.</p>
@@ -356,7 +368,7 @@
   <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
   <div class="site-footer__links">
     <a href="/tools/">Tools</a>
-    <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a href="/guides/">Guides</a>
     <a href="/about/">About</a>
     <a href="mailto:hello@triplethreadlabs.com">Contact</a>
     <a href="/policies/">Policies</a>

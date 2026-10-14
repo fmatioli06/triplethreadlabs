@@ -131,6 +131,12 @@
     .guide-body { grid-template-columns: 1fr; padding: 8px 20px 48px; }
     .guide-right { position: static; }
   }
+  .related { border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; margin: 40px 0; background: var(--white); }
+  .related__label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 12px; }
+  .related a.related__link { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; color: var(--black); text-decoration: none; }
+  .related a.related__link:hover { color: var(--green); }
+  .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
+  .related p:last-child { margin-bottom: 0 !important; }
 </style>
 </head>
 <body>
@@ -146,7 +152,7 @@
   </a>
   <nav class="site-nav desktop-only" aria-label="Primary">
     <a class="site-nav__item" href="/tools/">Tools</a>
-    <a class="site-nav__item" href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a class="site-nav__item" href="/guides/">Guides</a>
     <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
     <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
     <a class="site-nav__item" href="/about/">About</a>
@@ -160,7 +166,7 @@
 <div class="nav-overlay" id="navOverlay">
   <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
   <a href="/tools/">Tools</a>
-  <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+  <a href="/guides/">Guides</a>
   <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
   <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
   <a href="/about/">About</a>
@@ -324,6 +330,12 @@
       </div>
     </div>
 
+    <div class="related">
+      <div class="related__label">Related guides</div>
+      <a class="related__link" href="/patch-pricing-for-dog-patches/">How to Price Dog Patches (Without Losing Money on the Small Ones)</a>
+      <p>Small size, dense detail, velcro backings: how working shops quote dog patches so the small ones pay like the big ones.</p>
+    </div>
+
     <div class="cta-band">
       <h3>Price your next job in 60 seconds</h3>
       <p>The free embroidery pricing calculator runs the whole method in this guide — true cost, margin check, platform fee gross-up — while you type. No signup, no install.</p>
@@ -350,7 +362,7 @@
   <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
   <div class="site-footer__links">
     <a href="/tools/">Tools</a>
-    <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a href="/guides/">Guides</a>
     <a href="/about/">About</a>
     <a href="mailto:hello@triplethreadlabs.com">Contact</a>
     <a href="/policies/">Policies</a>
