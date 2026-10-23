@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Embroidery Pricing Cheat Sheet — Triple Thread Labs</title>
-<meta name="description" content="A free one-page pricing reference for embroidery shops. Formula, platform fees, and margin health guide — all on one page.">
+<title>Free Embroidery Pricing Cheat Sheet — Triple Thread Labs</title>
+<meta name="description" content="A free one-page pricing reference for embroidery shops: the pricing formula, platform fees, margin health bands, and stitch counts for common jobs. Enter your email and I'll send it over.">
 <link rel="canonical" href="https://triplethreadlabs.com/pricing-cheatsheet/">
 
-<meta property="og:title" content="Embroidery Pricing Cheat Sheet — Triple Thread Labs">
-<meta property="og:description" content="A free one-page pricing reference for embroidery shops. Formula, platform fees, and margin health guide — all on one page.">
+<meta property="og:title" content="Free Embroidery Pricing Cheat Sheet — Triple Thread Labs">
+<meta property="og:description" content="The one-page pricing reference for embroidery shops. Formula, platform fees, margin health, and common job stitch counts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://triplethreadlabs.com/pricing-cheatsheet/">
 <meta property="og:site_name" content="Triple Thread Labs">
@@ -16,8 +16,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Embroidery Pricing Cheat Sheet — Triple Thread Labs">
-<meta name="twitter:description" content="A free one-page pricing reference for embroidery shops.">
+<meta name="twitter:title" content="Free Embroidery Pricing Cheat Sheet — Triple Thread Labs">
+<meta name="twitter:description" content="The one-page pricing reference for embroidery shops. Enter your email and I'll send it over.">
 <meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
@@ -25,228 +25,274 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css?v=20261006">
 
 <style>
   :root {
     --black: #111111; --charcoal: #272727; --warm-gray: #4A4844; --mid-gray: #888480;
     --lt-gray: #C8C5C0; --page-bg: #ECEAE6; --off-white: #F5F4F1; --white: #FFFFFF;
-    --green: #2D7A4F; --green-mid: #3A9962; --green-light: #E8F5EE; --green-pale: #F0FAF3;
+    --green: #2D7A4F; --green-mid: #3A9962; --green-light: #E8F5EE;
     --line: #E0DEDA;
-    --warn: #8A5818; --warn-soft: #FDF3E7;
-    --danger: #8A2828; --danger-soft: #FDF0F0;
   }
+  body { background: var(--off-white); }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .cs-hero { max-width: 1120px; margin: 0 auto; padding: 56px 36px 48px; display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 52px; align-items: start; }
+  .cs-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+  .cs-hero h1 { font-family: 'Oswald', sans-serif; font-size: 46px; font-weight: 700; line-height: 1.05; color: var(--charcoal); text-transform: uppercase; margin: 0 0 18px; }
+  .cs-hero h1 .accent { color: var(--green); }
+  .cs-sub { font-size: 16.5px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); margin: 0 0 28px; max-width: 52ch; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    background: var(--page-bg);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    -webkit-font-smoothing: antialiased;
+  .cs-formcard { background: var(--green); border-radius: 4px; padding: 26px 28px 22px; }
+  .cs-formcard h2 { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #fff; margin: 0 0 6px; }
+  .cs-formcard .cs-formsub { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,.85); margin: 0 0 16px; line-height: 1.55; }
+  .cs-fineprint { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.65); margin: 14px 0 0; line-height: 1.55; }
+
+  #mlb2-40421709 .ml-form-embedWrapper { width: 100%; }
+  #mlb2-40421709 .ml-form-formContent { display: flex; gap: 2px; }
+  #mlb2-40421709 .ml-field-group { flex: 1; }
+  #mlb2-40421709 input[type="email"] {
+    width: 100%; background: #fff; border: none; padding: 15px 16px;
+    font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 14px; color: var(--black);
   }
-
-  .screen-ui { width: 100%; max-width: 800px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
-  .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--warm-gray); text-decoration: none; }
-  .back-link:hover { color: var(--black); }
-
-  .print-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 12px 20px; background: var(--green); color: white; border: none; border-radius: 3px; cursor: pointer;
+  #mlb2-40421709 input[type="email"]::placeholder { color: #B9B6B1; }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff; background: var(--black); padding: 16px 22px;
+    white-space: nowrap; height: 100%; border: none; border-radius: 0; cursor: pointer;
   }
-  .print-btn:hover { background: var(--green-mid); }
+  #mlb2-40421709 .ml-form-embedSubmit button.primary:hover { background: var(--charcoal); }
+  #mlb2-40421709 .ml-form-successBody p { color: #fff !important; font-family: 'DM Sans', sans-serif; font-weight: 400; }
 
-  .sheet { width: 100%; max-width: 800px; background: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.12); border-radius: 4px; overflow: hidden; }
+  .cs-preview-wrap { position: relative; }
+  .cs-preview { background: var(--white); border-radius: 4px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.14); position: relative; }
+  .cs-preview__header { background: var(--black); padding: 20px 24px 16px; border-top: 5px solid var(--green); }
+  .cs-preview__eyebrow { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 3px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+  .cs-preview__title { font-family: 'Oswald', sans-serif; font-size: 21px; font-weight: 700; text-transform: uppercase; color: #fff; line-height: 1.15; }
+  .cs-preview__title .accent { color: var(--green-mid); }
+  .cs-preview__sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 6px; font-weight: 300; }
+  .cs-preview__body { padding: 20px 24px 8px; }
+  .cs-preview .section-label { font-family: 'Oswald', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .cs-preview .formula-card { background: var(--charcoal); border-radius: 4px; padding: 14px 16px; color: #fff; margin-bottom: 20px; }
+  .cs-preview .formula-title { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+  .cs-preview .formula-line { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 11.5px; }
+  .cs-preview .formula-line:last-of-type { border-bottom: 0; }
+  .cs-preview .formula-line .component { color: rgba(255,255,255,0.78); font-weight: 300; white-space: nowrap; }
+  .cs-preview .formula-line .example { color: rgba(255,255,255,0.42); font-size: 10.5px; font-style: italic; text-align: right; }
+  .cs-preview .formula-result { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; }
+  .cs-preview .formula-result .label { font-family: 'Oswald', sans-serif; font-size: 9.5px; letter-spacing: 1.5px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; }
+  .cs-preview .formula-result .value { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+  .cs-preview .ref-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  .cs-preview .ref-table td { padding: 6px 0; border-bottom: 1px solid var(--line); color: var(--charcoal); font-weight: 400; }
+  .cs-preview .ref-table td:last-child { text-align: right; font-weight: 600; }
+  .cs-preview__fade { position: absolute; left: 0; right: 0; bottom: 0; height: 150px; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 78%); pointer-events: none; }
+  .cs-preview__caption { font-size: 12px; font-weight: 300; color: var(--mid-gray); margin-top: 14px; text-align: center; }
 
-  .sheet-header { background: var(--black); padding: 28px 36px 24px; border-top: 5px solid var(--green); display: flex; justify-content: space-between; align-items: flex-start; }
-  .sheet-eyebrow { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 3px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
-  .sheet-title { margin: 0; font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; color: white; line-height: 1.1; }
-  .sheet-title .accent { color: var(--green-mid); }
-  .sheet-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px; font-weight: 300; }
-  .sheet-wordmark { text-align: right; flex-shrink: 0; }
-  .wordmark-line1 { font-family: 'Oswald', sans-serif; font-size: 8px; letter-spacing: 2px; color: rgba(255,255,255,0.4); font-weight: 700; text-transform: uppercase; }
-  .wordmark-line2 { font-size: 18px; color: white; font-weight: 700; }
-  .wordmark-line2 .thread { font-family: 'Playfair Display', serif; font-style: italic; }
-  .wordmark-dot { color: var(--green-mid); }
+  .cs-inside { max-width: 1120px; margin: 0 auto; padding: 12px 36px 8px; }
+  .cs-inside h2 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--charcoal); margin: 0 0 22px; }
+  .cs-inside__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .cs-inside__item { background: #fff; padding: 22px 20px; }
+  .cs-inside__item h3 { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--green); margin: 0 0 8px; }
+  .cs-inside__item p { font-size: 13.5px; font-weight: 300; line-height: 1.6; color: var(--warm-gray); margin: 0; }
 
-  .sheet-body { padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--off-white); }
-  .sheet-col { padding: 28px; display: flex; flex-direction: column; gap: 22px; }
-  .sheet-col:first-child { border-right: 1px solid var(--line); background: white; }
+  .cs-about { max-width: 1120px; margin: 0 auto; padding: 34px 36px 56px; }
+  .cs-about p { font-size: 14.5px; font-weight: 300; line-height: 1.7; color: var(--warm-gray); max-width: 68ch; margin: 0; }
+  .cs-about a { color: var(--green); font-weight: 500; text-decoration: none; }
+  .cs-about a:hover { text-decoration: underline; }
 
-  .section-label { font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
-
-  .formula-card { background: var(--charcoal); border-radius: 4px; padding: 18px 20px; color: white; }
-  .formula-title { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 10px; font-weight: 500; }
-  .formula-line { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 12.5px; }
-  .formula-line:last-of-type { border-bottom: 0; }
-  .formula-line .component { color: rgba(255,255,255,0.75); font-weight: 300; }
-  .formula-line .example { color: rgba(255,255,255,0.4); font-size: 11px; font-style: italic; }
-  .formula-result { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; }
-  .formula-result .label { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 1.5px; color: var(--green-mid); font-weight: 600; text-transform: uppercase; }
-  .formula-result .value { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: white; }
-
-  .ref-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .ref-table th { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); font-weight: 600; padding: 0 8px 8px 0; text-align: left; border-bottom: 1px solid var(--line); }
-  .ref-table th:last-child { text-align: right; padding-right: 0; }
-  .ref-table td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); color: var(--charcoal); font-weight: 400; vertical-align: middle; }
-  .ref-table td:last-child { text-align: right; padding-right: 0; font-weight: 600; color: var(--charcoal); }
-  .ref-table tr:last-child td { border-bottom: 0; }
-
-  .platform-badge { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 100px; background: var(--green-light); color: var(--green); }
-
-  .margin-rows { display: flex; flex-direction: column; gap: 6px; }
-  .margin-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 4px; border: 1px solid var(--line); }
-  .margin-indicator { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .margin-row-content { flex: 1; }
-  .margin-row-title { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 1px; text-transform: uppercase; letter-spacing: .5px; }
-  .margin-row-sub { font-size: 10.5px; color: var(--mid-gray); font-weight: 300; }
-  .margin-row-pct { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; flex-shrink: 0; }
-
-  .margin-row.healthy { background: var(--green-light); border-color: rgba(45,122,79,0.2); }
-  .margin-row.healthy .margin-indicator { background: var(--green); }
-  .margin-row.healthy .margin-row-pct { color: var(--green); }
-  .margin-row.decent { background: #F5F9F0; border-color: rgba(100,150,60,0.2); }
-  .margin-row.decent .margin-indicator { background: #7DB060; }
-  .margin-row.decent .margin-row-pct { color: #5A8A40; }
-  .margin-row.tight { background: var(--warn-soft); border-color: rgba(138,88,24,0.2); }
-  .margin-row.tight .margin-indicator { background: #C8843A; }
-  .margin-row.tight .margin-row-pct { color: var(--warn); }
-  .margin-row.low { background: var(--danger-soft); border-color: rgba(138,40,40,0.2); }
-  .margin-row.low .margin-indicator { background: #C84040; }
-  .margin-row.low .margin-row-pct { color: var(--danger); }
-
-  .stitch-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .stitch-table th { font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); font-weight: 600; padding: 0 0 8px; text-align: left; border-bottom: 1px solid var(--line); }
-  .stitch-table th:last-child { text-align: right; }
-  .stitch-table td { padding: 6px 0; border-bottom: 1px solid var(--line); color: var(--charcoal); font-size: 12px; }
-  .stitch-table td:last-child { text-align: right; font-weight: 600; font-family: 'Oswald', sans-serif; }
-  .stitch-table tr:last-child td { border-bottom: 0; }
-  .job-label { font-weight: 500; color: var(--charcoal); display: block; margin-bottom: 1px; }
-  .job-sub { font-size: 10px; color: var(--lt-gray); font-weight: 300; }
-
-  .tip-box { background: var(--green-light); border-left: 3px solid var(--green); padding: 12px 14px; border-radius: 0 4px 4px 0; font-size: 11.5px; color: var(--green); line-height: 1.55; }
-  .tip-box strong { font-weight: 600; }
-
-  .sheet-footer { background: var(--black); padding: 14px 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-  .sheet-footer-left { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; }
-  .sheet-footer-right { font-size: 10px; color: var(--green-mid); font-weight: 500; letter-spacing: 0.5px; }
-  .sheet-footer-right a { color: inherit; }
-
-  @media print {
-    body { background: white; padding: 0; }
-    .screen-ui { display: none; }
-    .sheet { box-shadow: none; border-radius: 0; max-width: 100%; }
-    @page { size: letter landscape; margin: 0.4in; }
+  @media (max-width: 900px) {
+    .cs-hero { grid-template-columns: 1fr; padding: 40px 20px 36px; gap: 36px; }
+    .cs-hero h1 { font-size: 36px; }
+    .cs-inside { padding: 8px 20px 4px; }
+    .cs-inside__grid { grid-template-columns: 1fr 1fr; }
+    .cs-about { padding: 28px 20px 44px; }
+    #mlb2-40421709 .ml-form-formContent { flex-direction: column; }
+    #mlb2-40421709 .ml-form-embedSubmit button.primary { width: 100%; padding: 16px; }
   }
-
-  @media (max-width: 600px) {
-    .sheet-body { grid-template-columns: 1fr; }
-    .sheet-col:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
-    .sheet-header { flex-direction: column; gap: 16px; }
-    .sheet-wordmark { text-align: left; }
+  @media (max-width: 560px) {
+    .cs-inside__grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<div class="screen-ui">
-  <a href="/" class="back-link">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
-    Back to Labs
+<header class="site-header site-header--dark">
+  <a href="/" class="logo logo--dark">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
   </a>
-  <button class="print-btn" onclick="window.print()">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-    Save as PDF
+  <nav class="site-nav desktop-only" aria-label="Primary">
+    <a class="site-nav__item" href="/tools/">Tools</a>
+    <a class="site-nav__item" href="/guides/">Guides</a>
+    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
+    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
+    <a class="site-nav__item" href="/about/">About</a>
+    <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+    <span></span><span></span><span></span>
   </button>
+</header>
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
+  <a href="/tools/">Tools</a>
+  <a href="/guides/">Guides</a>
+  <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
+  <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
+  <a href="/about/">About</a>
 </div>
 
-<div class="sheet">
-
-  <div class="sheet-header">
+<main>
+  <section class="cs-hero">
     <div>
-      <div class="sheet-eyebrow">Free resource</div>
-      <h1 class="sheet-title">Embroidery Pricing<br><span class="accent">Cheat Sheet</span></h1>
-      <div class="sheet-sub">Formula · Platform fees · Margin health · Common job reference</div>
-    </div>
-    <div class="sheet-wordmark">
-      <div class="wordmark-line1">Triple</div>
-      <div class="wordmark-line2"><span class="thread">thread</span>labs<span class="wordmark-dot">.</span></div>
-    </div>
-  </div>
+      <div class="cs-eyebrow">Free resource</div>
+      <h1>The embroidery pricing <span class="accent">cheat sheet</span></h1>
+      <p class="cs-sub">One page with the pricing formula, what each platform actually takes, a margin health check, and stitch counts for the jobs you quote every day. It is the same sheet I keep open while I quote in my own shop.</p>
 
-  <div class="sheet-body">
-
-    <div class="sheet-col">
-      <div>
-        <div class="section-label">The Pricing Formula</div>
-        <div class="formula-card">
-          <div class="formula-title">Cost components — add them all up</div>
-          <div class="formula-line"><span class="component">Thread cost</span><span class="example">Stitch count ÷ 1,000 × $0.25</span></div>
-          <div class="formula-line"><span class="component">Labor</span><span class="example">Run time (min) ÷ 60 × hourly rate</span></div>
-          <div class="formula-line"><span class="component">Blank / garment</span><span class="example">Your actual cost</span></div>
-          <div class="formula-line"><span class="component">Stabilizer</span><span class="example">~$0.40–$0.75 per item</span></div>
-          <div class="formula-line"><span class="component">Digitizing (spread)</span><span class="example">Fee ÷ expected reorder qty</span></div>
-          <div class="formula-line"><span class="component">Overhead (10%)</span><span class="example">× 1.10 on subtotal</span></div>
-          <div class="formula-result"><span class="label">Sell for at least</span><span class="value">True cost × markup</span></div>
+      <div class="cs-formcard" id="get-the-sheet">
+        <h2>Get the cheat sheet</h2>
+        <p class="cs-formsub">Enter your email and I will send it over. It lands in your inbox, ready to print and keep by the machine.</p>
+        <div id="mlb2-40421709" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40421709">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="you@yourshop.com" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Send it to me</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none;">
+                <div class="ml-form-successContent">
+                  <p>✓ Check your email — cheat sheet is on its way.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <div class="section-label">Platform Fee Cheat Sheet</div>
-        <table class="ref-table">
-          <thead><tr><th>Platform</th><th>Total fees</th><th style="text-align:right">You keep</th></tr></thead>
-          <tbody>
-            <tr><td><span class="platform-badge">Etsy</span></td><td style="color:var(--mid-gray);font-size:11px;">6.5% trans + $0.20 + 3% pay</td><td>~90%</td></tr>
-            <tr><td><span class="platform-badge" style="background:#F0F4FF;color:#3355CC;">Shopify</span></td><td style="color:var(--mid-gray);font-size:11px;">2.9% + $0.30 (Stripe)</td><td>~97%</td></tr>
-            <tr><td><span class="platform-badge" style="background:#F5F0FF;color:#6633CC;">Square</span></td><td style="color:var(--mid-gray);font-size:11px;">2.6% + $0.10 in-person</td><td>~97%</td></tr>
-            <tr><td><span class="platform-badge" style="background:#FFF0F5;color:#CC3366;">Amazon</span></td><td style="color:var(--mid-gray);font-size:11px;">15% + 2.9% + $0.30</td><td>~82%</td></tr>
-            <tr><td><span class="platform-badge" style="background:#F5F5F5;color:#444;">Direct / cash</span></td><td style="color:var(--mid-gray);font-size:11px;">No platform fees</td><td>100%</td></tr>
-          </tbody>
-        </table>
-        <div class="tip-box" style="margin-top:10px;"><strong>Gross-up rule:</strong> To actually keep your target price after fees, divide by (1 − fee%). At 10% fees: charge $X ÷ 0.90 so you net $X after the cut.</div>
+        <p class="cs-fineprint">After the sheet, you will get a few short pricing emails from me over the next two weeks. No spam, no selling your address, unsubscribe anytime.</p>
       </div>
     </div>
 
-    <div class="sheet-col">
-      <div>
-        <div class="section-label">Margin Health Guide</div>
-        <div class="margin-rows">
-          <div class="margin-row healthy"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Healthy</div><div class="margin-row-sub">Strong. Room to discount, absorb returns, or run promos.</div></div><div class="margin-row-pct">40%+</div></div>
-          <div class="margin-row decent"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Decent</div><div class="margin-row-sub">Workable but watch your volume and overhead.</div></div><div class="margin-row-pct">25–40%</div></div>
-          <div class="margin-row tight"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Tight</div><div class="margin-row-sub">One mistake or return wipes your profit. Raise price or cut cost.</div></div><div class="margin-row-pct">15–25%</div></div>
-          <div class="margin-row low"><div class="margin-indicator"></div><div class="margin-row-content"><div class="margin-row-title">Low / Danger</div><div class="margin-row-sub">You're working for free or losing money. Fix this job before it ships.</div></div><div class="margin-row-pct">&lt;15%</div></div>
+    <div class="cs-preview-wrap">
+      <div class="cs-preview" aria-hidden="true">
+        <div class="cs-preview__header">
+          <div class="cs-preview__eyebrow">Free resource</div>
+          <div class="cs-preview__title">Embroidery Pricing<br><span class="accent">Cheat Sheet</span></div>
+          <div class="cs-preview__sub">Formula · Platform fees · Margin health · Common job reference</div>
         </div>
+        <div class="cs-preview__body">
+          <div class="section-label">The Pricing Formula</div>
+          <div class="formula-card">
+            <div class="formula-title">Cost components — add them all up</div>
+            <div class="formula-line"><span class="component">Thread cost</span><span class="example">Stitch count ÷ 1,000 × $0.25</span></div>
+            <div class="formula-line"><span class="component">Labor</span><span class="example">Run time (min) ÷ 60 × hourly rate</span></div>
+            <div class="formula-line"><span class="component">Blank / garment</span><span class="example">Your actual cost</span></div>
+            <div class="formula-line"><span class="component">Stabilizer</span><span class="example">~$0.40 to $0.75 per item</span></div>
+            <div class="formula-line"><span class="component">Digitizing (spread)</span><span class="example">Fee ÷ expected reorder qty</span></div>
+            <div class="formula-line"><span class="component">Overhead (10%)</span><span class="example">× 1.10 on subtotal</span></div>
+            <div class="formula-result"><span class="label">Sell for at least</span><span class="value">True cost × markup</span></div>
+          </div>
+          <div class="section-label">Platform Fee Cheat Sheet</div>
+          <table class="ref-table">
+            <tbody>
+              <tr><td>Etsy</td><td>~90% kept</td></tr>
+              <tr><td>Shopify</td><td>~97% kept</td></tr>
+              <tr><td>Square</td><td>~97% kept</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cs-preview__fade"></div>
       </div>
+      <p class="cs-preview__caption">The actual sheet, one page, prints clean. The fee table, margin guide, and job reference are on the full page.</p>
+    </div>
+  </section>
 
-      <div>
-        <div class="section-label">Common Job Reference</div>
-        <table class="stitch-table">
-          <thead><tr><th>Job type</th><th style="text-align:right">Typical stitches</th></tr></thead>
-          <tbody>
-            <tr><td><span class="job-label">Left chest logo</span><span class="job-sub">Standard 4" design</span></td><td>4,000–8,000</td></tr>
-            <tr><td><span class="job-label">Cap / hat</span><span class="job-sub">Structured front, 2.5" height</span></td><td>5,000–10,000</td></tr>
-            <tr><td><span class="job-label">Full back jacket</span><span class="job-sub">Dense fill, 12" design</span></td><td>15,000–30,000</td></tr>
-            <tr><td><span class="job-label">Name / text only</span><span class="job-sub">Script or block, 3" wide</span></td><td>1,500–4,000</td></tr>
-            <tr><td><span class="job-label">Team jersey (per name)</span><span class="job-sub">Name + number back</span></td><td>2,000–5,000</td></tr>
-          </tbody>
-        </table>
-        <div class="tip-box" style="margin-top:12px;"><strong>Markup rule of thumb:</strong> 20% markup ≠ 20% margin. A 20% markup gives you 16.7% margin. To hit 40% margin, you need a 67% markup. Use the pricing system — let the math do the math.</div>
+  <section class="cs-inside">
+    <h2>What is on the sheet</h2>
+    <div class="cs-inside__grid">
+      <div class="cs-inside__item">
+        <h3>The pricing formula</h3>
+        <p>Every cost that belongs in a quote, in order: thread, labor, blank, stabilizer, digitizing, overhead.</p>
+      </div>
+      <div class="cs-inside__item">
+        <h3>Platform fees, straight</h3>
+        <p>What Etsy, Shopify, Square, and Amazon really take, plus the gross-up math so fees do not eat your price.</p>
+      </div>
+      <div class="cs-inside__item">
+        <h3>Margin health check</h3>
+        <p>Four bands that tell you whether a job is healthy, tight, or quietly losing money before it ships.</p>
+      </div>
+      <div class="cs-inside__item">
+        <h3>Common job reference</h3>
+        <p>Typical stitch counts for left chest logos, caps, full jacket backs, names, and team jerseys.</p>
       </div>
     </div>
+  </section>
 
+  <section class="cs-about">
+    <p>I am Felipe. I run Triple Thread Customs, an embroidery and DTF shop in Raleigh, NC, and I have built tools and solutions professionally for 12 years. This sheet is the one-page version of how I price my own work. If you want the math done for you, that is the <a href="/embroidery-pricing-system/">Embroidery Pricing System</a>.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
+  <div class="site-footer__links">
+    <a href="/tools/">Tools</a>
+    <a href="/about/">About</a>
+    <a href="mailto:hello@triplethreadlabs.com">Contact</a>
+    <a href="/policies/">Policies</a>
   </div>
+</footer>
 
-  <div class="sheet-footer">
-    <span class="sheet-footer-left">© 2026 Triple Thread Labs · triplethreadlabs.com · Free to share</span>
-    <span class="sheet-footer-right"><a href="/embroidery-pricing-system/">Want the full calculator? Get the Embroidery Pricing System &rarr;</a></span>
-  </div>
+<script>
+  // Mobile nav
+  var navToggle = document.getElementById('navToggle');
+  var navOverlay = document.getElementById('navOverlay');
+  var navClose = document.getElementById('navClose');
+  navToggle.addEventListener('click', function() {
+    navOverlay.classList.add('is-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+  });
+  navClose.addEventListener('click', function() {
+    navOverlay.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+  navOverlay.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() { navOverlay.classList.remove('is-open'); });
+  });
 
-</div>
+  // MailerLite redirect after successful submission
+  function ml_webform_success_40421709() {
+    try {
+      window.top.location.href = '/thank-you/';
+    } catch(e) {
+      window.location.href = '/thank-you/';
+    }
+  }
+</script>
+
+<!-- MailerLite script -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>
+  fetch("https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/takel")
+</script>
 
 </body>
 </html>
