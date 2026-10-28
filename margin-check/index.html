@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margin Check | Triple Thread Labs</title>
+<meta name="description" content="Free tool for embroidery shops. Enter a job you already ran and see what you really paid yourself per hour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Triple Thread Labs palette */
+  --black: #111111;
+  --charcoal: #272727;
+  --warm-gray: #4A4844;
+  --mid-gray: #888480;
+  --lt-gray: #C8C5C0;
+  --line: #E4E2DE;
+  --off-white: #F5F4F1;
+  --white: #FFFFFF;
+  --page-bg: #ECEAE6;
+  --green: #2D7A4F;
+  --green-mid: #3A9962;
+  --green-light: #E8F5EE;
+  --green-pale: #F0FAF3;
+
+  /* Status colors (always paired with an icon + label) */
+  --loss: #B3261E;
+  --loss-bg: #FCEDEC;
+  --warn: #9A5B00;
+  --warn-bg: #FFF4E0;
+  --warn-line: #F2D49B;
+  --amber-text: #F5B94A;
+
+  /* Type */
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-hero: 3.25rem;
+
+  /* Spacing scale */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
+
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow: 0 1px 2px rgba(17,17,17,0.04), 0 4px 16px rgba(17,17,17,0.05);
+  --savebar-h: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--page-bg);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(var(--savebar-h) + var(--s6));
+}
+button, input { font: inherit; color: inherit; }
+a { color: var(--green); }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: var(--s5) var(--s4) 0; }
+
+/* ---------- Header / lockup ---------- */
+.site-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: var(--s4); border-bottom: 1px solid var(--line); margin-bottom: var(--s6); }
+.lockup { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.lockup__mark { display: flex; flex-direction: column; gap: 3px; }
+.lockup__bar { display: block; height: 2px; border-radius: 100px; background: var(--charcoal); }
+.lockup__bar--1 { width: 38px; }
+.lockup__bar--2 { width: 27px; background: var(--green); }
+.lockup__bar--3 { width: 17px; }
+.lockup__right { display: flex; flex-direction: column; gap: 2px; }
+.lockup__triple { font-family: var(--font-display); font-weight: 700; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mid-gray); line-height: 1; }
+.lockup__word { display: flex; align-items: baseline; gap: 4px; line-height: 1; color: var(--charcoal); }
+.lockup__thread { font-family: var(--font-accent); font-style: italic; font-weight: 700; font-size: 22px; }
+.lockup__labs { font-family: var(--font-body); font-weight: 700; font-size: 22px; letter-spacing: -0.3px; }
+.lockup__dot { font-family: var(--font-body); font-weight: 700; font-size: 22px; color: var(--green); }
+.tag { font-family: var(--font-display); font-size: var(--fs-xs); letter-spacing: 2px; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: var(--s1) var(--s3); border-radius: 100px; }
+
+/* ---------- Intro ---------- */
+.intro { margin-bottom: var(--s5); animation: rise 400ms ease both; }
+.eyebrow { font-size: var(--fs-xs); font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: var(--s2); }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-2xl); text-transform: uppercase; letter-spacing: 1px; line-height: 1.1; color: var(--black); margin-bottom: var(--s2); }
+.intro__sub { font-size: var(--fs-lg); font-weight: 300; color: var(--warm-gray); max-width: 560px; }
+
+/* ---------- Welcome banner ---------- */
+.banner { display: none; align-items: center; gap: var(--s3); background: var(--green-pale); border: 1px solid var(--green-light); border-left: 3px solid var(--green); border-radius: var(--radius); padding: var(--s3) var(--s4); margin-bottom: var(--s5); font-size: var(--fs-sm); color: var(--warm-gray); }
+.banner.is-visible { display: flex; animation: rise 300ms ease both; }
+.banner__close { margin-left: auto; background: none; border: none; cursor: pointer; font-size: 20px; line-height: 1; color: var(--mid-gray); min-width: 44px; min-height: 44px; }
+.banner__close:hover { color: var(--charcoal); }
+
+/* ---------- Layout ---------- */
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--s5); }
+@media (min-width: 880px) {
+  .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
+  .col-results { position: sticky; top: var(--s5); }
+}
+
+.card { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: var(--s5); animation: rise 400ms ease both; }
+.card + .card { margin-top: var(--s5); }
+.col-inputs .card { animation-delay: 100ms; }
+.col-results .card:first-child { animation-delay: 200ms; }
+
+/* ---------- Inputs ---------- */
+.group + .group { margin-top: var(--s5); padding-top: var(--s5); border-top: 1px solid var(--off-white); }
+.group__title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-sm); letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); margin-bottom: var(--s3); }
+.group__hint { font-size: var(--fs-sm); color: var(--mid-gray); font-weight: 300; margin: calc(var(--s2) * -1) 0 var(--s3); }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
+.field--full { grid-column: 1 / -1; }
+.field label { display: block; font-size: var(--fs-sm); font-weight: 500; color: var(--charcoal); margin-bottom: var(--s1); }
+.field label .req { color: var(--green); }
+.input-wrap { position: relative; display: flex; align-items: center; }
+.input-wrap__pre, .input-wrap__post { position: absolute; font-size: var(--fs-sm); color: var(--mid-gray); pointer-events: none; }
+.input-wrap__pre { left: var(--s3); }
+.input-wrap__post { right: var(--s3); }
+.field input { width: 100%; min-height: 44px; border: 1px solid var(--lt-gray); border-radius: var(--radius); background: var(--white); padding: var(--s2) var(--s3); font-size: var(--fs-md); font-variant-numeric: tabular-nums; transition: border-color 150ms ease, box-shadow 150ms ease; }
+.field input.has-pre { padding-left: 26px; }
+.field input.has-post { padding-right: 48px; }
+.field input:hover { border-color: var(--mid-gray); }
+.field input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-light); }
+.field.is-error input { border-color: var(--loss); animation: shake 300ms ease; }
+.field__help { font-size: var(--fs-xs); color: var(--mid-gray); margin-top: var(--s1); min-height: 1em; }
+.field.is-error .field__help { color: var(--loss); }
+.req-legend { font-size: var(--fs-xs); color: var(--mid-gray); margin-top: var(--s4); }
+
+/* ---------- Results ---------- */
+.result__label { font-size: var(--fs-xs); font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: var(--s2); }
+.status { display: inline-flex; align-items: center; gap: var(--s2); font-family: var(--font-display); font-size: var(--fs-xs); letter-spacing: 2px; text-transform: uppercase; padding: var(--s1) var(--s3); border-radius: 100px; margin-bottom: var(--s3); }
+.status--loss { color: var(--loss); background: var(--loss-bg); }
+.status--under { color: var(--warn); background: var(--warn-bg); }
+.status--good { color: var(--green); background: var(--green-light); }
+.status--wait { color: var(--mid-gray); background: var(--off-white); }
+.hero { display: flex; align-items: baseline; gap: var(--s2); font-family: var(--font-display); font-weight: 700; font-size: var(--fs-hero); line-height: 1; color: var(--black); font-variant-numeric: tabular-nums; }
+.hero__unit { font-size: var(--fs-xl); font-weight: 400; color: var(--mid-gray); }
+.hero.is-loss { color: var(--loss); }
+.fade { animation: fadeIn 250ms ease; }
+.verdict { font-size: var(--fs-lg); color: var(--warm-gray); margin: var(--s4) 0 var(--s5); line-height: 1.45; }
+.verdict strong { color: var(--black); font-weight: 700; }
+.note { font-size: var(--fs-sm); color: var(--warn); background: var(--warn-bg); border-radius: var(--radius); padding: var(--s2) var(--s3); margin: calc(var(--s3) * -1) 0 var(--s4); display: none; }
+.note.is-visible { display: block; }
+
+.compare { margin-bottom: var(--s5); }
+.compare__row { display: grid; grid-template-columns: 112px 1fr auto; align-items: center; gap: var(--s3); margin-bottom: var(--s2); font-size: var(--fs-sm); }
+.compare__name { color: var(--mid-gray); }
+.compare__track { height: 10px; background: var(--off-white); border-radius: 100px; overflow: hidden; }
+.compare__fill { height: 100%; border-radius: 100px; transition: width 300ms ease; }
+.compare__fill--you { background: var(--charcoal); }
+.compare__fill--goal { background: var(--green); }
+.compare__val { font-weight: 500; font-variant-numeric: tabular-nums; min-width: 72px; text-align: right; }
+
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--off-white); border-radius: var(--radius); overflow: hidden; }
+.stat { background: var(--white); padding: var(--s3) var(--s4); }
+.stat__label { font-size: var(--fs-xs); color: var(--mid-gray); margin-bottom: 2px; }
+.stat__val { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xl); color: var(--charcoal); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.stat__val--accent { color: var(--green); }
+.stat__val--loss { color: var(--loss); }
+.stat__sub { font-size: var(--fs-xs); color: var(--mid-gray); }
+.stats-wrap { padding: 2px; background: var(--off-white); border-radius: var(--radius); }
+
+.empty { text-align: left; padding: var(--s5) 0; color: var(--mid-gray); }
+.empty__title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xl); color: var(--charcoal); text-transform: uppercase; margin-bottom: var(--s2); }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s2); min-height: 44px; padding: var(--s2) var(--s5); border-radius: var(--radius); font-weight: 500; font-size: var(--fs-md); cursor: pointer; border: 1px solid transparent; text-decoration: none; transition: background 150ms ease, border-color 150ms ease, transform 150ms ease; }
+.btn:hover { transform: scale(1.02); }
+.btn:active { transform: scale(0.99); }
+.btn--primary { background: var(--green); color: var(--white); }
+.btn--primary:hover { background: var(--green-mid); }
+.btn--ghost { background: transparent; border-color: var(--lt-gray); color: var(--charcoal); }
+.btn--ghost:hover { border-color: var(--charcoal); }
+.btn--danger { background: transparent; border-color: var(--loss); color: var(--loss); }
+.btn--block { width: 100%; }
+.btn:disabled { background: var(--off-white); color: var(--mid-gray); border-color: var(--line); cursor: not-allowed; transform: none; }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--s3); }
+.link-btn { background: none; border: none; color: var(--mid-gray); font-size: var(--fs-sm); cursor: pointer; text-decoration: underline; min-height: 44px; padding: 0 var(--s2); }
+.link-btn:hover { color: var(--charcoal); }
+.link-btn.is-armed { color: var(--loss); font-weight: 500; }
+
+/* ---------- Email gate ---------- */
+.gate__title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); text-transform: uppercase; letter-spacing: 1px; color: var(--black); margin-bottom: var(--s2); }
+.gate__list { list-style: none; margin: var(--s3) 0 var(--s4); font-size: var(--fs-sm); color: var(--warm-gray); }
+.gate__list li { padding: var(--s1) 0 var(--s1) 22px; position: relative; }
+.gate__list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 12px; height: 2px; border-radius: 2px; background: var(--green); }
+.gate__form { display: flex; flex-direction: column; gap: var(--s3); }
+.gate__form .field { margin: 0; }
+.gate__fine { font-size: var(--fs-xs); color: var(--mid-gray); }
+.gate--done { border-left: 3px solid var(--green); }
+
+/* ---------- Saved jobs ---------- */
+.jobs-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); margin-top: var(--s4); font-variant-numeric: tabular-nums; }
+.jobs-table th { text-align: left; font-weight: 500; font-size: var(--fs-xs); letter-spacing: 1px; text-transform: uppercase; color: var(--mid-gray); padding: var(--s2) var(--s2) var(--s2) 0; border-bottom: 1px solid var(--line); }
+.jobs-table td { padding: var(--s3) var(--s2) var(--s3) 0; border-bottom: 1px solid var(--off-white); vertical-align: middle; }
+.jobs-table td.num, .jobs-table th.num { text-align: right; }
+.jobs-table .job-name { font-weight: 500; color: var(--charcoal); }
+.jobs-table .job-date { font-size: var(--fs-xs); color: var(--mid-gray); }
+.row-del { background: none; border: none; color: var(--mid-gray); cursor: pointer; min-width: 44px; min-height: 44px; font-size: 18px; }
+.row-del:hover { color: var(--loss); }
+.jobs-empty { font-size: var(--fs-sm); color: var(--mid-gray); margin-top: var(--s3); }
+
+/* ---------- Next step ---------- */
+.next { background: var(--charcoal); color: var(--off-white); }
+.next .eyebrow { color: var(--green-mid); }
+.next__title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xl); text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: var(--s2); }
+.next__body { font-size: var(--fs-md); font-weight: 300; color: var(--lt-gray); margin-bottom: var(--s4); }
+.next .btn--primary { background: var(--green-mid); }
+.next .btn--primary:hover { background: var(--green); }
+
+/* ---------- Save bar ---------- */
+.savebar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--charcoal); color: var(--off-white); min-height: var(--savebar-h); display: flex; align-items: center; }
+.savebar__inner { max-width: 1040px; margin: 0 auto; padding: var(--s2) var(--s4); width: 100%; display: flex; align-items: center; gap: var(--s4); }
+.savebar__msg { font-size: var(--fs-sm); flex: 1; min-width: 0; }
+.savebar__msg.is-warn { color: var(--amber-text); }
+.savebar__msg.is-calm { color: var(--white); }
+.savebar__msg.is-sample { color: var(--lt-gray); }
+.savebar__btns { display: flex; gap: var(--s2); flex-shrink: 0; }
+.savebar .btn { padding: var(--s2) var(--s4); font-size: var(--fs-sm); }
+.savebar .btn--ghost { color: var(--off-white); border-color: var(--warm-gray); }
+.savebar .btn--ghost:hover { border-color: var(--lt-gray); }
+.savebar .btn--primary { background: var(--green-mid); }
+
+/* Mobile result chip: shows the headline number while the result card is off screen */
+.chip { position: fixed; left: 50%; bottom: calc(var(--savebar-h) + var(--s3)); transform: translateX(-50%) translateY(12px); z-index: 29; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 100px; padding: var(--s2) var(--s4); font-size: var(--fs-sm); display: flex; align-items: center; gap: var(--s2); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 200ms ease, transform 200ms ease; min-height: 44px; white-space: nowrap; }
+.chip.is-visible { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.chip__val { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-lg); color: var(--black); }
+.chip__val.is-loss { color: var(--loss); }
+@media (min-width: 880px) { .chip { display: none; } }
+
+/* Toast */
+.toast { position: fixed; top: var(--s4); left: 50%; transform: translateX(-50%) translateY(-8px); background: var(--black); color: var(--white); font-size: var(--fs-sm); padding: var(--s3) var(--s4); border-radius: var(--radius); z-index: 40; opacity: 0; pointer-events: none; transition: opacity 200ms ease, transform 200ms ease; max-width: calc(100% - 32px); }
+.toast.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s6); padding-top: var(--s4); border-top: 1px solid var(--line); font-size: var(--fs-xs); color: var(--mid-gray); letter-spacing: 1px; text-transform: uppercase; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+[hidden] { display: none !important; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+  :root { --fs-hero: 2.75rem; --savebar-h: 112px; }
+  h1 { font-size: 1.75rem; }
+  .card { padding: var(--s4); }
+  .fields { grid-template-columns: 1fr; }
+  .compare__row { grid-template-columns: 84px 1fr auto; }
+  .savebar__inner { flex-direction: column; align-items: stretch; gap: var(--s2); }
+  .savebar__btns .btn { flex: 1; }
+  .btn-row .btn { flex: 1; }
+  .jobs-table .hide-sm { display: none; }
+}
+
+/* ---------- Motion ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: var(--white); padding: 0; }
+  .savebar, .chip, .toast, .banner, .gate, .next, .btn, .link-btn, .row-del, .no-print { display: none !important; }
+  .card { box-shadow: none; border: 1px solid var(--line); break-inside: avoid; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .col-results { position: static; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="site-head">
+    <a class="lockup" href="/" aria-label="Triple Thread Labs home">
+      <span class="lockup__mark" aria-hidden="true">
+        <span class="lockup__bar lockup__bar--1"></span>
+        <span class="lockup__bar lockup__bar--2"></span>
+        <span class="lockup__bar lockup__bar--3"></span>
+      </span>
+      <span class="lockup__right">
+        <span class="lockup__triple">Triple</span>
+        <span class="lockup__word"><span class="lockup__thread">thread</span><span class="lockup__labs">labs</span><span class="lockup__dot">.</span></span>
+      </span>
+    </a>
+    <span class="tag">Free tool</span>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">Embroidery margin check</p>
+    <h1>What did that job really pay you?</h1>
+    <p class="intro__sub">Enter a job you already ran. See your real hourly pay and how much you left on the table.</p>
+  </section>
+
+  <div class="banner" id="welcomeBanner" role="status">
+    <span aria-hidden="true">👋</span>
+    <span>Sample job loaded. Replace it with a job you already ran.</span>
+    <button class="banner__close" type="button" id="bannerClose" aria-label="Dismiss">×</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- ================= INPUTS ================= -->
+    <div class="col-inputs">
+      <div class="card" id="inputsCard">
+
+        <div class="group">
+          <h2 class="group__title">The job</h2>
+          <div class="fields">
+            <div class="field field--full" data-field="jobName">
+              <label for="jobName">Job name</label>
+              <div class="input-wrap"><input id="jobName" type="text" placeholder="e.g. 24 caps, left chest logo" autocomplete="off" maxlength="60"></div>
+              <p class="field__help">Optional. Helps when you save more than one job.</p>
+            </div>
+            <div class="field" data-field="charged">
+              <label for="charged">What you charged (total) <span class="req">*</span></label>
+              <div class="input-wrap"><span class="input-wrap__pre">$</span><input id="charged" class="has-pre" type="text" inputmode="decimal" placeholder="e.g. 264" autocomplete="off"></div>
+              <p class="field__help">The full amount the customer paid.</p>
+            </div>
+            <div class="field" data-field="qty">
+              <label for="qty">Quantity <span class="req">*</span></label>
+              <div class="input-wrap"><input id="qty" class="has-post" type="text" inputmode="numeric" placeholder="e.g. 24" autocomplete="off"><span class="input-wrap__post">pcs</span></div>
+              <p class="field__help">How many pieces you stitched.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <h2 class="group__title">Your costs</h2>
+          <div class="fields">
+            <div class="field" data-field="blank">
+              <label for="blank">Blank cost per piece <span class="req">*</span></label>
+              <div class="input-wrap"><span class="input-wrap__pre">$</span><input id="blank" class="has-pre" type="text" inputmode="decimal" placeholder="e.g. 6.50" autocomplete="off"></div>
+              <p class="field__help">The cap, shirt, or bag itself.</p>
+            </div>
+            <div class="field" data-field="supplies">
+              <label for="supplies">Supplies per piece</label>
+              <div class="input-wrap"><span class="input-wrap__pre">$</span><input id="supplies" class="has-pre" type="text" inputmode="decimal" placeholder="e.g. 0.40" autocomplete="off"></div>
+              <p class="field__help">Thread, backing, topping. A guess is fine.</p>
+            </div>
+            <div class="field field--full" data-field="overhead">
+              <label for="overhead">Shop overhead per hour</label>
+              <div class="input-wrap"><span class="input-wrap__pre">$</span><input id="overhead" class="has-pre has-post" type="text" inputmode="decimal" placeholder="e.g. 5" autocomplete="off"><span class="input-wrap__post">/hr</span></div>
+              <p class="field__help">Rent, machine payments, software, split across the hours you run. Optional, a guess is fine.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <h2 class="group__title">Your time</h2>
+          <p class="group__hint">Total minutes for the whole job, not per piece.</p>
+          <div class="fields">
+            <div class="field" data-field="machineMin">
+              <label for="machineMin">Machine time <span class="req">*</span></label>
+              <div class="input-wrap"><input id="machineMin" class="has-post" type="text" inputmode="numeric" placeholder="e.g. 180" autocomplete="off"><span class="input-wrap__post">min</span></div>
+              <p class="field__help">Time the machine was stitching.</p>
+            </div>
+            <div class="field" data-field="otherMin">
+              <label for="otherMin">Everything else <span class="req">*</span></label>
+              <div class="input-wrap"><input id="otherMin" class="has-post" type="text" inputmode="numeric" placeholder="e.g. 150" autocomplete="off"><span class="input-wrap__post">min</span></div>
+              <p class="field__help">Digitizing, hooping, trimming, packing, messages.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <h2 class="group__title">Your goal</h2>
+          <div class="fields">
+            <div class="field" data-field="target">
+              <label for="target">Target hourly pay <span class="req">*</span></label>
+              <div class="input-wrap"><span class="input-wrap__pre">$</span><input id="target" class="has-pre has-post" type="text" inputmode="decimal" placeholder="e.g. 35" autocomplete="off"><span class="input-wrap__post">/hr</span></div>
+              <p class="field__help">What you want to pay yourself.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="req-legend"><span class="req" style="color:var(--green)">*</span> Needed for your result</p>
+        <div class="btn-row no-print" style="margin-top:var(--s3)">
+          <button class="link-btn" type="button" id="resetBtn">Reset to sample job</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= RESULTS ================= -->
+    <div class="col-results">
+      <div class="card" id="resultsCard" aria-live="polite">
+        <div id="resultFull">
+          <p class="result__label">Your real hourly pay</p>
+          <span class="status" id="status"></span>
+          <div class="hero" id="hero"><span id="heroVal">$0.00</span><span class="hero__unit">/hr</span></div>
+          <p class="verdict" id="verdict"></p>
+          <p class="note" id="note"></p>
+
+          <div class="compare" aria-label="What you charged compared with your goal price">
+            <div class="compare__row">
+              <span class="compare__name">You charged</span>
+              <div class="compare__track"><div class="compare__fill compare__fill--you" id="barYou"></div></div>
+              <span class="compare__val" id="barYouVal"></span>
+            </div>
+            <div class="compare__row">
+              <span class="compare__name">Your goal price</span>
+              <div class="compare__track"><div class="compare__fill compare__fill--goal" id="barGoal"></div></div>
+              <span class="compare__val" id="barGoalVal"></span>
+            </div>
+          </div>
+
+          <div class="stats-wrap">
+            <div class="stats">
+              <div class="stat"><p class="stat__label" id="sCostsLabel">Blanks + supplies</p><p class="stat__val" id="sCosts"></p><p class="stat__sub" id="sCostsPer"></p></div>
+              <div class="stat"><p class="stat__label">Your time at your goal rate</p><p class="stat__val" id="sTime"></p><p class="stat__sub" id="sHours"></p></div>
+              <div class="stat"><p class="stat__label" id="sGapLabel">Left on the table</p><p class="stat__val" id="sGap"></p><p class="stat__sub" id="sGapPer"></p></div>
+              <div class="stat"><p class="stat__label">Price that hits your goal</p><p class="stat__val stat__val--accent" id="sGoal"></p><p class="stat__sub" id="sGoalPer"></p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="empty" id="resultEmpty" hidden>
+          <p class="result__label">Your real hourly pay</p>
+          <p class="empty__title">Almost there</p>
+          <p id="emptyMsg">Add your numbers to see your result.</p>
+        </div>
+      </div>
+
+      <!-- Email gate (before unlock) -->
+      <div class="card gate" id="gateCard">
+        <h2 class="gate__title">Send me my results + the pricing cheat sheet</h2>
+        <p style="font-size:var(--fs-sm);color:var(--warm-gray)">Your result stays on screen either way. Add your email to keep it.</p>
+        <ul class="gate__list">
+          <li>Save this job and check more side by side</li>
+          <li>Print your results or export them as a CSV</li>
+          <li>Get the embroidery pricing cheat sheet by email</li>
+        </ul>
+        <div class="gate__form">
+          <div class="field" data-field="email">
+            <label for="email">Email</label>
+            <div class="input-wrap"><input id="email" type="email" inputmode="email" placeholder="e.g. you@yourshop.com" autocomplete="email"></div>
+            <p class="field__help" id="emailHelp"></p>
+          </div>
+          <button class="btn btn--primary btn--block" type="button" id="emailBtn">Send Me My Results</button>
+          <p class="gate__fine">One email a week at most. Unsubscribe any time.</p>
+        </div>
+      </div>
+
+      <!-- Saved jobs (after unlock) -->
+      <div class="card gate--done" id="jobsCard" hidden>
+        <h2 class="gate__title">Your jobs</h2>
+        <p style="font-size:var(--fs-sm);color:var(--warm-gray)">Save each job you check. Patterns show up fast.</p>
+        <div class="btn-row" style="margin-top:var(--s4)">
+          <button class="btn btn--primary" type="button" id="saveJobBtn">Save This Job</button>
+          <button class="btn btn--ghost" type="button" id="printBtn">Print My Results</button>
+        </div>
+        <p class="jobs-empty" id="jobsEmpty">No saved jobs yet. Your current job will show here once you save it.</p>
+        <table class="jobs-table" id="jobsTable" hidden>
+          <thead><tr><th>Job</th><th class="num">Charged</th><th class="num">Your pay</th><th class="num hide-sm">Left on table</th><th class="no-print"><span class="sr-only">Delete</span></th></tr></thead>
+          <tbody id="jobsBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Next step -->
+      <div class="card next" id="nextCard">
+        <p class="eyebrow">Next step</p>
+        <h2 class="next__title">Price the next job before you quote it</h2>
+        <p class="next__body" id="nextBody">This tool looks back at one job. The Embroidery Pricing Calculator builds your price from stitch count, blanks, and your rate, so you quote it right the first time.</p>
+        <a class="btn btn--primary" id="nextLink" href="#">See the Pricing Calculator</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>Margin Check · v1.2</span>
+    <span>triplethreadlabs.com</span>
+  </footer>
+</div>
+
+<!-- Mobile result chip -->
+<button class="chip" type="button" id="chip" aria-label="Jump to your result">
+  <span>Your pay</span><span class="chip__val" id="chipVal">$0/hr</span>
+</button>
+
+<!-- Persistent save bar -->
+<div class="savebar no-print">
+  <div class="savebar__inner">
+    <p class="savebar__msg" id="saveMsg"></p>
+    <div class="savebar__btns">
+      <button class="btn btn--ghost" type="button" id="importBtn">↑ Import CSV</button>
+      <button class="btn btn--primary" type="button" id="exportBtn">↓ Export Backup</button>
+    </div>
+  </div>
+</div>
+<input type="file" id="importFile" accept=".csv,text/csv" hidden>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* =====================================================
+   CONFIG: set these before going live
+   ===================================================== */
+// MailerLite subscribe endpoint: the same form the site signup uses
+// (Labs List, form 185767805174417230), so a signup here joins the list
+// and starts the same welcome sequence. The payload must use
+// fields[email] plus the ml-submit and anticsrf hidden fields,
+// exactly like the forms on triplethreadlabs.com.
+const EMAIL_ENDPOINT = 'https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/subscribe';
+// Where the "next step" button goes.
+const PRICING_CALCULATOR_URL = 'https://triplethreadlabs.com/embroidery-pricing-system/';
+
+/* =====================================================
+   STATE
+   ===================================================== */
+const STORAGE_KEY = 'ttc_margincheck_v1';
+
+// Realistic sample: 24 caps at $11 each, a common underpriced quote
+const SAMPLE = {
+  jobName: '24 caps, left chest logo',
+  charged: 264,
+  qty: 24,
+  blank: 6.5,
+  supplies: 0.4,
+  machineMin: 180,
+  otherMin: 150,
+  target: 35
+};
+
+const NUMERIC_FIELDS = ['charged', 'qty', 'blank', 'supplies', 'overhead', 'machineMin', 'otherMin', 'target'];
+const REQUIRED = { charged: 'what you charged', qty: 'the quantity', blank: 'your blank cost', target: 'your target hourly pay' };
+
+let state = {
+  inputs: { ...SAMPLE },
+  jobs: [],
+  unlocked: false,
+  email: '',
+  lastBackup: null,
+  bannerDismissed: false
+};
+let lastResult = null;
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const saved = JSON.parse(raw);
+      state = { ...state, ...saved, inputs: { ...SAMPLE, ...(saved.inputs || {}) } };
+    }
+  } catch (e) { /* storage blocked: tool still works for this visit */ }
+}
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+/* =====================================================
+   HELPERS
+   ===================================================== */
+const $ = (id) => document.getElementById(id);
+const money = (n, dec = 2) => (n < 0 ? '-' : '') + '$' + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+// Drops cents on round numbers and anything $100+ ("$35", "$358", "$12.50")
+const moneyShort = (n) => money(n, (Math.abs(n) >= 100 || Number.isInteger(round2(n))) ? 0 : 2);
+
+// Turns "$1,200" or " 35 " into a number. Returns null for blank, NaN for junk/negatives.
+function parseNum(raw) {
+  const clean = String(raw).replace(/[$,\s]/g, '');
+  if (clean === '') return null;
+  const n = Number(clean);
+  if (!isFinite(n) || n < 0) return NaN;
+  return n;
+}
+
+function formatDate(ts) {
+  const d = new Date(ts);
+  const date = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  return date + ' at ' + time;
+}
+
+// 20 -> "20 min", 330 -> "5 hr 30 min", 60 -> "1 hr"
+function formatDuration(mins) {
+  const m = Math.round(mins);
+  if (m < 60) return m + ' min';
+  const h = Math.floor(m / 60), rem = m % 60;
+  return h + ' hr' + (rem ? ' ' + rem + ' min' : '');
+}
+
+let toastTimer;
+function toast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('is-visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('is-visible'), 2600);
+}
+
+function setFieldError(key, msg) {
+  const wrap = document.querySelector('[data-field="' + key + '"]');
+  if (!wrap) return;
+  const help = wrap.querySelector('.field__help');
+  if (!help.dataset.default) help.dataset.default = help.textContent;
+  if (msg) {
+    wrap.classList.remove('is-error'); void wrap.offsetWidth; // restart shake
+    wrap.classList.add('is-error');
+    help.textContent = msg;
+  } else {
+    wrap.classList.remove('is-error');
+    help.textContent = help.dataset.default;
+  }
+}
+
+/* =====================================================
+   CALCULATION
+   ===================================================== */
+// costs  = qty x (blank + supplies) + overhead per hour x hours
+// profit = charged - costs
+// hours  = (machine + other minutes) / 60
+// hourly = profit / hours
+// goal   = costs + target x hours   (the price that pays your target rate)
+// gap    = goal - charged           (dollars left on the table, if positive)
+function calculateMargin(i) {
+  const missing = [];
+  Object.keys(REQUIRED).forEach(k => { if (i[k] === null || i[k] === undefined) missing.push(REQUIRED[k]); });
+  if (missing.length) return { empty: 'Add ' + missing[0] + ' to see your result.' };
+  if (!(i.qty > 0)) return { empty: 'Add how many pieces you stitched to see your result.' };
+
+  const minutes = (i.machineMin || 0) + (i.otherMin || 0);
+  if (!(minutes > 0)) return { empty: 'Add your time to see your hourly pay.' };
+
+  const supplies = i.supplies || 0;
+  const hours = minutes / 60;
+  const materials = i.qty * (i.blank + supplies);
+  const overheadCost = (i.overhead || 0) * hours;
+  const costs = materials + overheadCost;
+  const profit = i.charged - costs;
+  const hourly = profit / hours;
+  const goal = costs + i.target * hours;
+  const gap = goal - i.charged;
+
+  let status = 'good';
+  if (profit < 0) status = 'loss';
+  else if (hourly < i.target - 0.005) status = 'under';
+
+  return { costs, materials, overheadCost, profit, hours, hourly, goal, gap, status, qty: i.qty, target: i.target, charged: i.charged, overheadRate: i.overhead || 0 };
+}
+
+/* =====================================================
+   RENDER
+   ===================================================== */
+function render() {
+  const r = calculateMargin(state.inputs);
+  lastResult = r.empty ? null : r;
+
+  $('resultFull').hidden = !!r.empty;
+  $('resultEmpty').hidden = !r.empty;
+
+  if (r.empty) {
+    $('emptyMsg').textContent = r.empty;
+    $('chipVal').textContent = '...';
+    $('chipVal').classList.remove('is-loss');
+    renderSaveBar();
+    return;
+  }
+
+  // Status pill (label + icon, never color alone)
+  const status = $('status');
+  const labels = {
+    loss: '✕ Lost money',
+    under: '! Under your goal',
+    good: '✓ At or above your goal'
+  };
+  status.className = 'status status--' + r.status;
+  status.textContent = labels[r.status];
+
+  // Headline number
+  const hero = $('hero');
+  $('heroVal').textContent = money(r.hourly);
+  hero.classList.toggle('is-loss', r.hourly < 0);
+  hero.classList.remove('fade'); void hero.offsetWidth; hero.classList.add('fade');
+
+  // Plain-language verdict
+  // Spell out the time so it's clear the hourly number already accounts for it
+  const tgt = moneyShort(r.target);
+  const dur = formatDuration(r.hours * 60);
+  let v;
+  if (r.status === 'loss') {
+    v = 'You lost <strong>' + money(Math.abs(r.profit)) + '</strong> on this job before paying yourself anything for ' + dur + ' of work. To hit ' + tgt + ' an hour, it needed to be <strong>' + moneyShort(r.goal) + '</strong>.';
+  } else if (r.status === 'under') {
+    v = 'After ' + money(r.costs) + ' in costs, you kept ' + money(r.profit) + ' for ' + dur + ' of work. That\'s <strong>' + money(r.hourly) + ' an hour</strong>. To hit ' + tgt + ', this job needed to be <strong>' + moneyShort(r.goal) + '</strong>.';
+  } else {
+    v = 'After ' + money(r.costs) + ' in costs, you kept ' + money(r.profit) + ' for ' + dur + ' of work. That\'s <strong>' + money(r.hourly) + ' an hour</strong>, so you paid yourself ' + tgt + '/hr with <strong>' + money(-r.gap) + '</strong> profit on top.';
+  }
+  $('verdict').innerHTML = v;
+
+  // Sanity check on wild numbers
+  const note = $('note');
+  if (r.hourly > 500) {
+    note.textContent = "That's over $500 an hour. Double-check your minutes.";
+    note.classList.add('is-visible');
+  } else {
+    note.classList.remove('is-visible');
+  }
+
+  // Charged vs goal bars
+  const max = Math.max(r.charged, r.goal, 1);
+  $('barYou').style.width = Math.max(2, (r.charged / max) * 100) + '%';
+  $('barGoal').style.width = Math.max(2, (r.goal / max) * 100) + '%';
+  $('barYouVal').textContent = moneyShort(r.charged);
+  $('barGoalVal').textContent = moneyShort(r.goal);
+
+  // Stats
+  $('sCosts').textContent = money(r.costs);
+  $('sCostsLabel').textContent = r.overheadRate > 0 ? 'Blanks, supplies + overhead' : 'Blanks + supplies';
+  $('sCostsPer').textContent = money(r.costs / r.qty) + ' per piece';
+  $('sTime').textContent = money(r.target * r.hours);
+  $('sHours').textContent = dur + ' at ' + tgt + '/hr';
+
+  // Under goal: show the shortfall. At or above goal: show real profit after your pay.
+  const sGap = $('sGap');
+  if (r.gap > 0.005) {
+    $('sGapLabel').textContent = 'Left on the table';
+    sGap.textContent = money(r.gap);
+    sGap.className = 'stat__val stat__val--loss';
+    $('sGapPer').textContent = money(r.gap / r.qty) + ' per piece';
+  } else {
+    $('sGapLabel').textContent = 'Real profit after your pay';
+    sGap.textContent = money(-r.gap);
+    sGap.className = 'stat__val stat__val--accent';
+    $('sGapPer').textContent = money(-r.gap / r.qty) + ' per piece';
+  }
+
+  $('sGoal').textContent = money(r.goal);
+  $('sGoalPer').textContent = money(r.goal / r.qty) + ' per piece';
+
+  // Mobile chip
+  $('chipVal').textContent = money(r.hourly, 0) + '/hr';
+  $('chipVal').classList.toggle('is-loss', r.hourly < 0);
+
+  // Next-step copy adapts to the result
+  $('nextBody').textContent = r.status === 'good'
+    ? 'You nailed this one. The Embroidery Pricing Calculator helps you do it on every quote, built from stitch count, blanks, and your rate.'
+    : 'This tool looks back at one job. The Embroidery Pricing Calculator builds your price from stitch count, blanks, and your rate, so you quote it right the first time.';
+
+  renderSaveBar();
+}
+
+function renderJobs() {
+  const unlocked = state.unlocked;
+  $('gateCard').hidden = unlocked;
+  $('jobsCard').hidden = !unlocked;
+  if (!unlocked) return;
+
+  const body = $('jobsBody');
+  body.innerHTML = '';
+  $('jobsEmpty').hidden = state.jobs.length > 0;
+  $('jobsTable').hidden = state.jobs.length === 0;
+
+  state.jobs.slice().reverse().forEach(job => {
+    const tr = document.createElement('tr');
+    const gapText = job.gap > 0.005 ? money(job.gap, 0) : '$0';
+    tr.innerHTML =
+      '<td><div class="job-name"></div><div class="job-date"></div></td>' +
+      '<td class="num">' + moneyShort(job.charged) + '</td>' +
+      '<td class="num" style="font-weight:500;color:' + (job.hourly < job.target ? 'var(--loss)' : 'var(--green)') + '">' + money(job.hourly, 2) + '/hr</td>' +
+      '<td class="num hide-sm">' + gapText + '</td>' +
+      '<td class="no-print"><button class="row-del" type="button" aria-label="Delete job">×</button></td>';
+    tr.querySelector('.job-name').textContent = job.jobName || 'Untitled job';
+    tr.querySelector('.job-date').textContent = new Date(job.savedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    tr.querySelector('.row-del').addEventListener('click', () => deleteJob(job.id));
+    body.appendChild(tr);
+  });
+}
+
+function isSampleState() {
+  if (state.jobs.length) return false;
+  return Object.keys(SAMPLE).every(k => state.inputs[k] === SAMPLE[k]);
+}
+
+function renderSaveBar() {
+  const msg = $('saveMsg');
+  if (isSampleState()) {
+    msg.className = 'savebar__msg is-sample';
+    msg.textContent = 'This is sample data. Enter a job you already ran, then export a backup.';
+  } else if (!state.lastBackup) {
+    msg.className = 'savebar__msg is-warn';
+    msg.textContent = '⚠ Not backed up yet. Export a CSV to save your results. Your data lives in this browser only.';
+  } else {
+    msg.className = 'savebar__msg is-calm';
+    msg.textContent = 'Last backup: ' + formatDate(state.lastBackup) + '. Export again any time to stay current.';
+  }
+}
+
+/* =====================================================
+   INPUT HANDLING
+   ===================================================== */
+function fillInputs() {
+  $('jobName').value = state.inputs.jobName || '';
+  NUMERIC_FIELDS.forEach(k => {
+    const v = state.inputs[k];
+    $(k).value = (v === null || v === undefined) ? '' : v;
+    setFieldError(k, '');
+  });
+}
+
+function handleInput(e) {
+  const key = e.target.id;
+  dismissBanner();
+  if (key === 'jobName') {
+    state.inputs.jobName = e.target.value.trim();
+  } else {
+    const n = parseNum(e.target.value);
+    if (Number.isNaN(n)) return; // junk or negative: keep last good value, flag on blur
+    state.inputs[key] = n;
+    setFieldError(key, '');
+  }
+  saveState();
+  render();
+}
+
+function handleBlur(e) {
+  const key = e.target.id;
+  if (!NUMERIC_FIELDS.includes(key)) return;
+  const n = parseNum(e.target.value);
+  if (Number.isNaN(n)) {
+    const prev = state.inputs[key];
+    e.target.value = (prev === null || prev === undefined) ? '' : prev;
+    setFieldError(key, 'Use a number, 0 or higher.');
+  } else if (n === null && REQUIRED[key]) {
+    setFieldError(key, 'Add ' + REQUIRED[key] + ' to see your result.');
+  } else if (key === 'qty' && n === 0) {
+    setFieldError(key, 'Quantity needs to be at least 1.');
+  }
+}
+
+/* =====================================================
+   ONBOARDING BANNER
+   ===================================================== */
+function showWelcomeBanner() {
+  if (state.bannerDismissed || !isSampleState()) return;
+  $('welcomeBanner').classList.add('is-visible');
+}
+function dismissBanner() {
+  if (state.bannerDismissed) return;
+  state.bannerDismissed = true;
+  $('welcomeBanner').classList.remove('is-visible');
+  saveState();
+}
+
+/* =====================================================
+   EMAIL GATE
+   ===================================================== */
+async function submitEmail() {
+  const input = $('email');
+  const email = input.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setFieldError('email', 'Check your email address.');
+    input.focus();
+    return;
+  }
+  setFieldError('email', '');
+
+  const btn = $('emailBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  if (EMAIL_ENDPOINT) {
+    try {
+      const fd = new FormData();
+      fd.append('fields[email]', email);
+      fd.append('ml-submit', '1');
+      fd.append('anticsrf', 'true');
+      await fetch(EMAIL_ENDPOINT, { method: 'POST', body: fd, mode: 'no-cors' });
+    } catch (e) {
+      // Network hiccup: still unlock. Never punish the visitor for it.
+    }
+  } else {
+    console.warn('Margin Check: EMAIL_ENDPOINT is empty, so no email was sent.');
+  }
+
+  state.unlocked = true;
+  state.email = email;
+  saveState();
+  renderJobs();
+  toast("You're in. Check your inbox for the cheat sheet.");
+}
+
+/* =====================================================
+   SAVED JOBS
+   ===================================================== */
+function saveJob() {
+  if (!lastResult) { toast('Finish your numbers first, then save.'); return; }
+  const r = lastResult;
+  const job = {
+    id: Date.now().toString(36),
+    savedAt: Date.now(),
+    jobName: state.inputs.jobName || 'Job ' + (state.jobs.length + 1),
+    ...pickInputs(state.inputs),
+    hourly: round2(r.hourly),
+    profit: round2(r.profit),
+    goal: round2(r.goal),
+    gap: round2(Math.max(0, r.gap))
+  };
+  state.jobs.push(job);
+  saveState();
+  renderJobs();
+  renderSaveBar();
+  toast('Saved. Enter your next job to compare.');
+}
+function deleteJob(id) {
+  state.jobs = state.jobs.filter(j => j.id !== id);
+  saveState();
+  renderJobs();
+  renderSaveBar();
+}
+function pickInputs(i) {
+  const out = {};
+  NUMERIC_FIELDS.forEach(k => out[k] = i[k] ?? 0);
+  return out;
+}
+const round2 = (n) => Math.round(n * 100) / 100;
+
+/* =====================================================
+   CSV EXPORT / IMPORT
+   ===================================================== */
+const CSV_COLS = ['jobName', 'savedAt', 'charged', 'qty', 'blank', 'supplies', 'machineMin', 'otherMin', 'target', 'hourly', 'profit', 'goal', 'gap', 'overhead'];
+const CSV_HEAD = ['Job', 'Saved', 'Charged', 'Quantity', 'Blank per piece', 'Supplies per piece', 'Machine minutes', 'Other minutes', 'Target hourly', 'Real hourly', 'Kept before your pay', 'Goal price', 'Left on table', 'Overhead per hour'];
+
+function csvCell(v) {
+  const s = String(v ?? '');
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+
+function exportCSV() {
+  if (!state.unlocked) {
+    const card = $('gateCard');
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => $('email').focus(), 400);
+    toast('Add your email to export your results.');
+    return;
+  }
+  // If nothing is saved yet, export the job on screen
+  let rows = state.jobs.slice();
+  if (!rows.length && lastResult) {
+    rows = [{ jobName: state.inputs.jobName || 'Job 1', savedAt: Date.now(), ...pickInputs(state.inputs), hourly: round2(lastResult.hourly), profit: round2(lastResult.profit), goal: round2(lastResult.goal), gap: round2(Math.max(0, lastResult.gap)) }];
+  }
+  if (!rows.length) { toast('Nothing to export yet.'); return; }
+
+  const lines = [CSV_HEAD.join(',')];
+  rows.forEach(j => {
+    lines.push(CSV_COLS.map(c => c === 'savedAt' ? csvCell(new Date(j.savedAt).toISOString()) : csvCell(j[c])).join(','));
+  });
+  const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'margin-check-' + new Date().toISOString().slice(0, 10) + '.csv';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+
+  state.lastBackup = Date.now();
+  saveState();
+  renderSaveBar();
+  toast('Backup downloaded.');
+}
+
+// Small CSV parser that handles quoted cells
+function parseCSV(text) {
+  const rows = [];
+  let row = [], cell = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (q) {
+      if (ch === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+      else if (ch === '"') q = false;
+      else cell += ch;
+    } else if (ch === '"') q = true;
+    else if (ch === ',') { row.push(cell); cell = ''; }
+    else if (ch === '\n' || ch === '\r') {
+      if (ch === '\r' && text[i + 1] === '\n') i++;
+      row.push(cell); rows.push(row); row = []; cell = '';
+    } else cell += ch;
+  }
+  if (cell || row.length) { row.push(cell); rows.push(row); }
+  return rows.filter(r => r.some(c => c.trim() !== ''));
+}
+
+function importCSV(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const rows = parseCSV(String(reader.result));
+      if (rows.length < 2 || rows[0][0].trim() !== 'Job') throw new Error('bad header');
+      let added = 0;
+      rows.slice(1).forEach(r => {
+        const job = { id: Date.now().toString(36) + added };
+        CSV_COLS.forEach((c, idx) => {
+          const raw = r[idx] ?? '';
+          if (c === 'jobName') job[c] = raw;
+          else if (c === 'savedAt') job[c] = Date.parse(raw) || Date.now();
+          else job[c] = Number(raw) || 0;
+        });
+        if (job.qty > 0) { state.jobs.push(job); added++; }
+      });
+      if (!added) throw new Error('no rows');
+      state.unlocked = true;
+      state.lastBackup = Date.now();
+      saveState();
+      renderJobs();
+      renderSaveBar();
+      toast(added + (added === 1 ? ' job' : ' jobs') + ' imported.');
+    } catch (e) {
+      toast("That file doesn't look like a Margin Check backup.");
+    }
+  };
+  reader.readAsText(file);
+}
+
+/* =====================================================
+   RESET (two-tap, no confirm dialog)
+   ===================================================== */
+let resetArmed = false, resetTimer;
+function handleReset() {
+  const btn = $('resetBtn');
+  if (!resetArmed) {
+    resetArmed = true;
+    btn.classList.add('is-armed');
+    btn.textContent = state.jobs.length ? 'Tap again to clear your job and saved jobs' : 'Tap again to clear your numbers';
+    resetTimer = setTimeout(disarmReset, 3500);
+    return;
+  }
+  disarmReset();
+  state.inputs = { ...SAMPLE };
+  state.jobs = [];
+  state.lastBackup = null;
+  saveState();
+  fillInputs();
+  render();
+  renderJobs();
+  toast('Back to the sample job.');
+}
+function disarmReset() {
+  resetArmed = false;
+  clearTimeout(resetTimer);
+  const btn = $('resetBtn');
+  btn.classList.remove('is-armed');
+  btn.textContent = 'Reset to sample job';
+}
+
+/* =====================================================
+   MOBILE CHIP: show only when the result card is off screen
+   ===================================================== */
+function setupChip() {
+  const chip = $('chip');
+  chip.addEventListener('click', () => $('resultsCard').scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(([entry]) => {
+    chip.classList.toggle('is-visible', !entry.isIntersecting && entry.boundingClientRect.top > 0);
+  }, { threshold: 0.15 });
+  io.observe($('resultsCard'));
+}
+
+/* =====================================================
+   INIT
+   ===================================================== */
+function init() {
+  loadState();
+  fillInputs();
+
+  document.querySelectorAll('#inputsCard input').forEach(el => {
+    el.addEventListener('input', handleInput);
+    el.addEventListener('blur', handleBlur);
+  });
+
+  $('bannerClose').addEventListener('click', dismissBanner);
+  $('emailBtn').addEventListener('click', submitEmail);
+  $('email').addEventListener('keydown', e => { if (e.key === 'Enter') submitEmail(); });
+  $('email').addEventListener('input', () => {
+    const b = $('emailBtn');
+    if (b.disabled) { b.disabled = false; b.textContent = 'Send Me My Results'; }
+  });
+  $('saveJobBtn').addEventListener('click', saveJob);
+  $('printBtn').addEventListener('click', () => window.print());
+  $('exportBtn').addEventListener('click', exportCSV);
+  $('importBtn').addEventListener('click', () => $('importFile').click());
+  $('importFile').addEventListener('change', e => {
+    if (e.target.files[0]) importCSV(e.target.files[0]);
+    e.target.value = '';
+  });
+  $('resetBtn').addEventListener('click', handleReset);
+  $('nextLink').href = PRICING_CALCULATOR_URL;
+
+  render();
+  renderJobs();
+  showWelcomeBanner();
+  setupChip();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
