@@ -189,7 +189,11 @@
     background: #fff;
     margin-top: 2px;
     transition: background 150ms ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
+  .tool-row:focus-visible { outline: 2px solid var(--green); outline-offset: -2px; }
   .tool-row:hover { background: var(--off-white); }
   .tool-row--last { border-bottom: none; }
   .tool-row--pale { background: var(--green-pale); }
@@ -447,7 +451,7 @@
     <span class="toolkit__note">No bloat, no subscriptions, no installs. Every file runs in your browser, offline.</span>
   </div>
 
-  <div class="tool-row tool-row--first">
+  <a class="tool-row tool-row--first" href="/embroidery-pricing-system/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <div class="tool-row__title-line">
@@ -464,11 +468,11 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$21.24</span> <span class="tool-row__was tabular">$24.99</span>
-      <a class="tool-row__cta" href="/embroidery-pricing-system/">See how it works</a>
+      <span class="tool-row__cta">See how it works</span>
     </div>
-  </div>
+  </a>
 
-  <div class="tool-row">
+  <a class="tool-row" href="/dtf-gang-sheet-builder/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <span class="tool-row__name">DTF Gang Sheet Builder</span>
@@ -482,11 +486,11 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$29.74</span> <span class="tool-row__was tabular">$34.99</span>
-      <a class="tool-row__cta" href="/dtf-gang-sheet-builder/">See how it works</a>
+      <span class="tool-row__cta">See how it works</span>
     </div>
-  </div>
+  </a>
 
-  <div class="tool-row">
+  <a class="tool-row" href="/dtf-pricing-tool/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <span class="tool-row__name">DTF Pricing Calculator</span>
@@ -500,11 +504,11 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$21.24</span> <span class="tool-row__was tabular">$24.99</span>
-      <a class="tool-row__cta" href="/dtf-pricing-tool/">See how it works</a>
+      <span class="tool-row__cta">See how it works</span>
     </div>
-  </div>
+  </a>
 
-  <div class="tool-row tool-row--hide-mobile">
+  <a class="tool-row tool-row--hide-mobile" href="/patch-price-builder/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <span class="tool-row__name">Patch Price Builder</span>
@@ -518,11 +522,11 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$11.89</span> <span class="tool-row__was tabular">$13.99</span>
-      <a class="tool-row__cta" href="/patch-price-builder/">See how it works</a>
+      <span class="tool-row__cta">See how it works</span>
     </div>
-  </div>
+  </a>
 
-  <div class="tool-row tool-row--pale tool-row--hide-mobile">
+  <a class="tool-row tool-row--pale tool-row--hide-mobile" href="/embroidery-starter-kit/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <div class="tool-row__title-line">
@@ -539,11 +543,11 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$29.74</span> <span class="tool-row__was tabular">$34.99</span>
-      <a class="tool-row__cta" href="/embroidery-starter-kit/">See what's inside</a>
+      <span class="tool-row__cta">See what's inside</span>
     </div>
-  </div>
+  </a>
 
-  <div class="tool-row tool-row--pale tool-row--hide-mobile">
+  <a class="tool-row tool-row--pale tool-row--hide-mobile" href="/dtf-starter-kit/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <div class="tool-row__title-line">
@@ -560,11 +564,11 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$38.24</span> <span class="tool-row__was tabular">$44.99</span>
-      <a class="tool-row__cta" href="/dtf-starter-kit/">See what's inside</a>
+      <span class="tool-row__cta">See what's inside</span>
     </div>
-  </div>
+  </a>
 
-  <div class="tool-row tool-row--dark tool-row--last">
+  <a class="tool-row tool-row--dark tool-row--last" href="/shop-suite-pro/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <div class="tool-row__title-line">
@@ -581,9 +585,9 @@
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__price tabular">$51.99</span>
-      <a class="tool-row__cta" href="/shop-suite-pro/">See all 8 modules</a>
+      <span class="tool-row__cta">See all 8 modules</span>
     </div>
-  </div>
+  </a>
 
   <a href="/tools/" class="mobile-only" style="display:block;text-align:center;margin-top:16px;font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);">See all seven tools →</a>
 </section>
