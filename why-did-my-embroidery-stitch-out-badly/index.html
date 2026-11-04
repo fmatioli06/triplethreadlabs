@@ -172,6 +172,9 @@
   .cta-band h3 { font-family: 'Oswald', sans-serif; font-size: 26px; margin: 0 0 10px; color: #fff; }
   .cta-band p { color: #c9c9c9 !important; font-size: 16px !important; max-width: 560px; margin: 0 auto 22px !important; }
   .cta-band .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .answer-box { background: var(--green-pale); border: 1px solid var(--line-on-pale); border-left: 4px solid var(--green); border-radius: var(--radius-md, 12px); padding: 20px 24px; margin: 24px 0 4px; }
+  .answer-box__label { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+  .answer-box p { margin: 0 !important; font-size: 16px !important; line-height: 1.6 !important; }
   .toc { background: var(--off-white); border: 1px solid var(--line); border-radius: var(--radius-md, 12px); padding: 22px 26px; margin: 28px 0 8px; }
   .toc .toc-label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px; }
   .toc ol { margin: 0 0 0 20px !important; font-size: 15px !important; line-height: 2 !important; }
@@ -238,7 +241,10 @@
   <article class="guide-left">
     <div class="guide-meta">Free guide · October 2026</div>
     <h1>Why Did My Embroidery Stitch Out Badly? How to Tell a File Problem From a Machine Problem</h1>
-    <p class="guide-lead">The design looked fine on screen. Then it came off the machine puckered, or the thread broke six times, or the little lettering turned into a blob. Almost every bad stitch-out is one of six symptoms, and each one splits the same way: something on your side of the machine, or something inside the file. Here is how to tell which, in the order I check them in my own shop.</p>
+    <div class="answer-box">
+      <div class="answer-box__label">The short answer</div>
+      <p>Do not start by changing settings, and do not start by blaming the digitizer. Read the failed sample first: where it failed, when it failed, and whether it fails the same way twice sorts most problems into machine or file in about two minutes. Then run the swap test, a design you trust on today's exact setup. If it stitches clean, your setup is fine and the problem lives in the new file. If it fails the same way, the file is innocent and the problem is on your side.</p>
+    </div>
 
     <div class="toc">
       <div class="toc-label">In this guide</div>
@@ -256,6 +262,8 @@
         <li><a href="#faq">Straight answers</a></li>
       </ol>
     </div>
+    <p class="guide-lead">The design looked fine on screen. Then it came off the machine puckered, or the thread broke six times, or the little lettering turned into a blob. Almost every bad stitch-out is one of six symptoms, and each one splits the same way: something on your side of the machine, or something inside the file. Here is how to tell which, in the order I check them in my own shop.</p>
+
 
     <h2 id="short">The short answer</h2>
     <p>Do not start by changing settings, and do not start by blaming the digitizer. Start by reading the failed sample, because the sample already knows what went wrong. Where it failed, when it failed, and whether it fails the same way twice will sort most problems into machine or file in about two minutes.</p>
