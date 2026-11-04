@@ -203,6 +203,13 @@
   .faq-row { display: flex; gap: 28px; padding: 18px 0; border-bottom: 1px solid var(--line-on-white); }
   .faq-q { width: 260px; flex-shrink: 0; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14.5px; color: var(--black); }
   .faq-a { flex: 1; font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .review-card { background: var(--green-pale); border: 1px solid var(--line-on-pale); border-radius: var(--radius-sm); padding: 20px; display: flex; flex-direction: column; gap: 10px; margin: 0; }
+  .review-card__stars { color: var(--green); font-size: 15px; letter-spacing: 3px; }
+  .review-card__text { font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--black); margin: 0; }
+  .review-card__who { margin-top: auto; font-size: 12.5px; font-weight: 500; color: var(--warm-gray); }
+  @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+
 
   /* Buy box */
   .buy-box { background: #fff; border: 1px solid var(--line-on-offwhite); border-radius: var(--radius-lg); box-shadow: var(--shadow-elevated); overflow: hidden; }
@@ -413,6 +420,18 @@
           <span class="module-cell__name">Inventory</span>
           <p>Track blanks, thread, and supplies with quantities, unit costs, and low-stock thresholds. Automatic alerts when you're running low or out.</p>
         </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>What shop owners say</h2>
+      <p class="section-block__sub">Real reviews from the TripleThreadLabs Etsy shop, in buyers' own words.</p>
+      <div class="reviews-grid">
+        <figure class="review-card">
+          <span class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote class="review-card__text">If I could give 10 stars I would. Easy to use and I had a tough time with all the inventory and they add a bulk for us. This is how you do Customer Service.</blockquote>
+          <figcaption class="review-card__who">Sharin &middot; Jun 22, 2026</figcaption>
+        </figure>
       </div>
     </div>
 
