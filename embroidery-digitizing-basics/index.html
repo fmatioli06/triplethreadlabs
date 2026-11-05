@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embroidery Digitizing Basics: What to Understand Even If You Never Digitize | Triple Thread Labs</title>
+<meta name="description" content="You do not have to digitize to run a good embroidery shop, but you do have to read a stitch file. The plain vocabulary, the formats, and the pre-flight habits that catch file problems before they cost you a garment.">
+<link rel="canonical" href="https://triplethreadlabs.com/embroidery-digitizing-basics/">
+
+<meta property="og:title" content="Embroidery Digitizing Basics: What to Understand Even If You Never Digitize">
+<meta property="og:description" content="You do not have to digitize to run a good embroidery shop, but you do have to read a stitch file. The plain vocabulary, the formats, and the pre-flight habits that catch file problems before they cost you a garment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://triplethreadlabs.com/embroidery-digitizing-basics/">
+<meta property="og:site_name" content="Triple Thread Labs">
+<meta property="og:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Embroidery Digitizing Basics: What to Understand Even If You Never Digitize">
+<meta name="twitter:description" content="You do not have to digitize to run a good embroidery shop, but you do have to read a stitch file. The plain vocabulary, the formats, and the pre-flight habits that catch file problems before they cost you a garment.">
+<meta name="twitter:image" content="https://triplethreadlabs.com/assets/social-preview.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232D7A4F%22/><text x=%2250%22 y=%2268%22 font-family=%22serif%22 font-size=%2260%22 fill=%22white%22 text-anchor=%22middle%22>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css?v=20261006">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://triplethreadlabs.com/#organization",
+      "name": "Triple Thread Labs",
+      "url": "https://triplethreadlabs.com",
+      "logo": "https://triplethreadlabs.com/assets/logo.png",
+      "description": "Browser-based tools for embroidery and DTF shops. Pricing, gang sheets, and business management, no installs, no subscriptions.",
+      "founder": {
+        "@type": "Person",
+        "name": "Felipe Matioli",
+        "jobTitle": "Founder"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Raleigh",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://triplethreadlabs.etsy.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://triplethreadlabs.com/#website",
+      "url": "https://triplethreadlabs.com",
+      "name": "Triple Thread Labs",
+      "description": "Tools for embroidery and DTF shops. Price jobs, build gang sheets, run your business.",
+      "publisher": {
+        "@id": "https://triplethreadlabs.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Embroidery Digitizing Basics: What to Understand Even If You Never Digitize",
+      "description": "You do not have to digitize to run a good embroidery shop, but you do have to read a stitch file. The plain vocabulary, the formats, and the pre-flight habits that catch file problems before they cost you a garment.",
+      "url": "https://triplethreadlabs.com/embroidery-digitizing-basics/",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Person",
+        "name": "Felipe Matioli",
+        "jobTitle": "Founder, Triple Thread Labs",
+        "description": "Runs an embroidery shop in Raleigh, NC and builds pricing tools for embroidery and DTF businesses."
+      },
+      "publisher": {
+        "@id": "https://triplethreadlabs.com/#organization"
+      },
+      "mainEntityOfPage": "https://triplethreadlabs.com/embroidery-digitizing-basics/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I just resize a design file to the size I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A little, carefully, and it is a gamble. Scaling a machine file stretches or squeezes the stitches already there instead of redrawing them, so shrinking crowds stitches together and growing spreads them into gaps. Small nudges often survive, and the test stitch decides. A real size change is made from the working file, where stitches get recalculated, so ask whoever made the file for the size you actually need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to learn digitizing software to run an embroidery shop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Plenty of working shops buy most of their designs and never open digitizing software. The skill you cannot skip is the literacy in this guide: what a file is, what the main settings do, how to test what you bought, and how to describe a problem when one shows up. Learning the software is a business choice about your time, not a requirement."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  .guide-body { max-width: 1180px; margin: 0 auto; padding: 8px 28px 60px; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; align-items: start; }
+  .guide-left { min-width: 0; }
+  .guide-left p { font-size: 17px; line-height: 1.75; color: var(--charcoal); margin: 0 0 18px; font-weight: 300; }
+  .guide-left p strong { font-weight: 600; }
+  .guide-left h2 { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 600; letter-spacing: 0.3px; margin: 44px 0 16px; color: var(--black); }
+  .guide-left h3 { font-family: 'Oswald', sans-serif; font-size: 21px; font-weight: 600; margin: 30px 0 10px; color: var(--black); }
+  .guide-left ul, .guide-left ol { margin: 0 0 20px 22px; font-size: 17px; line-height: 1.75; color: var(--charcoal); font-weight: 300; }
+  .guide-left li { margin-bottom: 8px; }
+  .guide-left li strong { font-weight: 600; }
+  .guide-left a:not(.btn) { color: var(--green); font-weight: 500; }
+  .guide-meta { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); font-family: 'Oswald', sans-serif; margin-bottom: 14px; }
+  .guide-left h1 { font-family: 'Oswald', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; line-height: 1.08; letter-spacing: 0.2px; margin: 0 0 18px; color: var(--black); }
+  .guide-lead { font-size: 20px !important; line-height: 1.65 !important; color: var(--warm-gray) !important; }
+  .formula-box { background: var(--green-pale); border: 1px solid #cfe8d8; border-radius: var(--radius-md, 12px); padding: 26px 28px; margin: 26px 0 30px; }
+  .formula-box .formula-label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+  .formula-box .formula-line { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 500; color: var(--black); line-height: 1.9; }
+  .formula-box .formula-note { font-size: 14px; color: var(--warm-gray); margin-top: 10px; line-height: 1.6; }
+  .cost-table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 15px; }
+  .cost-table th { text-align: left; font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); padding: 10px 12px; border-bottom: 2px solid var(--line); }
+  .cost-table td { padding: 11px 12px; border-bottom: 1px solid var(--line); color: var(--charcoal); font-weight: 300; vertical-align: top; }
+  .cost-table td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 500; color: var(--black); }
+  .cost-table tr.total td { font-weight: 600; color: var(--black); border-bottom: none; background: var(--off-white); }
+  .cost-table tr.price td { font-weight: 700; color: var(--green); border-bottom: none; font-size: 16px; }
+  .example-card { border: 1px solid var(--line); border-radius: var(--radius-md, 12px); padding: 24px 26px; margin: 24px 0; background: var(--white); }
+  .example-card .example-title { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+  .example-card .example-sub { font-size: 14px; color: var(--mid-gray); margin-bottom: 14px; }
+  .callout { border-left: 4px solid var(--green); background: var(--off-white); padding: 18px 22px; margin: 26px 0; border-radius: 0 10px 10px 0; }
+  .callout p { margin: 0 !important; font-size: 16px !important; }
+  .callout.warn { border-left-color: var(--warn); background: var(--warn-soft); }
+  .cta-band { background: var(--black); color: var(--off-white); border-radius: var(--radius-md, 12px); padding: 34px 32px; margin: 40px 0; text-align: center; }
+  .cta-band h3 { font-family: 'Oswald', sans-serif; font-size: 26px; margin: 0 0 10px; color: #fff; }
+  .cta-band p { color: #c9c9c9 !important; font-size: 16px !important; max-width: 560px; margin: 0 auto 22px !important; }
+  .cta-band .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .answer-box { background: var(--green-pale); border: 1px solid var(--line-on-pale); border-left: 4px solid var(--green); border-radius: var(--radius-md, 12px); padding: 20px 24px; margin: 24px 0 4px; }
+  .answer-box__label { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+  .answer-box p { margin: 0 !important; font-size: 16px !important; line-height: 1.6 !important; }
+  .toc { background: var(--off-white); border: 1px solid var(--line); border-radius: var(--radius-md, 12px); padding: 22px 26px; margin: 28px 0 8px; }
+  .toc .toc-label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px; }
+  .toc ol { margin: 0 0 0 20px !important; font-size: 15px !important; line-height: 2 !important; }
+  .toc a { color: var(--charcoal); font-weight: 400; text-decoration: none; }
+  .toc a:hover { color: var(--green); }
+  .guide-right { position: sticky; top: 24px; }
+  .author-box { border: 1px solid var(--line); border-radius: var(--radius-md, 12px); padding: 24px; background: var(--white); margin-bottom: 20px; }
+  .author-box .author-label { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px; }
+  .author-box p { font-size: 14.5px; line-height: 1.65; color: var(--warm-gray); margin: 0; font-weight: 300; }
+  .sticky-cta { background: var(--green-pale); border: 1px solid #cfe8d8; border-radius: var(--radius-md, 12px); padding: 24px; }
+  .sticky-cta h4 { font-family: 'Oswald', sans-serif; font-size: 18px; margin: 0 0 8px; }
+  .sticky-cta p { font-size: 14px; line-height: 1.6; color: var(--warm-gray); margin: 0 0 16px; font-weight: 300; }
+  .faq-list { margin-top: 8px; }
+  .faq-row { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .faq-q { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--black); }
+  .faq-a { font-size: 16px; line-height: 1.7; color: var(--charcoal); font-weight: 300; }
+  @media (max-width: 960px) {
+    .guide-body { grid-template-columns: 1fr; padding: 8px 20px 48px; }
+    .guide-right { position: static; }
+  }
+  .related { border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; margin: 40px 0; background: var(--white); }
+  .related__label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 12px; }
+  .related a.related__link { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; color: var(--black); text-decoration: none; }
+  .related a.related__link:hover { color: var(--green); }
+  .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
+  .related p:last-child { margin-bottom: 0 !important; }
+</style>
+</head>
+<body>
+
+<header class="site-header site-header--light product-header">
+  <a href="/" class="logo logo--light">
+    <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="logo__text">
+      <span class="logo__triple">Triple</span>
+      <span class="logo__word"><span class="logo__thread">thread</span><span class="logo__labs">labs</span><span class="logo__dot">.</span></span>
+    </span>
+    <span class="sr-only">Triple Thread Labs</span>
+  </a>
+  <nav class="site-nav desktop-only" aria-label="Primary">
+    <a class="site-nav__item" href="/tools/">Tools</a>
+    <a class="site-nav__item" href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a class="site-nav__item" href="/embroidery-pricing-calculator/">Embroidery calc</a>
+    <a class="site-nav__item" href="/dtf-pricing-calculator/">DTF calc</a>
+    <a class="site-nav__item" href="/about/">About</a>
+    <a class="header-cta" href="/embroidery-pricing-calculator/">Free calculator</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay__close" id="navClose" aria-label="Close menu">&times;</button>
+  <a href="/tools/">Tools</a>
+  <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+  <a href="/embroidery-pricing-calculator/">Free embroidery calculator</a>
+  <a href="/dtf-pricing-calculator/">Free DTF calculator</a>
+  <a href="/about/">About</a>
+</div>
+
+
+<div class="guide-body">
+  <article class="guide-left">
+    <div class="guide-meta">Free guide · November 2026</div>
+    <h1>Embroidery Digitizing Basics: What to Understand Even If You Never Digitize</h1>
+    <div class="answer-box">
+      <div class="answer-box__label">The short answer</div>
+      <p>A digitized design is not a picture. It is a set of instructions your machine follows, and every detail in the artwork became a decision somebody made. You never have to make those decisions to run a good shop, but you do have to speak the language: density, pull compensation, underlay, what a format can carry, and why resizing is not free. Add one habit, test stitching every new file before it touches a customer garment, and most file problems stop being mysteries.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-label">In this guide</div>
+      <ol>
+        <li><a href="#short">The short answer</a></li>
+        <li><a href="#formats">File formats, in plain terms</a></li>
+        <li><a href="#words">The words that run every design</a></li>
+        <li><a href="#easyhard">What makes a design easy or hard to run</a></li>
+        <li><a href="#preflight">The pre-flight: check the file before the garment</a></li>
+        <li><a href="#buying">Buying digitizing: what to send, what to ask</a></li>
+        <li><a href="#faq">Straight answers</a></li>
+      </ol>
+    </div>
+    <p class="guide-lead">A customer hands you a logo and wants it on twenty polos by Friday. Between the picture and the polos sits a file you did not make, full of decisions you cannot see. Digitizing is that translation step, artwork in, stitch instructions out. This guide is the working literacy: what the file is, the handful of words behind every design, and how to order and test digitizing.</p>
+
+
+    <h2 id="short">The short answer</h2>
+    <p>Digitizing is translation. The artwork is made of pixels or shapes; the stitch file is made of needle penetrations, points the needle will hit, sequenced first stitch to last. The file says where every stitch goes, in what order, with what kind of stitch, and when to stop, trim, and change color. Your machine does not see a logo. It follows coordinates.</p>
+    <p>So digitizing is a chain of judgment calls: how wide that column is, which direction the stitches run, where one color stops and the next starts. A digitizer makes those calls one element at a time, which is why it costs money, and why one-click auto-convert buttons disappoint: they trace the shapes, skip the judgment, and the skipping shows up first in lettering.</p>
+    <p>That is why two files of the same logo sew completely differently, and why a design is only ever good or bad <strong>at a size, on a fabric, for a placement</strong>.</p>
+
+    <h2 id="formats">File formats, in plain terms</h2>
+    <p>Files come in two families.</p>
+    <p><strong>Working files are the editable source.</strong> Each digitizing program keeps the design as objects with settings attached, in its own working format. This is where changes happen: proper resizing, lettering edits, the settings this guide describes. If you buy digitizing, the working file usually stays with the digitizer. That is normal.</p>
+    <p><strong>Machine files are the flattened instructions.</strong> Your machine reads one family of these and ignores the rest. A file in the wrong format does not sew badly, it does not load. The names you will meet most:</p>
+    <ul>
+      <li><strong>DST</strong> is the commercial standard, the format most shops and digitizers pass around. It carries the stitch commands and very little else, including almost no color information. A DST showing nonsense colors on screen is not broken, it never knew the colors.</li>
+      <li><strong>PES</strong> is the Brother format, the one the machines I started on read. <strong>JEF</strong> is Janome's, <strong>VP3</strong> and <strong>EXP</strong> cover other brands. Yours is in your manual.</li>
+    </ul>
+    <p>Two habits save trouble. Name your format in the order, not after delivery. And expect a delivery to include the size, the stitch count, and a run sheet with the color order. If all you got was a bare file, ask for them. You need all three for the pre-flight below.</p>
+
+    <h2 id="words">The words that run every design</h2>
+    <p>Six terms cover most of what a digitizer controls.</p>
+    <h3>The three stitch types</h3>
+    <p>Almost everything sewn is one of three stitches. A <strong>running stitch</strong> is a single line, for outlines, fine detail, and travel. A <strong>satin stitch</strong> is a column, thread swinging side to side across a narrow shape, why lettering and borders shine. A <strong>fill stitch</strong> (often called tatami) covers area in rows stepping back and forth.</p>
+    <h3>Density</h3>
+    <p>Density is how closely the rows of a fill, or the swings of a satin, are packed. More density means fuller coverage, more pull on the fabric, more stiffness, more needle hits in one place. Too little and the fabric grins through. Too much in one small area and the needle hammers the same spots until the thread gives up, the file side of breaks that repeat at one spot. Density is a dial, not a virtue, set for a fabric and a size.</p>
+    <h3>Pull compensation</h3>
+    <p>Stitches pull inward as they sew, so columns and fills finish narrower than drawn. Pull compensation is the digitizer adding a little width back. Too little, and fills fall short of their outlines and gaps open along the edges. A common file-side cause of bad stitch-outs, and an easy fix if you can name it and show the sewout.</p>
+    <h3>Underlay</h3>
+    <p>Underlay is the foundation sewn underneath the stitches you see. A lighter structure goes down first, anchoring fabric to backing and keeping edges clean. Invisible in the finished piece, it carries a good share of how crisp that piece looks. Thin underlay is a prime suspect when a design looks tired on textured fabric.</p>
+    <h3>Stitch count and sequencing</h3>
+    <p>Stitch count is the file's size in time: run time, thread use, how hard the design works the fabric. A small design with a huge count is telling you something early. Sequencing is the order of operations; bad sequencing shows up as extra trims and outlines landing before the fill they edge.</p>
+
+    <h2 id="easyhard">What makes a design easy or hard to run</h2>
+    <p>Before a file exists, the artwork itself is already easy or hard.</p>
+    <ul>
+      <li><strong>Small text is the hardest common request.</strong> Letters need columns wide enough to hold stitches and openings that stay open. Plain block lettering under about 5 mm tall starts losing the openings inside a, e, and o on most fabrics, and script or serif styles need noticeably more room. Treat 5 mm as a starting point, not a guarantee, and let a test stitch settle it.</li>
+      <li><strong>Many colors in a small area</strong> means many stops, trims, and restarts packed together. Restarts are where loose tails and messes start, and every trim is a chance for a break.</li>
+      <li><strong>Big dense fills</strong> pull hard from every direction. They just need support under them and a file built for them.</li>
+      <li><strong>The job changes underneath it.</strong> A file built picturing a stable woven, then run on a stretchy knit, is a mismatch the digitizer never got to plan for.</li>
+    </ul>
+    <p>None of this means refusing the job. It means the conversation happens before the invoice: make the lettering a size that survives, simplify the detail that will not read, or drop what will not sew. Customers accept those calls better before production than after a failed run.</p>
+    <p>One more, because it bites everyone: <strong>resizing a machine file is not free.</strong> Scaling does not redraw the design, it stretches or squeezes the stitches already there. Grow it and fills spread into gaps. Shrink it and stitches crowd, density climbs, lettering fills in. A real resize happens in the working file, where stitches get recalculated. Small nudges usually survive, test stitch as judge, but a jacket back design will not shrink to a left chest without a redraw.</p>
+
+    <h2 id="preflight">The pre-flight: check the file before the garment</h2>
+    <p>Every new file, every time. Five minutes here is cheaper than one ruined blank.</p>
+    <ol>
+      <li><strong>Confirm what you received.</strong> Format your machine reads, size matching the order, stitch count in hand. A missing run sheet gets asked for now, not discovered mid-run.</li>
+      <li><strong>Measure the smallest lettering.</strong> About 5 mm for plain block as a starting point, more for script and serif. Under the floor, the fix belongs in the file.</li>
+      <li><strong>Look for the crowded places.</strong> Tiny detail, stacked color changes, one area doing heavy work. That is where breaks and blobs are born.</li>
+      <li><strong>Test stitch the actual file.</strong> On scrap close to the real fabric, with your planned backing. Not a trusted design, this design. Read the sample: where did it go wrong, when, and does it fail in the same spot twice? Problems that repeat in the same spot live in the file. Problems that wander live in your setup. My guide to <a href="/why-did-my-embroidery-stitch-out-badly/">reading a bad stitch-out</a> walks through that sorting.</li>
+      <li><strong>Note what you ran.</strong> File name and version, size, fabric, backing, what the test showed, saved with the job. The reorder should start from your notes, not your memory.</li>
+    </ol>
+    <p>I keep a one page version of this check with the guide, <a href="/embroidery-digitizing-basics/printable/">the Design Pre-Flight Check</a>. Print it, tape it near the machine, and run it with a pencil. It sits with my other free checks and calculators on the <a href="/free-tools/">free tools page</a>.</p>
+
+    <h2 id="buying">Buying digitizing: what to send, what to ask</h2>
+    <p>Most shop owners buy far more digitizing than they ever make. Buying it well is mostly communication.</p>
+    <h3>What to send</h3>
+    <ul>
+      <li><strong>The cleanest artwork you have.</strong> A vector file if one exists, otherwise the largest, clearest image available. Fuzzy in, fuzzy out: the digitizer can only decide edges they can see.</li>
+      <li><strong>The finished size.</strong> The exact height or width it will sew at, not "about left-chest size." Size changes how the file is built.</li>
+      <li><strong>The fabric or item, and the placement.</strong> A left chest on a polo and the same logo on a structured cap are different files wearing the same artwork.</li>
+      <li><strong>Your machine format and your deadline.</strong> Both are cheap to state and expensive to discover late.</li>
+    </ul>
+    <h3>What to ask</h3>
+    <ul>
+      <li><strong>What will I receive?</strong> Your machine format, plus the size, the stitch count, and a run sheet with the color order. A bare file is not a complete answer.</li>
+      <li><strong>What size was it digitized for?</strong> And what happens if you need it noticeably bigger or smaller later. A second size usually means a new file.</li>
+      <li><strong>How do revisions work?</strong> If your test stitch shows a file problem, most digitizers would rather fix it than lose you. Send a photo of the sewout and three facts: what fabric, what size, what you saw. My <a href="/why-did-my-embroidery-stitch-out-badly/">stitch-out guide</a> templates that message.</li>
+    </ul>
+    <p>Notice what is not on either list: promises about how the design must sew. You test the file and let the evidence negotiate. That is the whole of buying digitizing well.</p>
+
+    <div class="related">
+      <div class="related__label">Related guides</div>
+      <a class="related__link" href="/why-did-my-embroidery-stitch-out-badly/">Why Did My Embroidery Stitch Out Badly?</a>
+      <p>Read the test stitch, run the swap test, tell a file problem from a machine problem.</p>
+      <a class="related__link" href="/why-is-my-embroidery-puckering/" style="margin-top:14px;display:inline-block;">Why Is My Embroidery Puckering? Stabilizer Mistakes and How to Choose</a>
+      <p>The three questions that pick the right backing.</p>
+      <a class="related__link" href="/how-much-to-charge-for-embroidery/" style="margin-top:14px;display:inline-block;">How Much Should I Charge for Embroidery?</a>
+      <p>Digitizing is a real cost on the first order. The pricing method that gets it onto the quote.</p>
+    </div>
+
+    <div class="cta-band">
+      <h3>The file is half the job. The setup is the other half.</h3>
+      <p>This guide teaches how to think about the file. The per-item answer, this exact garment, this backing, this needle, lives in the Embroidery Companion, the lookup reference I built for standing at the machine. It is part of the Embroidery Business Starter Kit on this site.</p>
+      <div class="btn-row">
+        <a href="/embroidery-starter-kit/" class="btn btn-primary">Get the Starter Kit</a>
+      </div>
+    </div>
+
+    <h2 id="faq">Straight answers</h2>
+    <div class="faq-list">
+      <div class="faq-row">
+        <div class="faq-q">Can I just resize a design file to the size I need?</div>
+        <div class="faq-a">A little, carefully, and it is a gamble. Scaling a machine file stretches or squeezes the stitches already there instead of redrawing them, so shrinking crowds stitches together and growing spreads them into gaps. Small nudges often survive, and the test stitch decides. A real size change is made from the working file, where stitches get recalculated, so ask whoever made the file for the size you actually need.</div>
+      </div>
+      <div class="faq-row">
+        <div class="faq-q">Do I need to learn digitizing software to run an embroidery shop?</div>
+        <div class="faq-a">No. Plenty of working shops buy most of their designs and never open digitizing software. The skill you cannot skip is the literacy in this guide: what a file is, what the main settings do, how to test what you bought, and how to describe a problem when one shows up. Learning the software is a business choice about your time, not a requirement.</div>
+      </div>
+    </div>
+  </article>
+
+  <aside class="guide-right">
+    <div class="author-box">
+      <div class="author-label">Written by</div>
+      <p><strong style="font-weight:600;color:var(--black);">Felipe Matioli</strong> runs an embroidery shop in Raleigh, NC and builds the tools at Triple Thread Labs. Digitizing is the step he outsources, and this is the working vocabulary he uses to order it, test what comes back, and describe the problem when a file needs a fix.</p>
+    </div>
+    <div class="sticky-cta">
+      <h4>Look it up in seconds</h4>
+      <p>The setup for the garment in front of you, stabilizer, needle, and placement, in the Embroidery Companion.</p>
+      <a href="/embroidery-starter-kit/" class="btn btn-primary btn-full">Get the Starter Kit</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <span class="site-footer__copy">© 2026 Triple Thread Labs · Built by a maker, for makers</span>
+  <div class="site-footer__links">
+    <a href="/tools/">Tools</a>
+    <a href="/how-much-to-charge-for-embroidery/">Pricing guide</a>
+    <a href="/about/">About</a>
+    <a href="mailto:hello@triplethreadlabs.com">Contact</a>
+    <a href="/policies/">Policies</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var t = document.getElementById('navToggle'), o = document.getElementById('navOverlay'), c = document.getElementById('navClose');
+    if (!t || !o) return;
+    t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
+    if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
+    o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Design Pre-Flight Check | Triple Thread Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+@page { size: Letter; margin: 0.5in 0.55in; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans', Arial, sans-serif; color:#272727; font-size:9.7pt; line-height:1.29; }
+.wm { display:flex; align-items:center; gap:12px; }
+.wm .bars { display:flex; flex-direction:column; gap:4px; }
+.wm .bar { height:5px; border-radius:2px; background:#272727; }
+.wm .b1 { width:44px; } .wm .b2 { width:31px; background:#3A9962; } .wm .b3 { width:20px; }
+.wm .t1 { font-family:'Oswald'; font-weight:600; font-size:9pt; letter-spacing:5px; color:#6E6A63; }
+.wm .t2 { font-size:15pt; color:#272727; font-weight:700; margin-top:-3px; }
+.wm .t2 .th { font-family:'Playfair Display'; font-style:italic; font-weight:700; }
+.wm .t2 .dot { color:#2D7A4F; }
+.head { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #2D7A4F; padding-bottom:10px; }
+.kicker { font-family:'Oswald'; font-weight:600; letter-spacing:3px; color:#2D7A4F; font-size:9.5pt; text-align:right; }
+h1 { font-family:'Oswald'; font-weight:700; font-size:19pt; line-height:1.12; margin:10px 0 3px; }
+.sub { font-size:11pt; color:#4A4741; margin-bottom:10px; }
+.cols { display:flex; gap:22px; }
+.col { flex:1; }
+.box { border:1.6px solid #272727; border-radius:8px; padding:9px 11px; margin-bottom:10px; }
+.box.green { border-color:#2D7A4F; background:#F2F7F3; }
+h2 { font-family:'Oswald'; font-weight:600; font-size:11.5pt; letter-spacing:1px; margin-bottom:6px; }
+ul { list-style:none; }
+li { padding-left:17px; position:relative; margin-bottom:4px; }
+li:before { content:''; position:absolute; left:0; top:5px; width:8px; height:8px; border:1.6px solid #2D7A4F; border-radius:2px; }
+ol { padding-left:18px; }
+ol li { padding-left:2px; margin-bottom:5px; }
+ol li:before { display:none; }
+b { font-weight:700; }
+.rule { font-family:'Oswald'; font-weight:600; font-size:11pt; text-align:center; padding:7px; background:#272727; color:#F5F4F1; border-radius:8px; margin:2px 0 10px; }
+.rule span { color:#3A9962; }
+.foot { display:flex; justify-content:space-between; font-size:9pt; color:#6E6A63; border-top:1px solid #D8D4CC; padding-top:8px; margin-top:2px; }
+
+.noprint { font-family:'DM Sans', Arial, sans-serif; display:flex; justify-content:space-between; align-items:center; padding:10px 0 14px; font-size:10pt; }
+.noprint a { color:#2D7A4F; text-decoration:none; font-weight:700; }
+.noprint button { font-family:'Oswald'; font-weight:600; letter-spacing:1px; background:#2D7A4F; color:#fff; border:none; border-radius:6px; padding:8px 14px; cursor:pointer; }
+@media print { .noprint { display:none; } }
+</style></head>
+<body>
+<div class="noprint"><a href="/embroidery-digitizing-basics/">&larr; Back to the guide</a><button onclick="window.print()">Print this checklist</button></div>
+
+<div class="head">
+  <div class="wm"><div class="bars"><div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div></div>
+  <div><div class="t1">TRIPLE</div><div class="t2"><span class="th">thread</span> labs<span class="dot">.</span></div></div></div>
+  <div class="kicker">FREE GUIDE PRINTABLE</div>
+</div>
+
+<h1>DESIGN PRE-FLIGHT CHECK</h1>
+<div class="sub">Five minutes before the real garment, on every new file, in order. Read the test stitch before the customer piece goes on the machine.</div>
+
+<div class="rule">A stitch file is <span>instructions</span>, not a picture. Test the instructions before the garment pays for them.</div>
+
+<div class="cols">
+<div class="col">
+  <div class="box green">
+    <h2>THE FIVE CHECKS</h2>
+    <ol>
+      <li><b>Confirm what arrived.</b> The format your machine reads, the finished size you ordered, the stitch count in hand. Missing run sheet: ask now, not mid-run.</li>
+      <li><b>Measure the smallest lettering.</b> About 5 mm tall for plain block is the starting point, more for script and serif. Under the floor, the fix belongs in the file.</li>
+      <li><b>Find the crowded places.</b> Tiny detail, stacked color changes, one area doing heavy work. That is where breaks and blobs are born.</li>
+      <li><b>Test stitch the actual file.</b> Scrap close to the real fabric, the backing you plan to use. Not a trusted design, this design.</li>
+      <li><b>Write down what you ran.</b> File name and version, size, fabric, backing, what the test showed. The reorder starts from your notes.</li>
+    </ol>
+  </div>
+  <div class="box">
+    <h2>READ THE TEST STITCH</h2>
+    <ul>
+      <li><b>Fails in the same spot twice:</b> it lives in the file. Photo it and send it back with the facts.</li>
+      <li><b>Problems wander around:</b> it lives in your setup. Backing, hooping, needle, path.</li>
+      <li><b>Lettering filled in:</b> too small for the fabric, or shrunk there. Bigger, bolder, or dropped.</li>
+      <li><b>Gaps along the edges:</b> the pull conversation. Name pull compensation when you write.</li>
+    </ul>
+  </div>
+</div>
+<div class="col">
+  <div class="box">
+    <h2>ORDERING: WHAT TO SEND</h2>
+    <ul>
+      <li>The cleanest artwork you have, vector if it exists.</li>
+      <li>The finished size it will sew at, exact, not "about left chest."</li>
+      <li>The fabric or item, and where it will sit on it.</li>
+      <li>Your machine format, your colors, your deadline.</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>ORDERING: WHAT TO ASK</h2>
+    <ul>
+      <li><b>What will I receive?</b> Machine format, size, stitch count, run sheet with the color order.</li>
+      <li><b>What size was it digitized for?</b> A second size usually means a new file. Know before the reorder.</li>
+      <li><b>How do revisions work?</b> Send a photo and three facts: fabric, size, what you saw.</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>WORDS THAT MATTER</h2>
+    <ul>
+      <li><b>Density:</b> how tight the stitches pack. Too much hammers one spot, too little shows fabric.</li>
+      <li><b>Pull compensation:</b> width added back because stitches pull in. Too little opens gaps.</li>
+      <li><b>Underlay:</b> the foundation under the visible stitches. Thin underlay, tired design.</li>
+      <li><b>Working file:</b> the editable source. Real resizing and edits happen there, not on the machine file.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<div class="rule">Resizing is not free, small nudges only. <span>Same spot twice means the file. Wandering means your setup.</span></div>
+
+<div class="foot"><div>From the free guide at triplethreadlabs.com</div><div>More free checks: triplethreadlabs.com/free-tools</div></div>
+</body></html>
