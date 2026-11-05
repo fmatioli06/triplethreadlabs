@@ -46,6 +46,16 @@
   .toolkit__head h2 { margin: 0; font-size: 42px; line-height: 1; }
   .toolkit__note { font-size: 13px; font-weight: 300; color: var(--warm-gray); max-width: 280px; text-align: right; }
 
+  .guide-find { padding: 18px 0 4px; display: flex; flex-direction: column; gap: 12px; }
+  .guide-search { width: 100%; box-sizing: border-box; padding: 13px 16px; font: inherit; font-size: 15px; border: 1px solid var(--line-on-offwhite); border-radius: 4px; background: #fff; color: var(--black); }
+  .guide-search:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 2px var(--green); }
+  .guide-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .guide-chips a { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); border-radius: 999px; padding: 6px 12px; text-decoration: none; background: #fff; }
+  .guide-chips a:hover { background: var(--green-pale, #E8F5EE); }
+  .guide-group { font-family: 'Oswald', sans-serif; font-size: 21px; font-weight: 600; color: var(--black); margin: 30px 0 2px; padding: 0 4px; }
+  .guide-noresults { display: none; padding: 22px 24px; background: #fff; margin-top: 2px; font-weight: 300; color: var(--warm-gray); }
+  .guide-noresults.show { display: block; }
+
   .tool-row { display: flex; align-items: center; gap: 24px; padding: 26px 24px; border-bottom: 1px solid var(--line-on-offwhite); background: #fff; margin-top: 2px; transition: background 150ms ease; }
   .tool-row:hover { background: var(--off-white); }
   .tool-row--last { border-bottom: none; }
@@ -218,6 +228,40 @@
     <span class="toolkit__note">Start with the pricing method, then go deep on the jobs that trip shops up.</span>
   </div>
 
+
+  <div class="guide-find">
+    <input class="guide-search" id="guideSearch" type="search" placeholder="Search the guides: try puckering, caps, pricing, thread" aria-label="Search the guides">
+    <div class="guide-chips">
+      <a href="#guides-pricing">Pricing</a>
+      <a href="#guides-troubleshooting">Troubleshooting</a>
+      <a href="#guides-technique">Technique</a>
+      <a href="#guides-digitizing">Digitizing</a>
+      <a href="#guides-starting">Starting out</a>
+    </div>
+  </div>
+
+  <a data-keep="1" class="tool-row tool-row--pale" href="/free-tools/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <div class="tool-row__title-line">
+        <span class="tool-row__name">Free Tools Shelf</span>
+        <span class="badge badge--fill">Free</span>
+      </div>
+      <span class="tool-row__desc">The take home versions of these guides, in one place: printables and checklists you keep by the machine. Free with one email signup.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Pricing cheat sheet</span>
+      <span>Test stitch checklist</span>
+      <span>Thread break check order</span>
+      <span>New tools land here first</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__cta">See the free tools</span>
+    </div>
+  </a>
+
+  <h3 class="guide-group" id="guides-pricing">Pricing</h3>
+
   <a class="tool-row" href="/how-much-to-charge-for-embroidery/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
@@ -252,6 +296,9 @@
       <span class="tool-row__cta">Read the guide</span>
     </div>
   </a>
+
+  <h3 class="guide-group" id="guides-troubleshooting">When a stitch-out goes wrong</h3>
+
   <a class="tool-row" href="/why-did-my-embroidery-stitch-out-badly/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
@@ -284,6 +331,23 @@
     </div>
   </a>
 
+  <a class="tool-row" href="/why-does-my-embroidery-thread-keep-breaking/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <span class="tool-row__name">Why Does My Embroidery Thread Keep Breaking?</span>
+      <span class="tool-row__desc">Thread keeps snapping or shredding? Work one check order: path, needle, thread, design, and tension dead last.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>The five check order</span>
+      <span>Read the break first</span>
+      <span>Tension last, on purpose</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__cta">Read the guide</span>
+    </div>
+  </a>
+
+  <h3 class="guide-group" id="guides-technique">Technique</h3>
 
   <a class="tool-row" href="/how-to-hoop-embroidery/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -295,22 +359,6 @@
       <span>Hoop size and type</span>
       <span>Placement and floating</span>
       <span>Hoop burn fixes</span>
-    </div>
-    <div class="tool-row__buy">
-      <span class="tool-row__cta">Read the guide</span>
-    </div>
-  </a>
-
-  <a class="tool-row" href="/why-does-my-embroidery-thread-keep-breaking/">
-    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="tool-row__title">
-      <span class="tool-row__name">Why Does My Embroidery Thread Keep Breaking?</span>
-      <span class="tool-row__desc">Thread keeps snapping or shredding? Work one check order: path, needle, thread, design, and tension dead last.</span>
-    </div>
-    <div class="tool-row__features">
-      <span>The five check order</span>
-      <span>Read the break first</span>
-      <span>Tension last, on purpose</span>
     </div>
     <div class="tool-row__buy">
       <span class="tool-row__cta">Read the guide</span>
@@ -332,6 +380,24 @@
       <span class="tool-row__cta">Read the guide</span>
     </div>
   </a>
+
+  <a class="tool-row" href="/how-to-embroider-caps/">
+    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="tool-row__title">
+      <span class="tool-row__name">How to Embroider Caps</span>
+      <span class="tool-row__desc">Caps stitch on a curve, and the curve causes most of the trouble. The holding, placement, and backing logic, proven on a sacrificial cap first.</span>
+    </div>
+    <div class="tool-row__features">
+      <span>Holding a cap</span>
+      <span>Center seam fixes</span>
+      <span>Placement and height</span>
+    </div>
+    <div class="tool-row__buy">
+      <span class="tool-row__cta">Read the guide</span>
+    </div>
+  </a>
+
+  <h3 class="guide-group" id="guides-digitizing">Digitizing and lettering</h3>
 
   <a class="tool-row" href="/embroidery-digitizing-basics/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -365,21 +431,7 @@
     </div>
   </a>
 
-  <a class="tool-row" href="/how-to-embroider-caps/">
-    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="tool-row__title">
-      <span class="tool-row__name">How to Embroider Caps</span>
-      <span class="tool-row__desc">Caps stitch on a curve, and the curve causes most of the trouble. The holding, placement, and backing logic, proven on a sacrificial cap first.</span>
-    </div>
-    <div class="tool-row__features">
-      <span>Holding a cap</span>
-      <span>Center seam fixes</span>
-      <span>Placement and height</span>
-    </div>
-    <div class="tool-row__buy">
-      <span class="tool-row__cta">Read the guide</span>
-    </div>
-  </a>
+  <h3 class="guide-group" id="guides-starting">Starting out</h3>
 
   <a class="tool-row" href="/which-embroidery-machine-should-i-buy/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -397,7 +449,7 @@
     </div>
   </a>
 
-  <a class="tool-row" href="/start-embroidery-business/">
+  <a class="tool-row tool-row--last" href="/start-embroidery-business/">
     <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="tool-row__title">
       <span class="tool-row__name">How to Start an Embroidery Business</span>
@@ -413,25 +465,7 @@
     </div>
   </a>
 
-  <a class="tool-row tool-row--pale tool-row--last" href="/free-tools/">
-    <div class="tool-row__mark" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="tool-row__title">
-      <div class="tool-row__title-line">
-        <span class="tool-row__name">Free Tools Shelf</span>
-        <span class="badge badge--fill">Free</span>
-      </div>
-      <span class="tool-row__desc">The take home versions of these guides, in one place: printables and checklists you keep by the machine. Free with one email signup.</span>
-    </div>
-    <div class="tool-row__features">
-      <span>Pricing cheat sheet</span>
-      <span>Test stitch checklist</span>
-      <span>Thread break check order</span>
-      <span>New tools land here first</span>
-    </div>
-    <div class="tool-row__buy">
-      <span class="tool-row__cta">See the free tools</span>
-    </div>
-  </a>
+  <div class="guide-noresults" id="guideNoResults">No guide matches that yet. Try a shorter word, like hoop, thread, or price.</div>
 </section>
 
 <section class="nudge">
@@ -464,6 +498,37 @@
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
     if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
     o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var input = document.getElementById('guideSearch');
+    if (!input) return;
+    var section = document.querySelector('section.toolkit');
+    var rows = Array.prototype.slice.call(section.querySelectorAll('a.tool-row'));
+    var groups = Array.prototype.slice.call(section.querySelectorAll('.guide-group'));
+    var noresults = document.getElementById('guideNoResults');
+    function apply() {
+      var q = input.value.trim().toLowerCase();
+      var visible = 0;
+      rows.forEach(function (r) {
+        if (r.hasAttribute('data-keep')) { r.style.display = ''; return; }
+        var show = !q || r.textContent.toLowerCase().indexOf(q) !== -1;
+        r.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      groups.forEach(function (g) {
+        var el = g.nextElementSibling, any = false;
+        while (el && !el.classList.contains('guide-group')) {
+          if (el.classList.contains('tool-row') && el.style.display !== 'none' && !el.hasAttribute('data-keep')) any = true;
+          el = el.nextElementSibling;
+        }
+        g.style.display = any ? '' : 'none';
+      });
+      if (noresults) noresults.classList.toggle('show', visible === 0);
+    }
+    input.addEventListener('input', apply);
   })();
 </script>
 </body>
