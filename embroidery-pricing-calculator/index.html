@@ -513,6 +513,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     };
     if (!els.stitches) return;
     var interacted = false;
+    var calcUsedFired = false;
 
     var money = function(n){ return '$' + n.toFixed(2); };
     var moneyRound = function(n){ return '$' + Math.round(n).toLocaleString(); };
@@ -550,7 +551,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       var profit     = netRevenue - trueCost;
       var margin     = priceR > 0 ? profit / priceR : 0;
       var feeAmt     = priceR * feePct;
-      if (interacted && stitches > 0 && window.fbq) fbq('trackCustom', 'CalculatorUsed');
+      if (interacted && !calcUsedFired && stitches > 0 && window.fbq) { calcUsedFired = true; fbq('trackCustom', 'CalculatorUsed'); }
 
       els.price.style.opacity = '0.4';
       requestAnimationFrame(function() {
