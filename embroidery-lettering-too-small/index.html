@@ -185,6 +185,7 @@
   .related a.related__link:hover { color: var(--green); }
   .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
   .related p:last-child { margin-bottom: 0 !important; }
+  .toc-time { color: var(--warm-gray); font-weight: 300; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -240,7 +241,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <div class="guide-body">
   <article class="guide-left">
-    <div class="guide-meta">Free guide · November 2026</div>
+    <div class="guide-meta">Free guide · November 2026 · <span data-read-total></span></div>
     <h1>Why Small Embroidery Lettering Fills In (and How Small You Can Actually Go)</h1>
     <div class="answer-box">
       <div class="answer-box__label">The short answer</div>
@@ -250,16 +251,16 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <div class="toc">
       <div class="toc-label">In this guide</div>
       <ol>
-        <li><a href="#short">The short answer</a></li>
-        <li><a href="#why">Why tiny letters close up</a></li>
-        <li><a href="#floor">The floor: how small is too small</a></li>
-        <li><a href="#fonts">Pick a font that survives the size</a></li>
-        <li><a href="#spacing">Give the letters air</a></li>
-        <li><a href="#moves">If it is close: four moves</a></li>
-        <li><a href="#leftchest">The everyday case: left chest names</a></li>
-        <li><a href="#sayno">When to say no</a></li>
-        <li><a href="#check">The lettering size check</a></li>
-        <li><a href="#faq">Straight answers</a></li>
+        <li><a href="#short">The short answer<span class="toc-time" data-read-section="short"></span></a></li>
+        <li><a href="#why">Why tiny letters close up<span class="toc-time" data-read-section="why"></span></a></li>
+        <li><a href="#floor">The floor: how small is too small<span class="toc-time" data-read-section="floor"></span></a></li>
+        <li><a href="#fonts">Pick a font that survives the size<span class="toc-time" data-read-section="fonts"></span></a></li>
+        <li><a href="#spacing">Give the letters air<span class="toc-time" data-read-section="spacing"></span></a></li>
+        <li><a href="#moves">If it is close: four moves<span class="toc-time" data-read-section="moves"></span></a></li>
+        <li><a href="#leftchest">The everyday case: left chest names<span class="toc-time" data-read-section="leftchest"></span></a></li>
+        <li><a href="#sayno">When to say no<span class="toc-time" data-read-section="sayno"></span></a></li>
+        <li><a href="#check">The lettering size check<span class="toc-time" data-read-section="check"></span></a></li>
+        <li><a href="#faq">Straight answers<span class="toc-time" data-read-section="faq"></span></a></li>
       </ol>
     </div>
     <p class="guide-lead">It read perfectly on screen. Then it came off the machine and the company name looks fine, but the tagline under it is a smudge, and the "est. 2019" line is gone. Small lettering is the most predictable failure in embroidery: not a machine problem, not a digitizing problem, a size problem. And size problems have floors you can learn.</p>
@@ -396,6 +397,25 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
     if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
     o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var article = document.querySelector('article.guide-left');
+    if (!article) return;
+    var WPM = 200;
+    function words(el) { var t = (el.textContent || '').trim(); return t ? t.split(/\s+/).length : 0; }
+    function mins(w) { return Math.max(1, Math.round(w / WPM)); }
+    var totalEl = article.querySelector('[data-read-total]');
+    if (totalEl) totalEl.textContent = mins(words(article)) + ' min read';
+    article.querySelectorAll('[data-read-section]').forEach(function (span) {
+      var head = document.getElementById(span.getAttribute('data-read-section'));
+      if (!head) return;
+      var w = words(head), el = head.nextElementSibling;
+      while (el && el.tagName !== 'H2') { w += words(el); el = el.nextElementSibling; }
+      span.textContent = ' \u00b7 ' + mins(w) + ' min';
+    });
   })();
 </script>
 </body>

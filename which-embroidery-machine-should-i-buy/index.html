@@ -214,6 +214,7 @@
   .check-list { list-style: none !important; margin-left: 0 !important; }
   .check-list li { display: flex; gap: 10px; align-items: flex-start; }
   .check-list input[type="checkbox"] { margin-top: 6px; width: 17px; height: 17px; accent-color: var(--green); flex: none; }
+  .toc-time { color: var(--warm-gray); font-weight: 300; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -269,7 +270,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <div class="guide-body">
   <article class="guide-left">
-    <div class="guide-meta">Free guide · October 2026</div>
+    <div class="guide-meta">Free guide · October 2026 · <span data-read-total></span></div>
     <h1>Which Embroidery Machine Should I Buy? The Path I Actually Took</h1>
     <div class="answer-box">
       <div class="answer-box__label">The short answer</div>
@@ -279,15 +280,15 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <div class="toc">
       <div class="toc-label">On this page</div>
       <ol>
-        <li><a href="#picker">The machine picker: five questions</a></li>
-        <li><a href="#mypath">My three machines, honestly</a></li>
-        <li><a href="#hoops">The hoop size rule (read this before any brand)</a></li>
-        <li><a href="#grid">The comparison grid: every machine the groups ask about</a></li>
-        <li><a href="#truecost">The true cost calculator</a></li>
-        <li><a href="#multineedle">Budget multi-needle vs commercial multi-needle</a></li>
-        <li><a href="#used">Buying used: the checklist I would tape to the dash</a></li>
-        <li><a href="#budgets">What I would do at each budget</a></li>
-        <li><a href="#faq">Straight answers</a></li>
+        <li><a href="#picker">The machine picker: five questions<span class="toc-time" data-read-section="picker"></span></a></li>
+        <li><a href="#mypath">My three machines, honestly<span class="toc-time" data-read-section="mypath"></span></a></li>
+        <li><a href="#hoops">The hoop size rule (read this before any brand)<span class="toc-time" data-read-section="hoops"></span></a></li>
+        <li><a href="#grid">The comparison grid: every machine the groups ask about<span class="toc-time" data-read-section="grid"></span></a></li>
+        <li><a href="#truecost">The true cost calculator<span class="toc-time" data-read-section="truecost"></span></a></li>
+        <li><a href="#multineedle">Budget multi-needle vs commercial multi-needle<span class="toc-time" data-read-section="multineedle"></span></a></li>
+        <li><a href="#used">Buying used: the checklist I would tape to the dash<span class="toc-time" data-read-section="used"></span></a></li>
+        <li><a href="#budgets">What I would do at each budget<span class="toc-time" data-read-section="budgets"></span></a></li>
+        <li><a href="#faq">Straight answers<span class="toc-time" data-read-section="faq"></span></a></li>
       </ol>
     </div>
     <p class="guide-lead">This question lands in the embroidery groups every single week, and most of the answers skip the only part that matters: what it is actually like to own the machine after the first month. I cannot tell you what to buy. I can show you exactly what I did: I started on a Brother PE-900, stepped up to a Brother NQ1700E, and today I run a BAi Mirror multi-needle in my own shop. This page is that path, the rules it taught me, and the honest version of every other machine people ask about, with the real prices I could verify in October 2026.</p>
@@ -701,6 +702,25 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       calc();
     });
     calc();
+  })();
+</script>
+
+<script>
+  (function () {
+    var article = document.querySelector('article.guide-left');
+    if (!article) return;
+    var WPM = 200;
+    function words(el) { var t = (el.textContent || '').trim(); return t ? t.split(/\s+/).length : 0; }
+    function mins(w) { return Math.max(1, Math.round(w / WPM)); }
+    var totalEl = article.querySelector('[data-read-total]');
+    if (totalEl) totalEl.textContent = mins(words(article)) + ' min read';
+    article.querySelectorAll('[data-read-section]').forEach(function (span) {
+      var head = document.getElementById(span.getAttribute('data-read-section'));
+      if (!head) return;
+      var w = words(head), el = head.nextElementSibling;
+      while (el && el.tagName !== 'H2') { w += words(el); el = el.nextElementSibling; }
+      span.textContent = ' \u00b7 ' + mins(w) + ' min';
+    });
   })();
 </script>
 </body>

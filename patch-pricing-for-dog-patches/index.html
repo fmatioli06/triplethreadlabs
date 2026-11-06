@@ -193,6 +193,7 @@
   .related a.related__link:hover { color: var(--green); }
   .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
   .related p:last-child { margin-bottom: 0 !important; }
+  .toc-time { color: var(--warm-gray); font-weight: 300; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -248,7 +249,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <div class="guide-body">
   <article class="guide-left">
-    <div class="guide-meta">Free guide · Updated October 2026</div>
+    <div class="guide-meta">Free guide · Updated October 2026 · <span data-read-total></span></div>
     <h1>How to Price Dog Patches (Without Losing Money on the Small Ones)</h1>
     <div class="answer-box">
       <div class="answer-box__label">The short answer</div>
@@ -258,15 +259,15 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <div class="toc">
       <div class="toc-label">In this guide</div>
       <ol>
-        <li><a href="#different">Why dog patches are their own thing</a></li>
-        <li><a href="#costs">The 5 costs that move on dog patches</a></li>
-        <li><a href="#backing">Backing: the choice that changes your quote</a></li>
-        <li><a href="#detail">Small detail costs real money</a></li>
-        <li><a href="#quantity">One dog vs. a whole litter</a></li>
-        <li><a href="#rush">Rush jobs (dog patches get a lot of them)</a></li>
-        <li><a href="#worksheet">Run your own numbers</a></li>
-        <li><a href="#traps">Traps that eat your margin</a></li>
-        <li><a href="#faq">Straight answers</a></li>
+        <li><a href="#different">Why dog patches are their own thing<span class="toc-time" data-read-section="different"></span></a></li>
+        <li><a href="#costs">The 5 costs that move on dog patches<span class="toc-time" data-read-section="costs"></span></a></li>
+        <li><a href="#backing">Backing: the choice that changes your quote<span class="toc-time" data-read-section="backing"></span></a></li>
+        <li><a href="#detail">Small detail costs real money<span class="toc-time" data-read-section="detail"></span></a></li>
+        <li><a href="#quantity">One dog vs. a whole litter<span class="toc-time" data-read-section="quantity"></span></a></li>
+        <li><a href="#rush">Rush jobs (dog patches get a lot of them)<span class="toc-time" data-read-section="rush"></span></a></li>
+        <li><a href="#worksheet">Run your own numbers<span class="toc-time" data-read-section="worksheet"></span></a></li>
+        <li><a href="#traps">Traps that eat your margin<span class="toc-time" data-read-section="traps"></span></a></li>
+        <li><a href="#faq">Straight answers<span class="toc-time" data-read-section="faq"></span></a></li>
       </ol>
     </div>
     <p class="guide-lead">Dog patches look like easy money. They're small, customers love them, and everybody wants one with their dog's name on it. Then you quote eight bucks, spend an hour fixing the digitizing, and realize the velcro backing cost more than the patch. Here's how working shops price them so the small ones pay like the big ones.</p>
@@ -411,6 +412,25 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
     if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
     o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var article = document.querySelector('article.guide-left');
+    if (!article) return;
+    var WPM = 200;
+    function words(el) { var t = (el.textContent || '').trim(); return t ? t.split(/\s+/).length : 0; }
+    function mins(w) { return Math.max(1, Math.round(w / WPM)); }
+    var totalEl = article.querySelector('[data-read-total]');
+    if (totalEl) totalEl.textContent = mins(words(article)) + ' min read';
+    article.querySelectorAll('[data-read-section]').forEach(function (span) {
+      var head = document.getElementById(span.getAttribute('data-read-section'));
+      if (!head) return;
+      var w = words(head), el = head.nextElementSibling;
+      while (el && el.tagName !== 'H2') { w += words(el); el = el.nextElementSibling; }
+      span.textContent = ' \u00b7 ' + mins(w) + ' min';
+    });
   })();
 </script>
 </body>

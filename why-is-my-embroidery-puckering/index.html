@@ -201,6 +201,7 @@
   .related a.related__link:hover { color: var(--green); }
   .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
   .related p:last-child { margin-bottom: 0 !important; }
+  .toc-time { color: var(--warm-gray); font-weight: 300; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -256,7 +257,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <div class="guide-body">
   <article class="guide-left">
-    <div class="guide-meta">Free guide · November 2026</div>
+    <div class="guide-meta">Free guide · November 2026 · <span data-read-total></span></div>
     <h1>Why Is My Embroidery Puckering? Stabilizer Mistakes and How to Choose</h1>
     <div class="answer-box">
       <div class="answer-box__label">The short answer</div>
@@ -266,14 +267,14 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <div class="toc">
       <div class="toc-label">In this guide</div>
       <ol>
-        <li><a href="#short">The short answer</a></li>
-        <li><a href="#questions">Three questions that pick your stabilizer</a></li>
-        <li><a href="#families">The families: support that stays, leaves, or disappears</a></li>
-        <li><a href="#weight">Weight and layers, without the guesswork</a></li>
-        <li><a href="#hooping">Hooping: snug, not stretched</a></li>
-        <li><a href="#mistakes">The seven stabilizer mistakes I see most</a></li>
-        <li><a href="#check">The two minute stabilizer check</a></li>
-        <li><a href="#faq">Straight answers</a></li>
+        <li><a href="#short">The short answer<span class="toc-time" data-read-section="short"></span></a></li>
+        <li><a href="#questions">Three questions that pick your stabilizer<span class="toc-time" data-read-section="questions"></span></a></li>
+        <li><a href="#families">The families: support that stays, leaves, or disappears<span class="toc-time" data-read-section="families"></span></a></li>
+        <li><a href="#weight">Weight and layers, without the guesswork<span class="toc-time" data-read-section="weight"></span></a></li>
+        <li><a href="#hooping">Hooping: snug, not stretched<span class="toc-time" data-read-section="hooping"></span></a></li>
+        <li><a href="#mistakes">The seven stabilizer mistakes I see most<span class="toc-time" data-read-section="mistakes"></span></a></li>
+        <li><a href="#check">The two minute stabilizer check<span class="toc-time" data-read-section="check"></span></a></li>
+        <li><a href="#faq">Straight answers<span class="toc-time" data-read-section="faq"></span></a></li>
       </ol>
     </div>
     <p class="guide-lead">You ran the test stitch and the fabric around the design is wavy. Or the outline sits a hair off the fill, or the stitches vanished into the fleece. Most of the time that is not your machine and it is not the file. It is the layer under the fabric: the stabilizer, and how you hooped it. Choosing stabilizer feels like guesswork until someone shows you the logic. It is a logic. Here it is, plus the setup mistakes that undo a good choice.</p>
@@ -420,6 +421,25 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
     if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
     o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var article = document.querySelector('article.guide-left');
+    if (!article) return;
+    var WPM = 200;
+    function words(el) { var t = (el.textContent || '').trim(); return t ? t.split(/\s+/).length : 0; }
+    function mins(w) { return Math.max(1, Math.round(w / WPM)); }
+    var totalEl = article.querySelector('[data-read-total]');
+    if (totalEl) totalEl.textContent = mins(words(article)) + ' min read';
+    article.querySelectorAll('[data-read-section]').forEach(function (span) {
+      var head = document.getElementById(span.getAttribute('data-read-section'));
+      if (!head) return;
+      var w = words(head), el = head.nextElementSibling;
+      while (el && el.tagName !== 'H2') { w += words(el); el = el.nextElementSibling; }
+      span.textContent = ' \u00b7 ' + mins(w) + ' min';
+    });
   })();
 </script>
 </body>

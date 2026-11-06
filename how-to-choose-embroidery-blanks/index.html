@@ -172,6 +172,7 @@
   .related a.related__link:hover { color: var(--green); }
   .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
   .related p:last-child { margin-bottom: 0 !important; }
+  .toc-time { color: var(--warm-gray); font-weight: 300; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -227,7 +228,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <div class="guide-body">
   <article class="guide-left">
-    <div class="guide-meta">Free guide · November 2026</div>
+    <div class="guide-meta">Free guide · November 2026 · <span data-read-total></span></div>
     <h1>How to Choose Embroidery Blanks That Stitch Clean and Last</h1>
     <div class="answer-box">
       <div class="answer-box__label">The short answer</div>
@@ -237,14 +238,14 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <div class="toc">
       <div class="toc-label">In this guide</div>
       <ol>
-        <li><a href="#short">The short answer</a></li>
-        <li><a href="#weight">What the fabric is telling you</a></li>
-        <li><a href="#surface">Surface texture changes the plan</a></li>
-        <li><a href="#construction">Construction that fights the hoop</a></li>
-        <li><a href="#test">Test before you commit</a></li>
-        <li><a href="#price">The blank is a cost line, not a guess</a></li>
-        <li><a href="#mistakes">The blank mistakes I see most</a></li>
-        <li><a href="#faq">Straight answers</a></li>
+        <li><a href="#short">The short answer<span class="toc-time" data-read-section="short"></span></a></li>
+        <li><a href="#weight">What the fabric is telling you<span class="toc-time" data-read-section="weight"></span></a></li>
+        <li><a href="#surface">Surface texture changes the plan<span class="toc-time" data-read-section="surface"></span></a></li>
+        <li><a href="#construction">Construction that fights the hoop<span class="toc-time" data-read-section="construction"></span></a></li>
+        <li><a href="#test">Test before you commit<span class="toc-time" data-read-section="test"></span></a></li>
+        <li><a href="#price">The blank is a cost line, not a guess<span class="toc-time" data-read-section="price"></span></a></li>
+        <li><a href="#mistakes">The blank mistakes I see most<span class="toc-time" data-read-section="mistakes"></span></a></li>
+        <li><a href="#faq">Straight answers<span class="toc-time" data-read-section="faq"></span></a></li>
       </ol>
     </div>
 
@@ -377,6 +378,25 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
     if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
     o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var article = document.querySelector('article.guide-left');
+    if (!article) return;
+    var WPM = 200;
+    function words(el) { var t = (el.textContent || '').trim(); return t ? t.split(/\s+/).length : 0; }
+    function mins(w) { return Math.max(1, Math.round(w / WPM)); }
+    var totalEl = article.querySelector('[data-read-total]');
+    if (totalEl) totalEl.textContent = mins(words(article)) + ' min read';
+    article.querySelectorAll('[data-read-section]').forEach(function (span) {
+      var head = document.getElementById(span.getAttribute('data-read-section'));
+      if (!head) return;
+      var w = words(head), el = head.nextElementSibling;
+      while (el && el.tagName !== 'H2') { w += words(el); el = el.nextElementSibling; }
+      span.textContent = ' \u00b7 ' + mins(w) + ' min';
+    });
   })();
 </script>
 </body>

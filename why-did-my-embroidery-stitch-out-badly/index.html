@@ -201,6 +201,7 @@
   .related a.related__link:hover { color: var(--green); }
   .related p { font-size: 15px !important; color: var(--warm-gray) !important; margin: 6px 0 16px !important; }
   .related p:last-child { margin-bottom: 0 !important; }
+  .toc-time { color: var(--warm-gray); font-weight: 300; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -256,7 +257,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <div class="guide-body">
   <article class="guide-left">
-    <div class="guide-meta">Free guide · October 2026</div>
+    <div class="guide-meta">Free guide · October 2026 · <span data-read-total></span></div>
     <h1>Why Did My Embroidery Stitch Out Badly? How to Tell a File Problem From a Machine Problem</h1>
     <div class="answer-box">
       <div class="answer-box__label">The short answer</div>
@@ -266,17 +267,17 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <div class="toc">
       <div class="toc-label">In this guide</div>
       <ol>
-        <li><a href="#short">The short answer</a></li>
-        <li><a href="#read">Read your test stitch first</a></li>
-        <li><a href="#puckering">Puckering</a></li>
-        <li><a href="#breaks">Thread breaks and shredding</a></li>
-        <li><a href="#gaps">Gaps and fabric showing through</a></li>
-        <li><a href="#lettering">Small lettering filled in</a></li>
-        <li><a href="#outlines">Outlines not lining up</a></li>
-        <li><a href="#birdnest">Birdnesting underneath</a></li>
-        <li><a href="#digitizer">When it is the file: what to send your digitizer</a></li>
-        <li><a href="#beforeyou">Before you run the real garment</a></li>
-        <li><a href="#faq">Straight answers</a></li>
+        <li><a href="#short">The short answer<span class="toc-time" data-read-section="short"></span></a></li>
+        <li><a href="#read">Read your test stitch first<span class="toc-time" data-read-section="read"></span></a></li>
+        <li><a href="#puckering">Puckering<span class="toc-time" data-read-section="puckering"></span></a></li>
+        <li><a href="#breaks">Thread breaks and shredding<span class="toc-time" data-read-section="breaks"></span></a></li>
+        <li><a href="#gaps">Gaps and fabric showing through<span class="toc-time" data-read-section="gaps"></span></a></li>
+        <li><a href="#lettering">Small lettering filled in<span class="toc-time" data-read-section="lettering"></span></a></li>
+        <li><a href="#outlines">Outlines not lining up<span class="toc-time" data-read-section="outlines"></span></a></li>
+        <li><a href="#birdnest">Birdnesting underneath<span class="toc-time" data-read-section="birdnest"></span></a></li>
+        <li><a href="#digitizer">When it is the file: what to send your digitizer<span class="toc-time" data-read-section="digitizer"></span></a></li>
+        <li><a href="#beforeyou">Before you run the real garment<span class="toc-time" data-read-section="beforeyou"></span></a></li>
+        <li><a href="#faq">Straight answers<span class="toc-time" data-read-section="faq"></span></a></li>
       </ol>
     </div>
     <p class="guide-lead">The design looked fine on screen. Then it came off the machine puckered, or the thread broke six times, or the little lettering turned into a blob. Almost every bad stitch-out is one of six symptoms, and each one splits the same way: something on your side of the machine, or something inside the file. Here is how to tell which, in the order I check them in my own shop.</p>
@@ -427,6 +428,25 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
     if (c) c.addEventListener('click', function () { o.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); });
     o.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { o.classList.remove('is-open'); }); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var article = document.querySelector('article.guide-left');
+    if (!article) return;
+    var WPM = 200;
+    function words(el) { var t = (el.textContent || '').trim(); return t ? t.split(/\s+/).length : 0; }
+    function mins(w) { return Math.max(1, Math.round(w / WPM)); }
+    var totalEl = article.querySelector('[data-read-total]');
+    if (totalEl) totalEl.textContent = mins(words(article)) + ' min read';
+    article.querySelectorAll('[data-read-section]').forEach(function (span) {
+      var head = document.getElementById(span.getAttribute('data-read-section'));
+      if (!head) return;
+      var w = words(head), el = head.nextElementSibling;
+      while (el && el.tagName !== 'H2') { w += words(el); el = el.nextElementSibling; }
+      span.textContent = ' \u00b7 ' + mins(w) + ' min';
+    });
   })();
 </script>
 </body>
