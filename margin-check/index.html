@@ -208,7 +208,9 @@ h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-2xl
 .jobs-empty { font-size: var(--fs-sm); color: var(--mid-gray); margin-top: var(--s3); }
 
 /* ---------- Next step ---------- */
-.next { background: var(--charcoal); color: var(--off-white); }
+.next { background: var(--charcoal); color: var(--off-white); position: relative; }
+.next__close { position: absolute; top: 8px; right: 10px; background: none; border: 0; color: var(--lt-gray); font-size: 22px; line-height: 1; cursor: pointer; padding: 6px 8px; }
+.next__close:hover { color: var(--white); }
 .next .eyebrow { color: var(--green-mid); }
 .next__title { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xl); text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: var(--s2); }
 .next__body { font-size: var(--fs-md); font-weight: 300; color: var(--lt-gray); margin-bottom: var(--s4); }
@@ -444,6 +446,15 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
         </div>
       </div>
 
+      <!-- Next step (appears once a valid result exists) -->
+      <div class="card next" id="nextCard" hidden>
+        <button class="next__close" id="nextClose" type="button" aria-label="Dismiss">&times;</button>
+        <p class="eyebrow">Next step</p>
+        <h2 class="next__title">Set your price before the next job.</h2>
+        <p class="next__body">Build your next quote using your shop's costs, time, fees, and target margin.</p>
+        <a class="btn btn--primary" href="https://triplethreadlabs.com/embroidery-pricing-system/?src=margin-check">Explore the Pricing System</a>
+      </div>
+
       <!-- Email gate (before unlock) -->
       <div class="card gate" id="gateCard">
         <h2 class="gate__title">Send me my results + the free tools</h2>
@@ -479,13 +490,6 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
         </table>
       </div>
 
-      <!-- Next step -->
-      <div class="card next" id="nextCard">
-        <p class="eyebrow">Next step</p>
-        <h2 class="next__title">Price the next job before you quote it</h2>
-        <p class="next__body" id="nextBody">This tool looks back at one job. The Embroidery Pricing System builds your price from stitch count, blanks, and your rate, so you quote it right the first time.</p>
-        <a class="btn btn--primary" id="nextLink" href="#">See the Pricing System</a>
-      </div>
     </div>
   </div>
 
@@ -525,7 +529,9 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 // exactly like the forms on triplethreadlabs.com.
 const EMAIL_ENDPOINT = 'https://assets.mailerlite.com/jsonp/2293862/forms/185767805174417230/subscribe';
 // Where the "next step" button goes.
-const PRICING_CALCULATOR_URL = 'https://triplethreadlabs.com/embroidery-pricing-system/';
+const NEXT_DISMISS_KEY = 'ttl-margin-next-dismissed';
+const NEXT_SNOOZE_MS = 30 * 24 * 60 * 60 * 1000;
+function nextDismissedAt() { try { return +(localStorage.getItem(NEXT_DISMISS_KEY) || 0); } catch (e) { return 0; } }
 
 /* =====================================================
    STATE
@@ -675,6 +681,7 @@ function render() {
     $('emptyMsg').textContent = r.empty;
     $('chipVal').textContent = '...';
     $('chipVal').classList.remove('is-loss');
+    $('nextCard').hidden = true;
     renderSaveBar();
     return;
   }
@@ -753,10 +760,8 @@ function render() {
   $('chipVal').textContent = money(r.hourly, 0) + '/hr';
   $('chipVal').classList.toggle('is-loss', r.hourly < 0);
 
-  // Next-step copy adapts to the result
-  $('nextBody').textContent = r.status === 'good'
-    ? 'You nailed this one. The Embroidery Pricing System helps you do it on every quote, built from stitch count, blanks, and your rate.'
-    : 'This tool looks back at one job. The Embroidery Pricing System builds your price from stitch count, blanks, and your rate, so you quote it right the first time.';
+  // Next-step card: show it once a valid result exists, unless it was dismissed in the last 30 days
+  $('nextCard').hidden = (Date.now() - nextDismissedAt()) < NEXT_SNOOZE_MS;
 
   renderSaveBar();
 }
@@ -1105,7 +1110,10 @@ function init() {
     e.target.value = '';
   });
   $('resetBtn').addEventListener('click', handleReset);
-  $('nextLink').href = PRICING_CALCULATOR_URL;
+  $('nextClose').addEventListener('click', () => {
+    $('nextCard').hidden = true;
+    try { localStorage.setItem(NEXT_DISMISS_KEY, String(Date.now())); } catch (e) {}
+  });
 
   render();
   renderJobs();
