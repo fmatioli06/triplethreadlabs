@@ -445,6 +445,17 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       <h2>Already own the Pricing Calculator?</h2>
       <p class="owners-copy">Shop Suite Pro does not replace the pricing math. It puts the work around it in the same file: quotes that turn into orders, order tracking, customer history, inventory, and a dashboard that shows money owed and overdue work.</p>
       <p class="owners-copy">Your Pricing Calculator backup cannot be imported into Shop Suite Pro yet, so saved quotes do not transfer and your shop defaults need a one-time setup in Shop Setup. Your Calculator file and everything saved in it stay untouched.</p>
+      <p class="owners-copy">Calculator owners upgrade for <strong>$30</strong> instead of the regular $64.99, with the exact same files as the full-price version.</p>
+      <p class="owners-copy" id="upgrade-note">The upgrade link lives inside your Pricing Calculator: save or print a quote there, and use the Shop Suite Pro link that appears.</p>
+      <a href="https://payhip.com/b/vH2zj" class="btn btn-primary" id="upgrade-btn" style="display:none">Upgrade to Shop Suite Pro · $30</a>
+      <script>
+        (function () {
+          if (new URLSearchParams(window.location.search).get('src') === 'calc-handoff') {
+            document.getElementById('upgrade-btn').style.display = '';
+            document.getElementById('upgrade-note').style.display = 'none';
+          }
+        })();
+      </script>
     </div>
 
     <div class="section-block">
