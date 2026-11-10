@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
+<title>Bird Nesting Fix Order | Triple Thread Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
 <style>
-@font-face { font-family:'Oswald'; src:url('file:///home/hatch/workspace/shop-suite-v7-launch/fonts/oswald-v57-latin-700.ttf'); font-weight:700; }
-@font-face { font-family:'Oswald6'; src:url('file:///home/hatch/workspace/shop-suite-v7-launch/fonts/oswald-v57-latin-600.ttf'); font-weight:600; }
-@font-face { font-family:'DMSans'; src:url('file:///home/hatch/workspace/shop-suite-v7-launch/fonts/dm-sans-v17-latin-regular.ttf'); font-weight:400; }
-@font-face { font-family:'DMSans'; src:url('file:///home/hatch/workspace/shop-suite-v7-launch/fonts/dm-sans-v17-latin-700.ttf'); font-weight:700; }
-@font-face { font-family:'PlayfairI'; src:url('file:///home/hatch/workspace/shop-suite-v7-launch/fonts/playfair-display-v40-latin-700italic.ttf'); font-weight:700; }
 @page { size: Letter; margin: 0.5in 0.55in; }
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'DMSans', Arial, sans-serif; color:#272727; font-size:9.3pt; line-height:1.24; }
+body { font-family:'DM Sans', Arial, sans-serif; color:#272727; font-size:9.3pt; line-height:1.24; }
 .wm { display:flex; align-items:center; gap:12px; }
 .wm .bars { display:flex; flex-direction:column; gap:4px; }
 .wm .bar { height:5px; border-radius:2px; background:#272727; }
 .wm .b1 { width:44px; } .wm .b2 { width:31px; background:#3A9962; } .wm .b3 { width:20px; }
-.wm .t1 { font-family:'Oswald6'; font-weight:600; font-size:9pt; letter-spacing:5px; color:#6E6A63; }
+.wm .t1 { font-family:'Oswald'; font-weight:600; font-size:9pt; letter-spacing:5px; color:#6E6A63; }
 .wm .t2 { font-size:15pt; color:#272727; font-weight:700; margin-top:-3px; }
-.wm .t2 .th { font-family:'PlayfairI'; font-weight:700; }
+.wm .t2 .th { font-family:'Playfair Display'; font-style:italic; font-weight:700; }
 .wm .t2 .dot { color:#2D7A4F; }
 .head { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #2D7A4F; padding-bottom:10px; }
-.kicker { font-family:'Oswald6'; font-weight:600; letter-spacing:3px; color:#2D7A4F; font-size:9.5pt; text-align:right; }
+.kicker { font-family:'Oswald'; font-weight:600; letter-spacing:3px; color:#2D7A4F; font-size:9.5pt; text-align:right; }
 h1 { font-family:'Oswald'; font-weight:700; font-size:18pt; line-height:1.12; margin:10px 0 3px; }
 .sub { font-size:11pt; color:#4A4741; margin-bottom:10px; }
 .cols { display:flex; gap:22px; }
 .col { flex:1; }
 .box { border:1.6px solid #272727; border-radius:8px; padding:8px 10px; margin-bottom:8px; }
 .box.green { border-color:#2D7A4F; background:#F2F7F3; }
-h2 { font-family:'Oswald6'; font-weight:600; font-size:11.5pt; letter-spacing:1px; margin-bottom:6px; }
+h2 { font-family:'Oswald'; font-weight:600; font-size:11.5pt; letter-spacing:1px; margin-bottom:6px; }
 ul { list-style:none; }
 li { padding-left:17px; position:relative; margin-bottom:3px; }
 li:before { content:''; position:absolute; left:0; top:5px; width:8px; height:8px; border:1.6px solid #2D7A4F; border-radius:2px; }
@@ -33,7 +30,7 @@ ol { padding-left:18px; }
 ol li { padding-left:2px; margin-bottom:5px; }
 ol li:before { display:none; }
 b { font-weight:700; }
-.rule { font-family:'Oswald6'; font-weight:600; font-size:11pt; text-align:center; padding:7px; background:#272727; color:#F5F4F1; border-radius:8px; margin:2px 0 10px; }
+.rule { font-family:'Oswald'; font-weight:600; font-size:11pt; text-align:center; padding:7px; background:#272727; color:#F5F4F1; border-radius:8px; margin:2px 0 10px; }
 .rule span { color:#3A9962; }
 .foot { display:flex; justify-content:space-between; font-size:9pt; color:#6E6A63; border-top:1px solid #D8D4CC; padding-top:8px; margin-top:2px; }
 </style></head>
