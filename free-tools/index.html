@@ -65,7 +65,9 @@
 
   .ft-shelf { max-width: 1120px; margin: 0 auto; padding: 12px 36px 8px; }
   .ft-shelf h2 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--charcoal); margin: 0 0 22px; }
-  .ft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 10px; }
+  .ft-group { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--charcoal); margin: 30px 0 14px; }
+  .ft-shelf .ft-group:first-of-type { margin-top: 2px; }
   .ft-item { background: #fff; padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 1px 4px rgba(39,39,39,.07); }
   .ft-thumb { height: 200px; overflow: hidden; border-bottom: 1px solid var(--line); background: #ECEAE6; }
   .ft-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
@@ -197,8 +199,9 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
   <section class="ft-shelf">
     <h2>What is on the shelf</h2>
+<h3 class="ft-group">Pricing</h3>
     <div class="ft-grid">
-      <div class="ft-item">
+<div class="ft-item">
         <div class="ft-thumb"><img src="/assets/shelf-cheatsheet.jpg" alt="The Embroidery Pricing Cheat Sheet: the pricing formula, platform fees, and margin health guide" loading="lazy"></div>
         <div class="ft-body">
           <span class="ft-tag">Pricing</span>
@@ -206,31 +209,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
           <p>What to charge, on one page. The quick version of the method behind my pricing calculator, with the costs most shops forget.</p>
         </div>
       </div>
-      <div class="ft-item">
-        <div class="ft-thumb"><img src="/assets/shelf-test-stitch.jpg" alt="The Test Stitch Checklist page: read your test stitch first, the swap test, and the message to send your digitizer" loading="lazy"></div>
-        <div class="ft-body">
-          <span class="ft-tag">Troubleshooting</span>
-          <h3>Test Stitch Checklist</h3>
-          <p>A design stitched out badly? Run this two minute check before the real garment, and know whether the problem is your setup or the file. Includes the exact message to send your digitizer when it is the file.</p>
-        </div>
-      </div>
-      <div class="ft-item">
-        <div class="ft-thumb"><img src="/assets/shelf-stabilizer.jpg" alt="The Stabilizer Mistake Check page: three questions that pick the right backing" loading="lazy"></div>
-        <div class="ft-body">
-          <span class="ft-tag">Troubleshooting</span>
-          <h3>Stabilizer Mistake Check</h3>
-          <p>Puckering, shifting, gaps in the design? The one page version of my stabilizer guide: three questions that pick the right backing, and the hooping mistakes that cause most of the damage.</p>
-        </div>
-      </div>
-      <div class="ft-item">
-        <div class="ft-thumb"><img src="/assets/shelf-thread-break.jpg" alt="The thread break guide: why does my embroidery thread keep breaking, and the check order that finds it" loading="lazy"></div>
-        <div class="ft-body">
-          <span class="ft-tag">Troubleshooting</span>
-          <h3>Thread Break Check Order</h3>
-          <p>Thread breaking mid run? Check needle, thread path, and speed before you ever touch the tension dial. The order matters, and tension is last for a reason. The full order is printed below, free, no signup needed for this one.</p>
-        </div>
-      </div>
-      <div class="ft-item">
+<div class="ft-item">
         <div class="ft-thumb"><img src="/assets/shelf-calculator.jpg" alt="The free embroidery pricing calculator with a worked job: 5,000 stitches and a suggested sell price of $22" loading="lazy"></div>
         <div class="ft-body">
           <span class="ft-tag">Calculator</span>
@@ -238,7 +217,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
           <p>The browser version of my embroidery pricing calculator. Price one job properly before you quote it.</p>
         </div>
       </div>
-      <div class="ft-item">
+<div class="ft-item">
         <div class="ft-thumb"><img src="/assets/shelf-margin.jpg" alt="The Margin Check tool with a sample job: 24 caps that really paid $17.89 an hour" loading="lazy"></div>
         <div class="ft-body">
           <span class="ft-tag">Calculator</span>
@@ -246,7 +225,35 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
           <p>Already ran the job? Enter what you charged and what it cost, and see what it really paid you per hour, plus what you left on the table. <a href="/margin-check/">Open the Margin Check</a>, free, your result shows right on screen.</p>
         </div>
       </div>
-      <div class="ft-item">
+    </div>
+
+    <h3 class="ft-group">Troubleshooting</h3>
+    <div class="ft-grid">
+<div class="ft-item">
+        <div class="ft-thumb"><img src="/assets/shelf-test-stitch.jpg" alt="The Test Stitch Checklist page: read your test stitch first, the swap test, and the message to send your digitizer" loading="lazy"></div>
+        <div class="ft-body">
+          <span class="ft-tag">Troubleshooting</span>
+          <h3>Test Stitch Checklist</h3>
+          <p>A design stitched out badly? Run this two minute check before the real garment, and know whether the problem is your setup or the file. Includes the exact message to send your digitizer when it is the file.</p>
+        </div>
+      </div>
+<div class="ft-item">
+        <div class="ft-thumb"><img src="/assets/shelf-stabilizer.jpg" alt="The Stabilizer Mistake Check page: three questions that pick the right backing" loading="lazy"></div>
+        <div class="ft-body">
+          <span class="ft-tag">Troubleshooting</span>
+          <h3>Stabilizer Mistake Check</h3>
+          <p>Puckering, shifting, gaps in the design? The one page version of my stabilizer guide: three questions that pick the right backing, and the hooping mistakes that cause most of the damage.</p>
+        </div>
+      </div>
+<div class="ft-item">
+        <div class="ft-thumb"><img src="/assets/shelf-thread-break.jpg" alt="The thread break guide: why does my embroidery thread keep breaking, and the check order that finds it" loading="lazy"></div>
+        <div class="ft-body">
+          <span class="ft-tag">Troubleshooting</span>
+          <h3>Thread Break Check Order</h3>
+          <p>Thread breaking mid run? Check needle, thread path, and speed before you ever touch the tension dial. The order matters, and tension is last for a reason. The full order is printed below, free, no signup needed for this one.</p>
+        </div>
+      </div>
+<div class="ft-item">
         <div class="ft-thumb"><img src="/assets/shelf-stitch-checker.jpg" alt="The Stitch File Checker with a sample design open: 5,230 stitches and a 7 minute 33 second run time" loading="lazy"></div>
         <div class="ft-body">
           <span class="ft-tag">Troubleshooting</span>
@@ -254,7 +261,11 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
           <p>Got a design file from a digitizer or a customer? Drop it in and see the stitch count, design size, thread colors in sew order, an estimated run time, and a set of pre-flight checks before it goes on a garment. <a href="/stitch-file-checker/">Open the Stitch File Checker</a>, free, and your file never leaves your computer.</p>
         </div>
       </div>
-      <div class="ft-item">
+    </div>
+
+    <h3 class="ft-group">Starting out</h3>
+    <div class="ft-grid">
+<div class="ft-item">
         <div class="ft-thumb"><img src="/assets/shelf-startup.jpg" alt="The Startup Checklist page: the eighteen steps to starting an embroidery shop, in order" loading="lazy"></div>
         <div class="ft-body">
           <span class="ft-tag">Starting out</span>
