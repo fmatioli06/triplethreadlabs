@@ -29,18 +29,23 @@
   .sh-wrap h1 .accent { color: var(--green); }
   .sh-sub { font-size: 16px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); margin: 0 0 30px; max-width: 62ch; }
   .sh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 26px; }
-  .sh-item { background: #fff; padding: 24px 22px; }
+  .sh-item { background: #fff; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .sh-thumb { height: 200px; overflow: hidden; border-bottom: 1px solid var(--line); background: #ECEAE6; }
+  .sh-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .sh-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+  .sh-tag { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 10px; }
   .sh-item h2 { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--green); margin: 0 0 8px; }
   .sh-item p { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--warm-gray); margin: 0 0 16px; }
-  .sh-btn { display: inline-block; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: var(--green); padding: 13px 20px; text-decoration: none; border-radius: 2px; }
+  .sh-btn { display: inline-block; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: var(--green); padding: 13px 20px; text-decoration: none; border-radius: 2px; margin-top: auto; align-self: flex-start; }
   .sh-btn:hover { background: var(--green-mid); }
-  .sh-checkorder { background: var(--charcoal); border-radius: 4px; padding: 26px 28px; color: #fff; margin-bottom: 26px; }
-  .sh-checkorder h2 { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px; }
-  .sh-checkorder .sh-co-sub { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,.75); margin: 0 0 18px; line-height: 1.55; }
-  .sh-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .sh-step .sh-step__n { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: var(--green-mid); }
-  .sh-step h3 { font-family: 'Oswald', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 4px 0 6px; }
-  .sh-step p { font-size: 12.5px; font-weight: 300; line-height: 1.55; color: rgba(255,255,255,.78); margin: 0; }
+  .sh-checkorder { background: var(--charcoal); border-radius: 4px; padding: 30px 28px; color: #fff; margin-bottom: 26px; }
+  .sh-checkorder h2 { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 6px; color: #fff; }
+  .sh-checkorder .sh-co-sub { font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,.85); margin: 0 0 20px; line-height: 1.6; }
+  .sh-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .sh-step { background: #313131; border-radius: 4px; padding: 16px 16px 18px; }
+  .sh-step .sh-step__n { font-family: 'Oswald', sans-serif; font-size: 26px; font-weight: 700; color: var(--green-mid); }
+  .sh-step h3 { font-family: 'Oswald', sans-serif; font-size: 13.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 6px 0 8px; color: #fff; }
+  .sh-step p { font-size: 13.5px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,.86); margin: 0; }
   .sh-note { font-size: 14px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); max-width: 68ch; }
   .sh-note a { color: var(--green); font-weight: 500; text-decoration: none; }
   .sh-note a:hover { text-decoration: underline; }
@@ -109,34 +114,58 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
     <div class="sh-grid">
       <div class="sh-item">
-        <h2>Pricing Cheat Sheet</h2>
-        <p>What to charge, on one page. The pricing formula, what each platform actually takes, a margin health check, and stitch counts for the jobs you quote every day.</p>
-        <a class="sh-btn" href="/pricing-cheatsheet/full/">Open the cheat sheet</a>
+        <div class="sh-thumb"><img src="/assets/shelf-cheatsheet.jpg" alt="The Embroidery Pricing Cheat Sheet: the pricing formula, platform fees, and margin health guide" loading="lazy"></div>
+        <div class="sh-body">
+          <span class="sh-tag">Pricing</span>
+          <h2>Pricing Cheat Sheet</h2>
+          <p>What to charge, on one page. The pricing formula, what each platform actually takes, a margin health check, and stitch counts for the jobs you quote every day.</p>
+          <a class="sh-btn" href="/pricing-cheatsheet/full/">Open the cheat sheet</a>
+        </div>
       </div>
       <div class="sh-item">
-        <h2>Test Stitch Checklist</h2>
-        <p>The two minute check to run before the real garment, the swap test that settles file versus machine, and the exact message to send your digitizer when it is the file. One page, prints clean.</p>
-        <a class="sh-btn" href="/assets/test-stitch-checklist.pdf">Get the checklist (pdf)</a>
+        <div class="sh-thumb"><img src="/assets/shelf-test-stitch.jpg" alt="The Test Stitch Checklist page: read your test stitch first, the swap test, and the message to send your digitizer" loading="lazy"></div>
+        <div class="sh-body">
+          <span class="sh-tag">Troubleshooting</span>
+          <h2>Test Stitch Checklist</h2>
+          <p>The two minute check to run before the real garment, the swap test that settles file versus machine, and the exact message to send your digitizer when it is the file. One page, prints clean.</p>
+          <a class="sh-btn" href="/assets/test-stitch-checklist.pdf">Get the checklist (pdf)</a>
+        </div>
       </div>
       <div class="sh-item">
-        <h2>Stabilizer Mistake Check</h2>
-        <p>Puckering, shifting, gaps in the design? The one page version of the stabilizer guide: three questions that pick the right backing, and the hooping mistakes that cause most of the damage. Print it and keep it by the machine.</p>
-        <a class="sh-btn" href="/assets/stabilizer-mistake-check.pdf">Get the check (pdf)</a>
+        <div class="sh-thumb"><img src="/assets/shelf-stabilizer.jpg" alt="The Stabilizer Mistake Check page: three questions that pick the right backing" loading="lazy"></div>
+        <div class="sh-body">
+          <span class="sh-tag">Troubleshooting</span>
+          <h2>Stabilizer Mistake Check</h2>
+          <p>Puckering, shifting, gaps in the design? The one page version of the stabilizer guide: three questions that pick the right backing, and the hooping mistakes that cause most of the damage. Print it and keep it by the machine.</p>
+          <a class="sh-btn" href="/assets/stabilizer-mistake-check.pdf">Get the check (pdf)</a>
+        </div>
       </div>
       <div class="sh-item">
-        <h2>Startup Checklist</h2>
-        <p>The startup guide as one printable page: all eighteen steps in order, paperwork through first customers, with the two pricing rules that matter most on day one.</p>
-        <a class="sh-btn" href="/assets/startup-checklist.pdf">Get the startup checklist (pdf)</a>
+        <div class="sh-thumb"><img src="/assets/shelf-startup.jpg" alt="The Startup Checklist page: the eighteen steps to starting an embroidery shop, in order" loading="lazy"></div>
+        <div class="sh-body">
+          <span class="sh-tag">Starting out</span>
+          <h2>Startup Checklist</h2>
+          <p>The startup guide as one printable page: all eighteen steps in order, paperwork through first customers, with the two pricing rules that matter most on day one.</p>
+          <a class="sh-btn" href="/assets/startup-checklist.pdf">Get the startup checklist (pdf)</a>
+        </div>
       </div>
       <div class="sh-item">
-        <h2>Free Pricing Calculator</h2>
-        <p>The browser version of my embroidery pricing calculator. Price one job properly before you quote it, no signup or download needed beyond this page.</p>
-        <a class="sh-btn" href="/embroidery-pricing-calculator/">Open the calculator</a>
+        <div class="sh-thumb"><img src="/assets/shelf-calculator.jpg" alt="The free embroidery pricing calculator with a worked job: 5,000 stitches and a suggested sell price of $22" loading="lazy"></div>
+        <div class="sh-body">
+          <span class="sh-tag">Calculator</span>
+          <h2>Free Pricing Calculator</h2>
+          <p>The browser version of my embroidery pricing calculator. Price one job properly before you quote it, no signup or download needed beyond this page.</p>
+          <a class="sh-btn" href="/embroidery-pricing-calculator/">Open the calculator</a>
+        </div>
       </div>
       <div class="sh-item">
-        <h2>The Guides</h2>
-        <p>The long reads stay free for everyone: what to charge for embroidery, why a design stitched out badly, and how to start an embroidery business. Their printable versions land on this shelf.</p>
-        <a class="sh-btn" href="/guides/">Read the guides</a>
+        <div class="sh-thumb"><img src="/assets/shelf-guides.jpg" alt="The guides library: every guide in one place, with search and topic filters" loading="lazy"></div>
+        <div class="sh-body">
+          <span class="sh-tag">Guides</span>
+          <h2>The Guides</h2>
+          <p>The long reads stay free for everyone: what to charge for embroidery, why a design stitched out badly, and how to start an embroidery business. Their printable versions land on this shelf.</p>
+          <a class="sh-btn" href="/guides/">Read the guides</a>
+        </div>
       </div>
     </div>
 
