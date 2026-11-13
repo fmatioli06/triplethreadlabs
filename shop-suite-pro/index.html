@@ -446,13 +446,17 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       <p class="owners-copy">Shop Suite Pro does not replace the pricing math. It puts the work around it in the same file: quotes that turn into orders, order tracking, customer history, inventory, and a dashboard that shows money owed and overdue work.</p>
       <p class="owners-copy">Your Pricing Calculator backup cannot be imported into Shop Suite Pro yet, so saved quotes do not transfer and your shop defaults need a one-time setup in Shop Setup. Your Calculator file and everything saved in it stay untouched.</p>
       <p class="owners-copy">Calculator owners upgrade for <strong>$30</strong> instead of the regular $64.99, with the exact same files as the full-price version.</p>
-      <p class="owners-copy" id="upgrade-note">The upgrade link lives inside your Pricing Calculator: save or print a quote there, and use the Shop Suite Pro link that appears.</p>
+      <p class="owners-copy" id="upgrade-note">The fastest way in is the upgrade link inside your Pricing Calculator: save or print a quote there, and use the Shop Suite Pro link that appears.</p>
+      <p class="owners-copy" id="upgrade-verify-copy">If you cannot get to that link, email your Etsy or website order number and the email you bought with. Once the purchase checks out, we reply with your private $30 upgrade checkout link. That link is never posted in public, so only Calculator owners can use it.</p>
+      <a href="mailto:hello@triplethreadlabs.com?subject=Shop%20Suite%20Pro%20upgrade%20request&amp;body=Name%3A%0AWhere%20I%20bought%20the%20Pricing%20Calculator%20(Etsy%20or%20triplethreadlabs.com)%3A%0AOrder%20number%3A%0AEmail%20I%20bought%20it%20with%3A" class="btn btn-primary" id="upgrade-request-btn">Request the $30 upgrade</a>
       <a href="https://payhip.com/b/vH2zj" class="btn btn-primary" id="upgrade-btn" style="display:none">Upgrade to Shop Suite Pro · $30</a>
       <script>
         (function () {
           if (new URLSearchParams(window.location.search).get('src') === 'calc-handoff') {
             document.getElementById('upgrade-btn').style.display = '';
             document.getElementById('upgrade-note').style.display = 'none';
+            document.getElementById('upgrade-verify-copy').style.display = 'none';
+            document.getElementById('upgrade-request-btn').style.display = 'none';
           }
         })();
       </script>
