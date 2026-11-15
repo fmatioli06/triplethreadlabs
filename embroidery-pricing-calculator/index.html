@@ -109,6 +109,16 @@
   .intro__stat-value { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: var(--black); }
   .intro__stat-label { font-size: 10.5px; font-weight: 300; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid-gray); margin-top: 2px; }
 
+  .positioning { background: #fff; padding: 30px 36px 6px; }
+  .positioning__panel { background: var(--off-white); border-left: 4px solid var(--green); padding: 24px 28px; }
+  .positioning h2 { font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.25; color: var(--charcoal, #272727); margin: 0 0 10px; }
+  .positioning p { font-size: 15.5px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); margin: 0; max-width: 72ch; }
+  @media (max-width: 900px) {
+    .positioning { padding: 24px 20px 2px; }
+    .positioning__panel { padding: 20px; }
+    .positioning h2 { font-size: 21px; }
+  }
+
   .calc { background: #fff; padding: 36px; display: flex; gap: 34px; align-items: flex-start; }
   .calc__inputs { width: 400px; flex-shrink: 0; }
   .calc__section-label {
@@ -340,6 +350,13 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
         <div class="intro__stat-label">Tools sold</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="positioning reveal">
+  <div class="positioning__panel">
+    <h2>Price from your costs, not theirs.</h2>
+    <p>Most shops set prices by looking at what everyone else charges. But their costs are not your costs. This calculator runs your numbers instead: your blank, your machine time, your overhead, your margin. Put your real costs in and see what the job should actually pay.</p>
   </div>
 </section>
 

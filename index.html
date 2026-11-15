@@ -175,6 +175,26 @@
     color: var(--mid-gray);
   }
 
+  /* Positioning statement */
+  .positioning { background: var(--white); padding: 60px 40px 64px; }
+  .positioning__inner { max-width: 780px; }
+  .positioning__rule { width: 54px; height: 4px; background: var(--green); margin-bottom: 22px; }
+  .positioning h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .positioning p { font-size: 17px; font-weight: 300; line-height: 1.7; color: var(--warm-gray); margin: 0; max-width: 68ch; }
+  @media (max-width: 900px) {
+    .positioning { padding: 42px 20px 46px; }
+    .positioning h2 { font-size: 27px; }
+    .positioning p { font-size: 16px; }
+  }
+
   /* Toolkit spec-list */
   .toolkit { background: var(--page-bg); padding: 64px 40px 68px; }
   .toolkit__head {
@@ -465,6 +485,15 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       <div class="hero__stat-value">Raleigh, NC</div>
       <span class="hero__stat-label">Built by a working embroiderer</span>
     </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section class="positioning reveal">
+  <div class="positioning__inner">
+    <div class="positioning__rule" aria-hidden="true"></div>
+    <h2>Pricing is the strongest lever on profit in your shop.</h2>
+    <p>Most shops set it by looking at what everyone else charges. But their costs are not your costs. Every tool here prices from your costs instead: your blank, your machine time, your overhead, your margin.</p>
   </div>
 </section>
 
