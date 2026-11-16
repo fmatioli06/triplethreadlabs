@@ -138,6 +138,25 @@
   .lead { font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); max-width: 600px; margin-bottom: 36px; }
 
   .mockup-panel { border: 1px solid var(--line-on-white); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 48px; }
+  .mockup-tabs { display: flex; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); overflow-x: auto; }
+  .mockup-tab {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    padding: 14px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+  }
+  .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
   .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
@@ -285,9 +304,28 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <p class="lead">Sublimation blanks feel cheap, so shops price them by feel, and the press time quietly eats the job. This calculator builds every quote from your real costs: the blank, your consumables or the prints you buy in, your minutes, and your markup.</p>
 
     <div class="mockup-panel">
+      <div class="mockup-tabs" role="tablist">
+        <button class="mockup-tab" role="tab" aria-selected="true" data-tab="0">Build a quote</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="1">Line items</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="2">Buy prints</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="3">Settings</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="4">Print quote</button>
+      </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <img src="/assets/sublimation-panel.png" alt="Sublimation Pricing Calculator with a sample quote of mugs, tumblers, and shirts totaling $874.92 at a 67% blended margin">
+          <img src="/assets/sublimation-build-quote.png" alt="Sublimation Pricing Calculator: build your quote, the Johnson Family Reunion job at $874.92 with a 67 percent blended margin">
+        </div>
+        <div class="mockup-stage-inner" data-panel="1">
+          <img src="/assets/sublimation-line-items.png" alt="Line item detail: mugs, tumblers, and shirts priced line by line with quantities" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="2">
+          <img src="/assets/sublimation-buy-prints.png" alt="Buy prints: transfer costs worked into the quote for shops that buy their prints" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="3">
+          <img src="/assets/sublimation-settings.png" alt="Settings: blank costs, transfer prices, and press time defaults" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="4">
+          <img src="/assets/sublimation-print-quote.png" alt="Print quote: the finished sublimation quote, ready to print and send" loading="lazy">
         </div>
       </div>
     </div>
@@ -388,6 +426,22 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <a href="/policies/">Policies</a>
   </div>
 </footer>
+
+<script>
+  var tabs = document.querySelectorAll('.mockup-tab');
+  var panels = document.querySelectorAll('.mockup-stage-inner');
+  function selectTab(idx) {
+    tabs.forEach(function(t, i) { t.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
+    panels.forEach(function(p, i) { p.classList.toggle('is-active', i === idx); });
+  }
+  tabs.forEach(function(tab, idx) {
+    tab.addEventListener('click', function() { selectTab(idx); });
+    tab.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') selectTab((idx + 1) % tabs.length);
+      if (e.key === 'ArrowLeft') selectTab((idx - 1 + tabs.length) % tabs.length);
+    });
+  });
+</script>
 
 <script>
   (function () {
