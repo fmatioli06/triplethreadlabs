@@ -112,6 +112,25 @@
   .lead { font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); max-width: 600px; margin-bottom: 36px; }
 
   .mockup-panel { border: 1px solid var(--line-on-white); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 48px; }
+  .mockup-tabs { display: flex; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); overflow-x: auto; }
+  .mockup-tab {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    padding: 14px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+  }
+  .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
   .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
@@ -259,9 +278,28 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <p class="lead">Price any embroidered patch in seconds &mdash; dog patches, rush orders, jacket backs, caps. Enter the size and coverage, get an accurate stitch count with backing and finish priced in, and quote a per-patch number with confidence. Every time, not just when you feel like doing the math.</p>
 
     <div class="mockup-panel">
+      <div class="mockup-tabs" role="tablist">
+        <button class="mockup-tab" role="tab" aria-selected="true" data-tab="0">Quote</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="1">Patch detail</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="2">Order summary</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="3">Settings</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="4">Print and backup</button>
+      </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <img src="/assets/patch-pricing-panel.png" alt="Patch Price Builder showing patch shape, size, embroidery coverage, and backing inputs with a $34.50 order total, cost breakdown, and 66% margin">
+          <img src="/assets/patch-pricing-quote.png" alt="Patch Price Builder: a patch quote for Maple Ridge FD shoulder rockers, $34.50 total with true cost, margin, and profit shown">
+        </div>
+        <div class="mockup-stage-inner" data-panel="1">
+          <img src="/assets/patch-pricing-line-detail.png" alt="Patch line detail: stitch count, patch size, and per patch pricing for one line item" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="2">
+          <img src="/assets/patch-pricing-order-summary.png" alt="Order summary: the full patch order with line items, totals, and profit" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="3">
+          <img src="/assets/patch-pricing-settings.png" alt="Patch Price Builder settings: stitch cost, patch material rate, and digitizing fee" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="4">
+          <img src="/assets/patch-pricing-print-backup.png" alt="Print and backup: the printed quote, plus what is included with the Patch Price Builder" loading="lazy">
         </div>
       </div>
     </div>
@@ -386,6 +424,22 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <a href="/policies/">Policies</a>
   </div>
 </footer>
+
+<script>
+  var tabs = document.querySelectorAll('.mockup-tab');
+  var panels = document.querySelectorAll('.mockup-stage-inner');
+  function selectTab(idx) {
+    tabs.forEach(function(t, i) { t.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
+    panels.forEach(function(p, i) { p.classList.toggle('is-active', i === idx); });
+  }
+  tabs.forEach(function(tab, idx) {
+    tab.addEventListener('click', function() { selectTab(idx); });
+    tab.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') selectTab((idx + 1) % tabs.length);
+      if (e.key === 'ArrowLeft') selectTab((idx - 1 + tabs.length) % tabs.length);
+    });
+  });
+</script>
 
 <script>
   (function () {
