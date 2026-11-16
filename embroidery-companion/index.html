@@ -146,6 +146,25 @@
   .lead { font-size: 18px; font-weight: 300; line-height: 1.65; color: var(--warm-gray); max-width: 600px; margin-bottom: 36px; }
 
   .mockup-panel { border: 1px solid var(--line-on-white); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 48px; }
+  .mockup-tabs { display: flex; background: var(--off-white); border-bottom: 1px solid var(--line-on-white); overflow-x: auto; }
+  .mockup-tab {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    padding: 14px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+  }
+  .mockup-tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--green); }
   .mockup-stage { background: var(--charcoal); min-height: 340px; padding: 20px; display: flex; align-items: center; justify-content: center; }
   .mockup-stage-inner img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 34px rgba(0,0,0,.3); }
   .mockup-stage-inner { display: none; width: 100%; }
@@ -293,9 +312,28 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <p class="lead">A design is puckering, the thread just nested, and the order is due tonight. The Companion is the book you open in that moment: 67 short references covering stabilizers, needles, placement, and the first fix for the problems that stop a job, searchable in seconds.</p>
 
     <div class="mockup-panel">
+      <div class="mockup-tabs" role="tablist">
+        <button class="mockup-tab" role="tab" aria-selected="true" data-tab="0">Start here</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="1">Bird nesting</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="2">Search</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="3">Placement</button>
+        <button class="mockup-tab" role="tab" aria-selected="false" data-tab="4">Worksheets</button>
+      </div>
       <div class="mockup-stage">
         <div class="mockup-stage-inner is-active" data-panel="0">
-          <img src="/assets/companion-panel.png" alt="Embroidery Companion home screen with a search bar, common topics, and a reference card on thread bunching and bird nesting">
+          <img src="/assets/companion-home-search.png" alt="Embroidery Companion home view: stuck at the machine, find the fix fast, with search and topic tiles">
+        </div>
+        <div class="mockup-stage-inner" data-panel="1">
+          <img src="/assets/companion-bird-nesting.png" alt="Embroidery Companion reference opened: why embroidery bird nests underneath, and the clean and rethread order" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="2">
+          <img src="/assets/companion-search.png" alt="Searching the Embroidery Companion for bird nesting: the right reference in seconds" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="3">
+          <img src="/assets/companion-placement.png" alt="Left chest placement reference with the A B C shirt diagram" loading="lazy">
+        </div>
+        <div class="mockup-stage-inner" data-panel="4">
+          <img src="/assets/companion-worksheets.png" alt="Production time worksheet filled in: 24 pieces, planning total 8 hours 46 minutes over 2 working days" loading="lazy">
         </div>
       </div>
     </div>
@@ -400,6 +438,22 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
     <a href="/policies/">Policies</a>
   </div>
 </footer>
+
+<script>
+  var tabs = document.querySelectorAll('.mockup-tab');
+  var panels = document.querySelectorAll('.mockup-stage-inner');
+  function selectTab(idx) {
+    tabs.forEach(function(t, i) { t.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
+    panels.forEach(function(p, i) { p.classList.toggle('is-active', i === idx); });
+  }
+  tabs.forEach(function(tab, idx) {
+    tab.addEventListener('click', function() { selectTab(idx); });
+    tab.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight') selectTab((idx + 1) % tabs.length);
+      if (e.key === 'ArrowLeft') selectTab((idx - 1 + tabs.length) % tabs.length);
+    });
+  });
+</script>
 
 <script>
   (function () {
