@@ -583,6 +583,17 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
 
 <script>
   (function () {
+    if (new URLSearchParams(window.location.search).get('src') === 'ssp-video-test') {
+      document.querySelectorAll('a[href="https://payhip.com/b/NsBGr"]').forEach(function (a) {
+        a.href = 'https://payhip.com/b/dlDWq';
+        a.addEventListener('click', function () { fbq('track', 'InitiateCheckout'); });
+      });
+    }
+  })();
+</script>
+
+<script>
+  (function () {
     var t = document.getElementById('navToggle'), o = document.getElementById('navOverlay'), c = document.getElementById('navClose');
     if (!t || !o) return;
     t.addEventListener('click', function () { o.classList.add('is-open'); t.setAttribute('aria-expanded', 'true'); });
