@@ -46,6 +46,26 @@
     "availability": "https://schema.org/InStock",
     "url": "https://payhip.com/b/zbaBW",
     "seller": { "@type": "Organization", "name": "Triple Thread Labs" }
+  ,
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+      "shippingDestination": [
+        { "@type": "DefinedRegion", "addressCountry": "US" },
+        { "@type": "DefinedRegion", "addressCountry": "GB" }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": ["US", "GB"],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://triplethreadlabs.com/policies/#refund"
+    }
   },
   "publisher": {
     "@type": "Organization",
