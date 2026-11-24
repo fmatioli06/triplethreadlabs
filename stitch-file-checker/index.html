@@ -273,7 +273,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       <span class="lockup__mark" aria-hidden="true"><span></span><span></span><span></span></span>
       <span><span class="lockup__triple">Triple</span><span class="lockup__word"><span class="lockup__thread">thread</span><span class="lockup__labs">labs</span><span class="lockup__dot">.</span></span></span>
     </div>
-    <span class="eyebrow">Free tool</span>
+    
     <h1>Stitch File Checker</h1>
     <p class="lede">Open any stitch file to see its stitch count, run time, colors and size before you quote the job.</p>
   </header>
@@ -354,7 +354,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       </section>
 
       <section class="card cta" id="priceCard" aria-labelledby="ctaTitle">
-        <p class="cta__eyebrow">Next step</p>
+        
         <h2 class="card__title" id="ctaTitle">Turn these numbers into a price</h2>
         <div class="field" data-key="qty">
           <label for="qty">How many pieces?</label>
@@ -372,7 +372,7 @@ src="https://www.facebook.com/tr?id=1711573937264368&ev=PageView&noscript=1"
       </section>
 
       <section class="card mail" aria-labelledby="mailTitle">
-        <p class="mail__eyebrow">Free download</p>
+        
         <h2 class="card__title" id="mailTitle">Embroidery Pricing Cheat Sheet</h2>
         <p class="mail__body">Shop rates, order minimums and the per-stitch math on one printable page. Join the Triple Thread Labs email list and it lands in your inbox.</p>
         <a class="btn btn--ghost" id="mailBtn" href="https://triplethreadlabs.com" target="_blank" rel="noopener">Send Me the Cheat Sheet</a>
@@ -833,7 +833,6 @@ function runTimeMinutes(stats, s) {
   return stats.stitches / speed + (stats.trims * s.trimSec + stats.colorChanges * s.colorSec) / 60;
 }
 
-
 /* ============================================================
    APP
    ============================================================ */
@@ -1045,7 +1044,6 @@ function renderPrice() {
   $('qQtyLabel').textContent = fmtInt(q) + (q === 1 ? ' piece' : ' pieces');
   setVal('qTime', fmtTime(runTimeMinutes(st, s) * q));
 }
-
 
 
 function renderNumbers() {
