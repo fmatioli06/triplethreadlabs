@@ -360,8 +360,8 @@ a { color: var(--green); }
           <summary>New to needles? Start here</summary>
           <ul>
             <li><strong>The numbers</strong> (like 75/11) are the needle size printed on the pack. Bigger number, thicker needle.</li>
-            <li><strong>Ballpoint</strong> means a rounded tip. It slides between the threads, so it suits stretchy fabric.</li>
-            <li><strong>Sharp</strong> means a pointed tip. It goes through tight fabric cleanly.</li>
+            <li><strong>Ballpoint</strong> means a rounded tip. It is made to slide between the threads, so it suits stretchy fabric.</li>
+            <li><strong>Sharp</strong> means a pointed tip. It helps the needle get through tight fabric cleanly.</li>
             <li><strong>Fit</strong> matters when you buy. Home machines usually take needles with one flat side at the top. Commercial machines usually take fully round ones. Your machine manual says which.</li>
             <li><strong>Thread weight</strong> (wt) is how thick the thread is. 40 wt is the standard embroidery thread. Smaller number, thicker thread.</li>
           </ul>
@@ -421,17 +421,17 @@ var GROUPS = [
 
 var GARMENTS = [
   { id: 'tee', group: 'knits', name: 'T-shirt', sub: 'regular tee', full: 'T-shirt', size: 75, point: 'ballpoint',
-    why: "The rounded tip slides between the threads instead of cutting them, so you don't get holes around the design.",
+    why: 'The rounded tip is made to slide between the threads, which lowers the risk of holes around the design.',
     keys: 'tshirt t shirt tee jersey cotton knit' },
   { id: 'light-tee', group: 'knits', name: 'Lightweight tee', sub: 'thin shirts, small lettering', full: 'Lightweight tee / small lettering', size: 70, point: 'ballpoint',
     why: 'A thinner needle for thin fabric and small lettering.',
     keys: 'thin tee tshirt t shirt light triblend tri-blend fine detail knit' },
   { id: 'polo', group: 'knits', name: 'Polo', sub: 'golf shirt', full: 'Polo / golf shirt', size: 75, point: 'ballpoint',
-    why: 'The standard pick for polos. The rounded tip slides between the threads instead of cutting them.',
+    why: 'A common pick for polos. The rounded tip is made to slide between the threads, not cut them.',
     alt: { when: 'standard', text: '80/12 ballpoint. Needle charts list both sizes for polos.' },
     keys: 'golf shirt pique polo knit' },
   { id: 'hoodie', group: 'knits', name: 'Hoodie', sub: 'sweatshirt, fleece', full: 'Hoodie / sweatshirt / fleece', size: 75, point: 'ballpoint',
-    why: 'The rounded tip protects the fabric under the design.',
+    why: 'The rounded tip is easier on the fabric under the design.',
     alt: { when: 'always', text: 'The same size with a sharp point. Plenty of shops run a sharp on fleece because it is thick and stable.' },
     keys: 'hoodie hoody sweatshirt crewneck fleece sweats knit' },
   { id: 'heavy-fleece', group: 'knits', name: 'Heavy fleece', sub: 'thick hoodie', full: 'Heavy fleece / thick hoodie', size: 80, point: 'ballpoint',
@@ -439,50 +439,50 @@ var GARMENTS = [
     alt: { when: 'always', text: 'The same size with a sharp point. Plenty of shops run a sharp on fleece because it is thick and stable.' },
     keys: 'heavyweight hoodie thick sweatshirt heavy fleece knit' },
   { id: 'performance', group: 'knits', name: 'Athletic shirt', sub: 'stretchy, moisture-wicking', full: 'Athletic / performance shirt', size: 70, point: 'ballpoint',
-    why: 'A thin needle that slips between the stretchy threads without snagging them.',
+    why: 'A thin needle helps slip between the stretchy threads with less snagging.',
     alt: { when: 'standard', text: '75/11 ballpoint. Needle charts list both sizes for stretchy athletic fabric.' },
     keys: 'performance athletic stretch dri fit drifit dri-fit polyester spandex lycra moisture wicking sport gym knit' },
   { id: 'beanie', group: 'knits', name: 'Beanie', sub: 'winter hat', full: 'Beanie', size: 75, point: 'ballpoint',
-    why: 'A beanie stretches like a sweater, so it gets a rounded tip even though it is a hat.',
+    why: 'A beanie stretches like a sweater, so a rounded tip is the usual pick even though it is a hat.',
     keys: 'beanie knit hat cap toque winter hat' },
   { id: 'onesie', group: 'knits', name: 'Baby onesie', sub: 'baby clothes', full: 'Baby onesie', size: 70, point: 'ballpoint',
-    why: 'Gentle on thin, soft baby fabric.',
+    why: 'Gentler on thin, soft baby fabric.',
     keys: 'baby onesie infant bodysuit bib knit' },
 
   { id: 'structured-cap', group: 'wovens', name: 'Structured cap', sub: 'stiff front, holds its shape', full: 'Structured cap', size: 80, point: 'sharp', hold60: 'on the stiff front panel',
-    why: 'The front of this cap has a stiff panel inside. A sharp point goes through it cleanly instead of bending off course.',
+    why: 'The front of this cap has a stiff panel inside. A sharp point helps the needle get through it cleanly.',
     alt: { when: 'standard', text: '75/11 sharp. Needle charts list both sizes for structured caps.' },
     keys: 'hat cap structured trucker snapback baseball buckram richardson' },
   { id: 'dad-hat', group: 'wovens', name: 'Dad hat', sub: 'soft front, no stiff panel', full: 'Dad hat / soft cap', size: 75, point: 'sharp',
-    why: 'No stiff panel to fight, so a standard sharp does it.',
+    why: 'No stiff panel to fight, so a standard sharp is usually enough.',
     keys: 'hat cap dad hat unstructured soft cap bucket' },
   { id: 'puff-cap', group: 'wovens', name: '3D puff cap', sub: 'raised foam lettering', full: 'Cap with 3D puff', size: 80, point: 'sharp', hold60: 'going through foam and a stiff panel',
     why: 'Has to punch through the foam and the stiff front panel together.',
     alt: { when: 'standard', text: '75/11 sharp. Some puff specialists prefer it over 80/12.' },
     keys: 'hat cap 3d puff foam raised buckram' },
   { id: 'denim', group: 'wovens', name: 'Denim', sub: 'jacket, jeans', full: 'Denim jacket / jeans', size: 80, point: 'sharp',
-    why: 'Denim is tight and tough. A sharp point goes through it cleanly.',
+    why: 'Denim is tight and tough. A sharp point helps the needle get through it cleanly.',
     alt: { when: 'standard', text: '75/11 sharp on lighter denim.' },
     keys: 'denim jean jeans jacket twill' },
   { id: 'heavy-denim', group: 'wovens', name: 'Heavy denim', sub: 'thick seams, layers', full: 'Heavy denim / thick layers', size: 90, point: 'sharp', hold60: 'on fabric this heavy',
-    why: 'Thick denim and stacked layers need a stronger needle than regular denim.',
+    why: 'Thick denim and stacked layers often call for a stronger needle than regular denim.',
     keys: 'heavy denim thick jeans seams layers multi layer multi-layer carhartt' },
   { id: 'canvas', group: 'wovens', name: 'Canvas tote', sub: 'bags, duck canvas', full: 'Canvas tote / duck canvas', size: 80, point: 'sharp',
-    why: 'Canvas is tight and heavy. A sharp point goes through it cleanly.',
-    step: 'Step up to 90/14 on heavy duck canvas or doubled layers.',
+    why: 'Canvas is tight and heavy. A sharp point helps the needle get through it cleanly.',
+    step: 'Try 90/14 on heavy duck canvas or doubled layers.',
     keys: 'canvas tote bag duck canvas backpack' },
   { id: 'dress-shirt', group: 'wovens', name: 'Dress shirt', sub: 'button-up, oxford', full: 'Dress shirt / button-up', size: 75, point: 'sharp',
-    why: 'Gives clean, crisp edges on smooth shirt fabric.',
+    why: 'Helps keep edges clean and crisp on smooth shirt fabric.',
     alt: { when: 'always', text: 'The same size with a ballpoint. Needle charts are split on dress shirts.' },
     keys: 'dress shirt button up button down oxford woven poplin broadcloth' },
   { id: 'towel', group: 'wovens', name: 'Towel', sub: 'bath or hand towel', full: 'Towel', size: 75, point: 'sharp',
-    why: 'Goes through the base of the towel, under the fluffy loops.',
+    why: 'Helps the needle get through the base of the towel, under the fluffy loops.',
     alt: { when: 'always', text: 'The same size with a ballpoint. Needle charts list either point for towels.' },
-    step: 'Go to 80/12 on thick bath towels.',
+    step: 'Try 80/12 on thick bath towels.',
     keys: 'towel terry cloth bath hand towel robe' },
   { id: 'apron', group: 'wovens', name: 'Apron', sub: 'work shirt', full: 'Apron / work shirt', size: 75, point: 'sharp',
     why: 'A standard sharp for medium-weight work fabric.',
-    step: 'Go to 80/12 on heavy aprons.',
+    step: 'Try 80/12 on heavy aprons.',
     keys: 'apron twill work shirt workwear uniform dickies' }
 ];
 
@@ -496,7 +496,7 @@ var THREADS = [
 var SIZE_LABEL = { 65: '65/9', 70: '70/10', 75: '75/11', 80: '80/12', 90: '90/14' };
 var SIZE_UP = { 65: 70, 70: 75, 75: 80, 80: 90 };
 
-var LIFE_LINE = "Change the needle every 8 to 10 hours of stitching, or right away if thread breaks climb, stitches start skipping, or you hear popping. A dull needle causes more 'tension problems' than tension does.";
+var LIFE_LINE = "Change the needle every 8 to 10 hours of stitching, or right away if thread breaks climb, stitches start skipping, or you hear popping. A dull needle is behind a lot of 'tension problems'.";
 var GUIDE_LINE = 'A recommendation, not a rule. Stitch a test on scrap before the real run.';
 var GUIDE_TOP = 'These are recommendations to start from, not rules. Always stitch a test first.';
 var GUIDE_FOOT = 'This is a guide. Recommendations come from our shop notes and needle and thread maker charts. Your machine, fabric and design can call for something different, so test before you run the job.';
@@ -534,8 +534,8 @@ function pickNeedle(garmentId, threadId) {
     metallic = true;
     size = Math.max(base, 80);
     threadLine = size > base
-      ? 'Metallic 40 wt thread: switch to a metallic needle and step up to ' + SIZE_LABEL[size] + '. The bigger eye lets the thread run without shredding.'
-      : 'Metallic 40 wt thread: switch to a metallic needle in the same size. The bigger eye lets the thread run without shredding.';
+      ? 'Metallic 40 wt thread: switch to a metallic needle and step up to ' + SIZE_LABEL[size] + '. The bigger eye helps reduce thread shredding.'
+      : 'Metallic 40 wt thread: switch to a metallic needle in the same size. The bigger eye helps reduce thread shredding.';
   } else if (t.id === 'fine60') {
     if (g.hold60) {
       size = 75;
@@ -547,8 +547,8 @@ function pickNeedle(garmentId, threadId) {
   } else if (t.id === 'heavy30') {
     size = base >= 80 ? base : SIZE_UP[base];
     threadLine = size > base
-      ? '30 wt thread: go up one size to ' + SIZE_LABEL[size] + ' so the thicker thread fits the eye.'
-      : '30 wt thread: no change. ' + SIZE_LABEL[size] + ' already has room for it.';
+      ? '30 wt thread: go up one size to ' + SIZE_LABEL[size] + ' to give the thicker thread more room in the eye.'
+      : '30 wt thread: no change. ' + SIZE_LABEL[size] + ' usually has room for it.';
   }
 
   var type, sub;
@@ -558,8 +558,8 @@ function pickNeedle(garmentId, threadId) {
 
   var note;
   if (t.id === 'standard' && g.step) note = g.step;
-  else if (t.id === 'fine60' && g.id === 'canvas') note = 'Hold at 75/11 on heavy duck canvas or doubled layers.';
-  else if (metallic) note = 'Ask for a metallic needle with a ' + g.point + ' tip. The common commercial one is DBx7ST.';
+  else if (t.id === 'fine60' && g.id === 'canvas') note = 'Try staying at 75/11 on heavy duck canvas or doubled layers.';
+  else if (metallic) note = 'Look for a metallic needle with a ' + g.point + ' tip. Tip options vary by maker. A common commercial one is DBx7ST.';
   else note = PACK_NOTE[g.point];
 
   var alt = '';
